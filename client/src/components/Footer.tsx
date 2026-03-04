@@ -15,9 +15,13 @@ export function Footer() {
             </div>
             <p className="text-sm leading-relaxed mb-4">
               Global concierge documentation and 3D preservation for ultra-premium aircraft. On-site.
-              Worldwide.
+              Worldwide. Your originals never leave your hangar.
             </p>
             <p className="text-xs text-[#6a6259]">A division of Provenarc Group LLC</p>
+            <div className="mt-4 text-xs text-[#6a6259] space-y-1">
+              <p>Mon&ndash;Fri: 8:00 AM &ndash; 6:00 PM CST</p>
+              <p>Weekend/Emergency: By appointment</p>
+            </div>
           </div>
 
           <div>
@@ -26,16 +30,16 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {[
-                "Essential Documentation",
-                "Complete Documentation",
-                "Premium Comprehensive",
-                "Executive Package",
-                "Flagship Comprehensive",
-              ].map((s) => (
-                <li key={s}>
-                  <Link href="/services">
-                    <span className="text-sm cursor-pointer transition-colors" data-testid={`footer-link-${s.split(" ")[0].toLowerCase()}`}>
-                      {s}
+                { label: "Service Tiers", href: "/services" },
+                { label: "How It Works", href: "/how-it-works" },
+                { label: "Pricing", href: "/pricing" },
+                { label: "Why Provenarc", href: "/why-provenarc" },
+                { label: "FAQ", href: "/faq" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href}>
+                    <span className="text-sm cursor-pointer transition-colors" data-testid={`footer-link-${item.label.split(" ")[0].toLowerCase()}`}>
+                      {item.label}
                     </span>
                   </Link>
                 </li>
@@ -50,9 +54,11 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { label: "About Us", href: "/about" },
-                { label: "Pricing", href: "/pricing" },
-                { label: "Partners", href: "/about" },
+                { label: "Partners", href: "/partners" },
+                { label: "Broker Portal", href: "/broker/login" },
+                { label: "MRO Portal", href: "/mro/login" },
                 { label: "Contact", href: "/contact" },
+                { label: "Privacy Policy", href: "/privacy" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.href}>
@@ -86,6 +92,13 @@ export function Footer() {
                   </span>
                 </Link>
               </li>
+              <li>
+                <Link href="/partners">
+                  <span className="text-sm text-[#c9a96e] cursor-pointer transition-colors" data-testid="footer-link-partnership">
+                    Partnership Inquiries
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -94,9 +107,16 @@ export function Footer() {
           <p className="text-xs text-[#6a6259]">
             &copy; {new Date().getFullYear()} Provenarc Group LLC. All rights reserved.
           </p>
-          <p className="text-xs text-[#6a6259]">
-            Provenarc Aero Solutions &mdash; A division of Provenarc Group LLC, Texas
-          </p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy">
+              <span className="text-xs text-[#6a6259] cursor-pointer transition-colors">
+                Privacy Policy
+              </span>
+            </Link>
+            <p className="text-xs text-[#6a6259]">
+              Provenarc Aero Solutions &mdash; A division of Provenarc Group LLC, Texas
+            </p>
+          </div>
         </div>
       </div>
     </footer>

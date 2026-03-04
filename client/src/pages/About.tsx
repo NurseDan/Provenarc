@@ -91,11 +91,12 @@ export default function About() {
               About Provenarc
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#faf6f1] leading-tight">
-              Aircraft Documentation, Elevated
+              Provenance. Precision. Permanence.
             </h1>
             <p className="text-[#b8b0a4] text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-              We&rsquo;re building the world&rsquo;s premier aircraft documentation and
-              preservation company. On-site. Worldwide. No compromises.
+              Founded by aviation professionals who understand irreplaceable value. We&rsquo;re
+              building the world&rsquo;s premier aircraft documentation and preservation company.
+              On-site. Worldwide. No compromises.
             </p>
           </motion.div>
         </div>
@@ -134,6 +135,23 @@ export default function About() {
                 </p>
               </div>
             </div>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="mt-16">
+            <Card className="p-6 lg:p-8 border-primary/20 max-w-2xl mx-auto">
+              <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-3">
+                Why &ldquo;Provenarc&rdquo;
+              </p>
+              <h3 className="font-serif text-2xl mb-3">
+                <span className="text-primary">Proven</span>ance + <span className="text-primary">Arc</span>hive
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Provenance</strong> &mdash; the origin, history,
+                and authenticity of an asset.{" "}
+                <strong className="text-foreground">Archive</strong> &mdash; permanent preservation
+                for future reference. Every aircraft has a story. We preserve it.
+              </p>
+            </Card>
           </motion.div>
         </div>
       </section>

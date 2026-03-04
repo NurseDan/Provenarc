@@ -13,6 +13,7 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
   createQuoteRequest(data: InsertQuoteRequest): Promise<QuoteRequest>;
   createContactInquiry(data: InsertContactInquiry): Promise<ContactInquiry>;
+  getQuoteRequestsByEmail(email: string): Promise<QuoteRequest[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -39,6 +40,10 @@ export class DatabaseStorage implements IStorage {
   async createContactInquiry(data: InsertContactInquiry): Promise<ContactInquiry> {
     const [inquiry] = await db.insert(contactInquiries).values(data).returning();
     return inquiry;
+  }
+
+  async getQuoteRequestsByEmail(email: string): Promise<QuoteRequest[]> {
+    return db.select().from(quoteRequests).where(eq(quoteRequests.email, email));
   }
 }
 

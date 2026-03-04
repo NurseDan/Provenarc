@@ -29,7 +29,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, MapPin, Clock, Send, Calendar, Shield } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -66,6 +66,7 @@ function QuoteRequestForm() {
       aircraftType: "",
       serviceTier: "",
       location: "",
+      timeline: "",
       message: "",
     },
   });
@@ -155,9 +156,27 @@ function QuoteRequestForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Aircraft Type</FormLabel>
-                <FormControl>
-                  <Input placeholder="e.g. Gulfstream G550" {...field} data-testid="input-quote-aircraft" />
-                </FormControl>
+                <Select onValueChange={field.onChange} value={field.value || ""}>
+                  <FormControl>
+                    <SelectTrigger data-testid="select-quote-aircraft">
+                      <SelectValue placeholder="Select aircraft type" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="piston-single">Piston Single Engine</SelectItem>
+                    <SelectItem value="piston-twin">Piston Twin Engine</SelectItem>
+                    <SelectItem value="turboprop-single">Turboprop Single</SelectItem>
+                    <SelectItem value="turboprop-twin">Turboprop Twin</SelectItem>
+                    <SelectItem value="light-jet">Light Jet</SelectItem>
+                    <SelectItem value="midsize-jet">Midsize Jet</SelectItem>
+                    <SelectItem value="super-midsize">Super Midsize Jet</SelectItem>
+                    <SelectItem value="large-cabin">Large Cabin Jet</SelectItem>
+                    <SelectItem value="ultra-long-range">Ultra Long Range Jet</SelectItem>
+                    <SelectItem value="vvip-bbj">VVIP / BBJ / ACJ</SelectItem>
+                    <SelectItem value="helicopter">Helicopter</SelectItem>
+                    <SelectItem value="other">Other / Multiple Aircraft</SelectItem>
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
@@ -168,7 +187,7 @@ function QuoteRequestForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Service Tier Interest</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
+                <Select onValueChange={field.onChange} value={field.value || ""}>
                   <FormControl>
                     <SelectTrigger data-testid="select-quote-tier">
                       <SelectValue placeholder="Select tier" />
@@ -189,19 +208,45 @@ function QuoteRequestForm() {
           />
         </div>
 
-        <FormField
-          control={form.control}
-          name="location"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Aircraft Location</FormLabel>
-              <FormControl>
-                <Input placeholder="City, State/Country" {...field} data-testid="input-quote-location" />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <FormField
+            control={form.control}
+            name="location"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Aircraft Location</FormLabel>
+                <FormControl>
+                  <Input placeholder="City, State/Country" {...field} data-testid="input-quote-location" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="timeline"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Timeline / Urgency</FormLabel>
+                <Select onValueChange={field.onChange} value={field.value || ""}>
+                  <FormControl>
+                    <SelectTrigger data-testid="select-quote-timeline">
+                      <SelectValue placeholder="Select timeline" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="flexible">Flexible (60+ days)</SelectItem>
+                    <SelectItem value="standard">Standard (30\u201360 days)</SelectItem>
+                    <SelectItem value="urgent">Urgent (15\u201330 days)</SelectItem>
+                    <SelectItem value="critical">Transaction Deadline (&lt;15 days)</SelectItem>
+                    <SelectItem value="exploring">Just Exploring Options</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
         <FormField
           control={form.control}
@@ -414,26 +459,11 @@ export default function Contact() {
                   <h3 className="font-serif text-xl mb-6">Get in Touch</h3>
                   <ul className="space-y-4">
                     {[
-                      {
-                        icon: MapPin,
-                        label: "Headquarters",
-                        value: "Texas, United States",
-                      },
-                      {
-                        icon: Globe,
-                        label: "Service Area",
-                        value: "Global Coverage",
-                      },
-                      {
-                        icon: Clock,
-                        label: "Response Time",
-                        value: "Within 24 hours",
-                      },
-                      {
-                        icon: Phone,
-                        label: "Scheduling",
-                        value: "30\u201360 days in advance",
-                      },
+                      { icon: MapPin, label: "Headquarters", value: "Texas, United States" },
+                      { icon: GlobeIcon, label: "Service Area", value: "Worldwide" },
+                      { icon: Clock, label: "Office Hours", value: "Mon\u2013Fri, 8:00 AM \u2013 6:00 PM CST" },
+                      { icon: Phone, label: "Scheduling", value: "30\u201360 days in advance" },
+                      { icon: Calendar, label: "Weekend/Emergency", value: "By appointment" },
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <div className="flex-shrink-0 w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center">
@@ -449,7 +479,10 @@ export default function Contact() {
                 </div>
 
                 <Card className="p-6 bg-primary/5 border-primary/10">
-                  <h3 className="font-medium text-sm mb-2">Discovery Call</h3>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Calendar className="h-4 w-4 text-primary" />
+                    <h3 className="font-medium text-sm">Discovery Call</h3>
+                  </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Schedule a 30-minute call to discuss your aircraft, timeline, and documentation
                     goals. Submit a quote request and we&rsquo;ll coordinate a convenient time.
@@ -457,10 +490,24 @@ export default function Contact() {
                 </Card>
 
                 <Card className="p-6 bg-primary/5 border-primary/10">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Shield className="h-4 w-4 text-primary" />
+                    <h3 className="font-medium text-sm">Confidentiality</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    All inquiries are handled with strict confidentiality. Your aircraft details
+                    and personal information are never shared with third parties.
+                  </p>
+                </Card>
+
+                <Card className="p-6 bg-primary/5 border-primary/10">
                   <h3 className="font-medium text-sm mb-2">Aviation Sales Professionals</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Managing a transaction with a deadline? We offer expedited service for brokers
-                    and agents. Mention your timeline in the quote request.
+                    and agents. Mention your timeline in the quote request or{" "}
+                    <a href="/broker/login" className="text-primary underline underline-offset-2">
+                      log in to your partner portal
+                    </a>.
                   </p>
                 </Card>
               </motion.div>
@@ -489,7 +536,7 @@ export default function Contact() {
   );
 }
 
-function Globe(props: any) {
+function GlobeIcon(props: any) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

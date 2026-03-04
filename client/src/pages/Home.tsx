@@ -396,6 +396,41 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-20 bg-card/50">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-12">
+            <p className="text-primary font-mono text-xs tracking-[0.35em] uppercase mb-4">
+              Trusted by Aviation Professionals
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight">
+              Built for the Standards You Demand
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { value: "100%", label: "On-Site Service", sub: "Zero shipping risk" },
+              { value: "48hr", label: "Quote Turnaround", sub: "Custom proposals" },
+              { value: "Global", label: "Coverage", sub: "Any location worldwide" },
+              { value: "NDA", label: "Confidentiality", sub: "Every engagement" },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="text-center"
+                data-testid={`stat-trust-${i}`}
+              >
+                <p className="font-serif text-3xl text-primary mb-1">{stat.value}</p>
+                <p className="text-sm font-medium mb-1">{stat.label}</p>
+                <p className="text-xs text-muted-foreground">{stat.sub}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-3xl mx-auto px-6 text-center">

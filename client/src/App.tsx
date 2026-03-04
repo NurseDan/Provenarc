@@ -8,9 +8,18 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import Home from "@/pages/Home";
 import Services from "@/pages/Services";
+import HowItWorks from "@/pages/HowItWorks";
 import Pricing from "@/pages/Pricing";
+import WhyProvenarc from "@/pages/WhyProvenarc";
 import About from "@/pages/About";
+import Partners from "@/pages/Partners";
+import FAQ from "@/pages/FAQ";
 import Contact from "@/pages/Contact";
+import Privacy from "@/pages/Privacy";
+import BrokerLogin from "@/pages/BrokerLogin";
+import MROLogin from "@/pages/MROLogin";
+import BrokerDashboard from "@/pages/BrokerDashboard";
+import MRODashboard from "@/pages/MRODashboard";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -26,9 +35,18 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/services" component={Services} />
+      <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/pricing" component={Pricing} />
+      <Route path="/why-provenarc" component={WhyProvenarc} />
       <Route path="/about" component={About} />
+      <Route path="/partners" component={Partners} />
+      <Route path="/faq" component={FAQ} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/broker/login" component={BrokerLogin} />
+      <Route path="/mro/login" component={MROLogin} />
+      <Route path="/broker/dashboard" component={BrokerDashboard} />
+      <Route path="/mro/dashboard" component={MRODashboard} />
       <Route component={NotFound} />
     </Switch>
   );
