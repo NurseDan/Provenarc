@@ -12,8 +12,8 @@ import {
 const mainLinks = [
   { label: "Services", href: "/services" },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Why Provenarc", href: "/why-provenarc" },
+  { label: "Insights", href: "/insights" },
 ];
 
 const companyLinks = [
@@ -25,8 +25,8 @@ const companyLinks = [
 const mobileLinks = [
   { label: "Services", href: "/services" },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Why Provenarc", href: "/why-provenarc" },
+  { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
   { label: "Partners", href: "/partners" },
   { label: "FAQ", href: "/faq" },
@@ -122,8 +122,8 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:block">
-          <Link href="/contact" data-testid="link-request-quote-nav">
-            <Button size="sm">Request Quote</Button>
+          <Link href="/contact" data-testid="link-schedule-consultation-nav">
+            <Button size="sm">Schedule a Consultation</Button>
           </Link>
         </div>
 
@@ -166,8 +166,8 @@ export function Navbar() {
           </div>
           <div className="pt-2">
             <Link href="/contact">
-              <Button className="w-full" onClick={() => setIsOpen(false)} data-testid="button-mobile-quote">
-                Request Quote
+              <Button className="w-full" onClick={() => setIsOpen(false)} data-testid="button-mobile-consultation">
+                Schedule a Consultation
               </Button>
             </Link>
           </div>

@@ -60,7 +60,7 @@ export default function Partners() {
               <h3 className="font-medium text-sm mb-3">Program Benefits</h3>
               <ul className="space-y-2 mb-8">
                 {[
-                  "10\u201315% referral commission on all referred projects",
+                  "Competitive referral commissions on all referred projects",
                   "White-label documentation available under your brand",
                   "Expedited service for transaction deadlines",
                   "Competitive advantage \u2014 differentiate your listings",
@@ -77,7 +77,7 @@ export default function Partners() {
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact">
                   <Button data-testid="button-broker-apply">
-                    Apply for Partner Access <ArrowRight className="ml-2 h-4 w-4" />
+                    Discuss Partnership <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="/broker/login">
@@ -90,29 +90,20 @@ export default function Partners() {
             </div>
 
             <Card className="p-6 lg:p-8 border-primary/20">
-              <h3 className="font-serif text-xl mb-6">Commission Structure</h3>
-              <div className="space-y-4">
+              <h3 className="font-serif text-xl mb-6">Partner Benefits</h3>
+              <div className="space-y-3">
                 {[
-                  { tier: "Tier 1\u20133", range: "$17,700\u2013$53,100", commission: "10%", example: "$1,770\u2013$5,310" },
-                  { tier: "Tier 4", range: "$150,000", commission: "12%", example: "$18,000" },
-                  { tier: "Tier 5", range: "$210,000", commission: "15%", example: "$31,500" },
-                ].map((row, i) => (
-                  <div key={i} className="flex items-center justify-between gap-4 p-3 rounded-md bg-muted/50">
-                    <div>
-                      <p className="text-sm font-medium">{row.tier}</p>
-                      <p className="text-xs text-muted-foreground">Base: {row.range}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-mono text-sm font-bold text-primary">{row.commission}</p>
-                      <p className="text-xs text-muted-foreground">{row.example} per referral</p>
-                    </div>
+                  "Competitive referral commissions",
+                  "Transparent commission structure",
+                  "Prompt payment within 30 days",
+                  "Volume incentive programs",
+                ].map((benefit, i) => (
+                  <div key={i} className="flex items-start gap-3 p-3 rounded-md bg-muted/50">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-muted-foreground">{benefit}</p>
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground mt-4">
-                Commissions paid within 30 days of project completion. Volume bonuses available
-                for 5+ referrals per quarter.
-              </p>
             </Card>
           </motion.div>
         </div>
@@ -166,7 +157,7 @@ export default function Partners() {
                   <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase">
                     MRO Partnerships
                   </p>
-                  <h2 className="font-serif text-3xl">Add Six-Figure Revenue</h2>
+                  <h2 className="font-serif text-3xl">Expand Your Service Offering</h2>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -195,7 +186,7 @@ export default function Partners() {
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact">
                   <Button data-testid="button-mro-apply">
-                    Explore MRO Partnership <ArrowRight className="ml-2 h-4 w-4" />
+                    Discuss Partnership <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="/mro/login">
@@ -267,7 +258,7 @@ export default function Partners() {
             <div className="text-center">
               <Link href="/contact">
                 <Button size="lg" data-testid="button-insurance-contact">
-                  Contact Us About Insurance Partnerships <ArrowRight className="ml-2 h-4 w-4" />
+                  Discuss Insurance Partnership <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -291,6 +282,9 @@ export default function Partners() {
                 Schedule Partnership Discussion <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
+            <p className="text-[#9b9590] text-sm mt-4">
+              No commitment required. Confidential partnership discussions.
+            </p>
           </motion.div>
         </div>
       </section>

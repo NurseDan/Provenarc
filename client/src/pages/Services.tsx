@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Plane, Clock, MapPin, FileText } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -19,11 +19,6 @@ const tiers = [
     aircraft: "Piston Aircraft",
     description:
       "Professional on-site digitization of all aircraft logbooks and maintenance records. Our technician travels to your location with portable scanning equipment, digitizes every page on-site, and returns your originals before departing. Zero shipping risk.",
-    fieldDays: 1,
-    fieldTotal: "$7,500",
-    postDays: 3,
-    postTotal: "$10,200",
-    baseTotal: "$17,700",
     turnaround: "10\u201315 business days",
     scope: [
       "Complete logbook scanning (all volumes)",
@@ -40,11 +35,6 @@ const tiers = [
     aircraft: "Turboprop Aircraft",
     description:
       "Everything in Tier 1, plus comprehensive 3D scanning of your aircraft\u2019s exterior and interior. Creates baseline condition documentation for insurance claims, enables remote buyer inspections, and preserves your aircraft\u2019s physical state digitally.",
-    fieldDays: 2,
-    fieldTotal: "$15,000",
-    postDays: 6,
-    postTotal: "$20,400",
-    baseTotal: "$35,400",
     turnaround: "15\u201320 business days",
     scope: [
       "Everything in Tier 1",
@@ -62,11 +52,6 @@ const tiers = [
     aircraft: "Light Jets",
     description:
       "Our most comprehensive standard package. Includes everything in Tier 2, plus detailed 3D scanning of mechanical systems including engine components, critical systems, and modifications. Ideal for pre-sale documentation and insurance baseline.",
-    fieldDays: 3,
-    fieldTotal: "$22,500",
-    postDays: 9,
-    postTotal: "$30,600",
-    baseTotal: "$53,100",
     turnaround: "20\u201325 business days",
     scope: [
       "Everything in Tier 2",
@@ -80,15 +65,10 @@ const tiers = [
   {
     number: 4,
     name: "Executive Documentation Package",
-    subtitle: "For Large Cabin Jets ($10M\u2013$30M)",
+    subtitle: "For Large Cabin Jets",
     aircraft: "G550, Global 6000, Large Cabin Jets",
     description:
-      "Ultra-premium service with a senior two-person technician team, extended 5-day on-site presence, and executive-grade deliverables. Designed for aircraft valued at $10M\u2013$30M where comprehensive documentation directly protects multi-million dollar investments.",
-    fieldDays: 5,
-    fieldTotal: "$75,000",
-    postDays: 15,
-    postTotal: "$75,000",
-    baseTotal: "$150,000",
+      "Ultra-premium service with a senior two-person technician team, extended on-site presence, and executive-grade deliverables. Designed for large cabin jets where comprehensive documentation directly protects significant investments.",
     turnaround: "25\u201330 business days",
     scope: [
       "Complete records digitization (all logbooks, all maintenance records)",
@@ -103,15 +83,10 @@ const tiers = [
   {
     number: 5,
     name: "Flagship Comprehensive",
-    subtitle: "For Ultra-Premium Jets ($30M+)",
+    subtitle: "For Ultra-Premium Jets",
     aircraft: "G650, Global 7500, BBJ",
     description:
       "The pinnacle of aircraft documentation. Multi-day concierge service for the world\u2019s finest jets, including historical research, ownership transition support, concierge coordination, and in-person executive presentation delivery.",
-    fieldDays: 7,
-    fieldTotal: "$105,000",
-    postDays: 21,
-    postTotal: "$105,000",
-    baseTotal: "$210,000",
     turnaround: "30\u201340 business days",
     scope: [
       "Everything in Tier 4",
@@ -129,32 +104,35 @@ const tiers = [
 const addOns = [
   {
     name: "Ownership Transition Package",
-    price: "$25,000",
     description:
       "Historical records research, prior owner contact and document recovery, gap analysis, pre-sale documentation audit, and buyer presentation package.",
     turnaround: "+10 business days",
   },
   {
     name: "Annual Documentation Update",
-    price: "$35,000/year",
     description:
       "Annual 3D condition baseline scan, records update, compliance verification (ADs, inspections), and insurance renewal documentation.",
     turnaround: "20\u201325 business days per visit",
   },
   {
     name: "Post-Incident Documentation",
-    price: "From $75,000",
     description:
       "Emergency 48\u201372 hour deployment, complete damage documentation via 3D scanning, pre/post comparison analysis, and insurance claim support package.",
     turnaround: "15\u201320 business days",
   },
   {
     name: "Expedited Service",
-    price: "+25\u201340%",
     description:
       "Priority scheduling for aviation sales professionals with transaction deadlines. Same quality standards, compressed timeline through dedicated resources.",
     turnaround: "50\u201367% faster turnaround",
   },
+];
+
+const investmentFactors = [
+  { icon: Plane, label: "Aircraft type and documentation volume" },
+  { icon: MapPin, label: "Number of scan locations" },
+  { icon: Clock, label: "Timeline requirements" },
+  { icon: FileText, label: "Deliverable specifications" },
 ];
 
 export default function Services() {
@@ -172,7 +150,7 @@ export default function Services() {
             </h1>
             <p className="text-[#b8b0a4] text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
               From piston aircraft to ultra-premium jets, we offer five tiers of documentation
-              service\u2014all delivered on-site at your aircraft\u2019s location, anywhere in the world.
+              service&mdash;all delivered on-site at your aircraft&rsquo;s location, anywhere in the world.
             </p>
           </motion.div>
         </div>
@@ -209,38 +187,16 @@ export default function Services() {
               </div>
 
               <Card className="p-6 lg:sticky lg:top-24">
-                <p className="text-sm text-muted-foreground mb-2">Best for: {tier.aircraft}</p>
-                <p className="font-mono text-3xl font-bold" data-testid={`text-price-tier-${tier.number}`}>
-                  {tier.baseTotal}
+                <p className="text-sm font-medium mb-1" data-testid={`text-aircraft-tier-${tier.number}`}>
+                  Best for: {tier.aircraft}
                 </p>
-                <p className="text-xs text-muted-foreground mt-1">Base investment + travel</p>
-
-                <div className="mt-6 space-y-3">
-                  <div className="flex items-center justify-between gap-1 text-sm">
-                    <span className="text-muted-foreground">
-                      Field Service ({tier.fieldDays} {tier.fieldDays === 1 ? "day" : "days"})
-                    </span>
-                    <span className="font-mono">{tier.fieldTotal}</span>
-                  </div>
-                  <div className="flex items-center justify-between gap-1 text-sm">
-                    <span className="text-muted-foreground">
-                      Post-Production ({tier.postDays} days)
-                    </span>
-                    <span className="font-mono">{tier.postTotal}</span>
-                  </div>
-                  <div className="border-t pt-3 flex items-center justify-between gap-1 text-sm font-medium">
-                    <span>Base Subtotal</span>
-                    <span className="font-mono">{tier.baseTotal}</span>
-                  </div>
-                </div>
-
-                <p className="text-xs text-muted-foreground mt-4">
+                <p className="text-sm text-muted-foreground mt-3">
                   Turnaround: {tier.turnaround}
                 </p>
 
                 <Link href="/contact">
                   <Button className="w-full mt-6" data-testid={`button-quote-tier-${tier.number}`}>
-                    Request Quote <ArrowRight className="ml-2 h-4 w-4" />
+                    Discuss Your Project <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </Card>
@@ -271,10 +227,7 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <Card className="p-6 h-full" data-testid={`card-addon-${i}`}>
-                  <div className="flex items-start justify-between gap-4 mb-3">
-                    <h3 className="font-medium">{addon.name}</h3>
-                    <span className="font-mono text-sm font-bold whitespace-nowrap">{addon.price}</span>
-                  </div>
+                  <h3 className="font-medium mb-3">{addon.name}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{addon.description}</p>
                   <p className="text-xs text-muted-foreground mt-3">
                     Turnaround: {addon.turnaround}
@@ -283,6 +236,40 @@ export default function Services() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-24" data-testid="section-investment-framework">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-12">
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Tailored to You
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl">Your Investment</h2>
+            <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
+              Your investment is shaped by four factors:
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+              {investmentFactors.map((factor, i) => (
+                <Card key={i} className="p-5 flex items-start gap-4" data-testid={`card-factor-${i}`}>
+                  <factor.icon className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-sm">{factor.label}</span>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center space-y-4">
+              <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                You'll receive a detailed, fixed-price proposal after your discovery session &mdash; before any commitment.
+              </p>
+              <p className="font-medium">
+                Your engagement price is fixed at proposal. No scope creep. No surprise charges.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -296,20 +283,23 @@ export default function Services() {
             <p className="text-[#b8b0a4] text-lg mt-4">
               Contact us for a detailed proposal tailored to your aircraft and requirements.
             </p>
+            <p className="text-[#b8b0a4]/70 text-sm mt-2">
+              No commitment required. 30-minute confidential call.
+            </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
               <Link href="/contact">
                 <Button size="lg" data-testid="button-services-cta-quote">
-                  Request Custom Quote
+                  Schedule a Discovery Session
                 </Button>
               </Link>
-              <Link href="/pricing">
+              <Link href="/how-it-works">
                 <Button
                   size="lg"
                   variant="outline"
                   className="backdrop-blur-sm bg-[#faf6f1]/5 border-[#faf6f1]/15 text-[#faf6f1]"
-                  data-testid="button-services-cta-pricing"
+                  data-testid="button-services-cta-process"
                 >
-                  View Pricing Details
+                  See Our Process
                 </Button>
               </Link>
             </div>

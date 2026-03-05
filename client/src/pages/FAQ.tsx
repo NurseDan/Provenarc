@@ -18,98 +18,70 @@ const fadeUp = {
 
 const faqCategories = [
   {
-    title: "Service & Process",
+    title: "Fit & Scope",
     items: [
       {
-        q: "How does the on-site process work?",
-        a: "Our technician team travels to your aircraft\u2019s location with professional scanning equipment. We digitize all logbooks and records on-site, perform 3D scanning of the aircraft, verify quality, and return your originals before departing. Your documents never leave your custody.",
+        q: "What types of aircraft and documentation do you handle?",
+        a: "All aircraft classes from piston singles to ultra-premium jets. Five service tiers tailored to different aircraft and documentation needs. We handle logbooks, maintenance records, STCs, 337s, AD compliance, and more.",
       },
       {
-        q: "How far in advance should I book?",
-        a: "Most clients book 30\u201360 days in advance. For expedited service or transaction deadlines, we can sometimes accommodate shorter timelines with an expedited service premium of 25\u201340%.",
+        q: "Do you work with individual owners, fleet operators, or both?",
+        a: "Both. Individual owners, fleet operators, brokerages, MRO facilities, and insurance carriers.",
       },
       {
-        q: "What aircraft types do you service?",
-        a: "We service all aircraft classes from piston singles to ultra-premium jets like the G650, Global 7500, and BBJ. Our five service tiers are tailored to different aircraft classes and documentation needs.",
-      },
-      {
-        q: "Do you travel internationally?",
-        a: "Yes. We provide global concierge service and have documented aircraft across North America, Europe, the Middle East, and Asia. Travel costs are billed at cost with receipts provided.",
-      },
-      {
-        q: "What\u2019s the 3:1 quality ratio?",
-        a: "For every day our technicians spend in the field scanning, we dedicate three days to post-production quality control. This includes OCR verification, metadata tagging, point cloud optimization, and multi-stage review to ensure insurance-grade deliverables.",
-      },
-      {
-        q: "What happens if bad weather delays my service?",
-        a: "Weather or mechanical delays are rescheduled at no penalty to you. We build flexibility into our scheduling specifically for aviation\u2019s unpredictable nature.",
+        q: "What geographic regions do you serve?",
+        a: "Worldwide. We\u2019ve documented aircraft across North America, Europe, Middle East, and Asia. Our team travels to any location.",
       },
     ],
   },
   {
-    title: "Pricing & Payment",
+    title: "Process & Timeline",
     items: [
       {
-        q: "Why is Provenarc more expensive than ship-it-in services?",
-        a: "We\u2019re not competing on price \u2014 we\u2019re competing on value, convenience, and security. Our pricing reflects global concierge travel, zero shipping risk, integrated 3D scanning, and insurance-grade quality control. The risk of losing irreplaceable logbooks in transit is eliminated entirely.",
+        q: "How does an engagement typically work?",
+        a: "Four steps: Confidential Consultation \u2192 On-Site Mobilization \u2192 Precision Digitization & 3D Capture \u2192 Secure Delivery. Every engagement begins under mutual NDA.",
       },
       {
-        q: "What are the payment terms?",
-        a: "50% deposit upon booking (reserves your field service date) and 50% balance due upon delivery of final deliverables. Travel expenses are reconciled at completion with receipts provided.",
+        q: "How long does on-site digitization take?",
+        a: "Varies by tier and aircraft complexity. Typically 1\u20137 days on-site, followed by post-production processing. We coordinate to your schedule.",
       },
       {
-        q: "What payment methods do you accept?",
-        a: "Wire transfer (preferred for international), ACH/bank transfer, corporate check, and credit card. A 3% processing fee applies to credit card payments over $10,000.",
-      },
-      {
-        q: "What\u2019s included in travel costs?",
-        a: "Travel costs include portal-to-portal travel time ($2,400/day) plus actual expenses (airfare, hotel, ground transport, meals) billed at cost with no markup. We provide receipts for all expenses.",
-      },
-      {
-        q: "What\u2019s your cancellation policy?",
-        a: "30+ days notice: full refund minus $1,000 administrative fee. 15\u201329 days: 50% refund (resources committed). 14 days or less: no refund (travel booked, schedule blocked). Weather/mechanical delays: reschedule at no penalty.",
+        q: "What\u2019s required from our team during the process?",
+        a: "Hangar access and someone to provide our team access to the aircraft and records. We handle everything else.",
       },
     ],
   },
   {
-    title: "Security & Custody",
+    title: "Investment & Value",
     items: [
       {
-        q: "Do my logbooks ever leave my property?",
-        a: "Never. All scanning is performed at your aircraft\u2019s location. Your original documents are returned to you before our technician team departs. Zero days out of your custody.",
+        q: "How is pricing structured?",
+        a: "Your investment is shaped by four factors: aircraft type, documentation volume, timeline requirements, and deliverable specifications. You receive a detailed, fixed-price proposal after your discovery session \u2014 before any commitment. No surprise charges.",
       },
       {
-        q: "How is my data secured?",
-        a: "AES-256 encryption at rest and in transit, role-based access control, geographic data redundancy across multiple data centers, and full audit trail for all access. Enterprise-grade security standards.",
+        q: "What ROI should we expect?",
+        a: "Aircraft with incomplete logbooks may lose 20\u201350% of their market value. Professional documentation protects your investment, accelerates sales, and provides insurance-grade baselines. The value typically far exceeds the investment.",
       },
       {
-        q: "Who has access to my documentation?",
-        a: "Only you and anyone you explicitly authorize through the RecordVault platform. We do not share, sell, or grant access to your documentation to any third party without your written consent.",
-      },
-      {
-        q: "How long is my documentation hosted?",
-        a: "Hosting terms vary by tier. Standard tiers include 5-year RecordVault hosting. Tier 4 includes lifetime hosting and Tier 5 includes 10-year platinum hosting. Extensions are available.",
+        q: "Is there a minimum engagement size?",
+        a: "We offer five tiers to serve different aircraft classes. Schedule a discovery session and we\u2019ll recommend the right scope for your needs.",
       },
     ],
   },
   {
-    title: "Partnerships",
+    title: "Security & Confidentiality",
     items: [
       {
-        q: "How does the broker referral program work?",
-        a: "Refer qualified aircraft owner clients to Provenarc. When the referred client completes a documentation project, you earn a 10\u201315% commission based on the service tier. Commissions are paid within 30 days of project completion.",
+        q: "How do you protect our data?",
+        a: "AES-256 encryption at rest and in transit, role-based access control, geographic redundancy, full audit trail. Enterprise-grade security standards.",
       },
       {
-        q: "Can MRO facilities partner with Provenarc?",
-        a: "Yes. We offer revenue-share partnerships where documentation services are performed at your facility during scheduled maintenance events. This creates an additional revenue stream with zero overhead for your operation.",
+        q: "Why don\u2019t you list your clients?",
+        a: "By policy, we maintain strict confidentiality for all client relationships. Aviation records contain sensitive financial, operational, and ownership information. Our clients value our discretion as much as our technical expertise \u2014 and many chose us specifically because of it.",
       },
       {
-        q: "Is white-label service available?",
-        a: "Yes. Broker partners can offer documentation services under their own brand with co-branded or white-label deliverables. This is particularly valuable for brokerages that want to differentiate their listings.",
-      },
-      {
-        q: "How do I apply for partnership?",
-        a: "Visit our Partners page and submit an inquiry, or contact us directly. We\u2019ll schedule a partnership discussion to explore the best program structure for your business.",
+        q: "What happens to our original documents during the process?",
+        a: "Your original documents never leave your property. We scan everything on-site and return originals before our team departs. Zero days out of your custody.",
       },
     ],
   },
@@ -129,8 +101,8 @@ export default function FAQ() {
               Frequently Asked Questions
             </h1>
             <p className="text-[#b8b0a4] text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-              Everything you need to know about our services, pricing, security, and partnership
-              programs.
+              Everything you need to know about our services, process, security, and how we
+              protect your aviation records.
             </p>
           </motion.div>
         </div>
@@ -175,14 +147,14 @@ export default function FAQ() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <h2 className="font-serif text-3xl md:text-4xl text-[#faf6f1]">
-              Still Have Questions?
+              Ready to protect your records? Book your session.
             </h2>
             <p className="text-[#b8b0a4] text-lg mt-4">
-              Schedule a 30-minute discovery call and we&rsquo;ll answer everything.
+              No commitment required. 30-minute confidential call. We&rsquo;ll share a preliminary scope assessment regardless.
             </p>
             <Link href="/contact">
               <Button size="lg" className="mt-8" data-testid="button-faq-cta">
-                Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+                Schedule a Discovery Session <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </motion.div>

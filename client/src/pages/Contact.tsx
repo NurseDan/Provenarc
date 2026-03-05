@@ -194,11 +194,11 @@ function QuoteRequestForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="tier-1">Tier 1 &ndash; Essential ($17,700)</SelectItem>
-                    <SelectItem value="tier-2">Tier 2 &ndash; Complete ($35,400)</SelectItem>
-                    <SelectItem value="tier-3">Tier 3 &ndash; Premium ($53,100)</SelectItem>
-                    <SelectItem value="tier-4">Tier 4 &ndash; Executive ($150,000)</SelectItem>
-                    <SelectItem value="tier-5">Tier 5 &ndash; Flagship ($210,000)</SelectItem>
+                    <SelectItem value="tier-1">Tier 1 &ndash; Essential Documentation</SelectItem>
+                    <SelectItem value="tier-2">Tier 2 &ndash; Complete Documentation</SelectItem>
+                    <SelectItem value="tier-3">Tier 3 &ndash; Premium Comprehensive</SelectItem>
+                    <SelectItem value="tier-4">Tier 4 &ndash; Executive Package</SelectItem>
+                    <SelectItem value="tier-5">Tier 5 &ndash; Flagship Comprehensive</SelectItem>
                     <SelectItem value="unsure">Not Sure &ndash; Help Me Choose</SelectItem>
                   </SelectContent>
                 </Select>
@@ -268,7 +268,7 @@ function QuoteRequestForm() {
         />
 
         <Button type="submit" className="w-full" disabled={mutation.isPending} data-testid="button-submit-quote">
-          {mutation.isPending ? "Submitting..." : "Submit Quote Request"}
+          {mutation.isPending ? "Submitting..." : "Submit Enquiry"}
           {!mutation.isPending && <Send className="ml-2 h-4 w-4" />}
         </Button>
       </form>
@@ -418,14 +418,13 @@ export default function Contact() {
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-6">
-              Contact Us
+              Private Consultation
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#faf6f1] leading-tight">
-              Let&rsquo;s Discuss Your Aircraft
+              Schedule a Discovery Session
             </h1>
             <p className="text-[#b8b0a4] text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-              Whether you&rsquo;re ready for a quote or have questions about our services, we&rsquo;re
-              here to help. Most clients book 30&ndash;60 days in advance.
+              Every engagement begins with a confidential conversation. Share your requirements below and we&rsquo;ll prepare a preliminary scope assessment within 48 hours.
             </p>
           </motion.div>
         </div>
@@ -437,16 +436,18 @@ export default function Contact() {
             <div className="lg:col-span-2">
               <motion.div {...fadeUp}>
                 <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
-                  Quote Request
+                  Begin Your Consultation
                 </p>
-                <h2 className="font-serif text-3xl mb-2">Request a Custom Quote</h2>
+                <h2 className="font-serif text-3xl mb-2">Tell Us About Your Aircraft</h2>
                 <p className="text-muted-foreground mb-8">
-                  Tell us about your aircraft and we&rsquo;ll prepare a detailed proposal within 24
-                  hours.
+                  Share your aircraft details and documentation goals. We&rsquo;ll prepare a preliminary scope assessment and schedule a confidential discussion.
                 </p>
                 <Card className="p-6 lg:p-8">
                   <QuoteRequestForm />
                 </Card>
+                <p className="text-muted-foreground mt-6 text-center">
+                  All enquiries are confidential. You&rsquo;ll receive a preliminary scope assessment within 48 hours &mdash; no commitment required.
+                </p>
               </motion.div>
             </div>
 
@@ -454,9 +455,9 @@ export default function Contact() {
               <motion.div {...fadeUp} className="space-y-8">
                 <div>
                   <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
-                    Quick Contact
+                    How It Works
                   </p>
-                  <h3 className="font-serif text-xl mb-6">Get in Touch</h3>
+                  <h3 className="font-serif text-xl mb-6">What to Expect</h3>
                   <ul className="space-y-4">
                     {[
                       { icon: MapPin, label: "Headquarters", value: "Texas, United States" },
@@ -486,6 +487,9 @@ export default function Contact() {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Schedule a 30-minute call to discuss your aircraft, timeline, and documentation
                     goals. Submit a quote request and we&rsquo;ll coordinate a convenient time.
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-3">
+                    No commitment required.
                   </p>
                 </Card>
 
@@ -520,7 +524,7 @@ export default function Contact() {
         <div className="max-w-3xl mx-auto px-6">
           <motion.div {...fadeUp}>
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
-              General Inquiry
+              General Enquiry
             </p>
             <h2 className="font-serif text-3xl mb-2">Send Us a Message</h2>
             <p className="text-muted-foreground mb-8">

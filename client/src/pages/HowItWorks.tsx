@@ -19,14 +19,14 @@ const steps = [
   {
     number: "01",
     icon: Calendar,
-    title: "Schedule Service",
-    description: "Discovery call to understand your aircraft, timeline, and documentation goals.",
+    title: "Confidential Consultation",
+    description: "Every engagement begins with a secure conversation to understand your aircraft, documentation requirements, and timeline. We execute a mutual NDA before any substantive discussion.",
     details: [
+      "Mutual NDA execution before substantive discussion",
       "30-minute introductory call with a documentation specialist",
-      "Select service tier based on aircraft type and needs",
-      "Confirm aircraft location and hangar access requirements",
-      "Coordinate FBO, MRO, or private hangar logistics",
-      "Establish timeline and any transaction deadlines",
+      "Custom scope assessment based on your aircraft",
+      "Timeline coordination and logistics planning",
+      "Deliverable: Scope Assessment & Custom Engagement Plan",
     ],
   },
   {
@@ -224,6 +224,14 @@ export default function HowItWorks() {
               </div>
             </Card>
           </motion.div>
+
+          <motion.div {...fadeUp} className="mt-12 text-center">
+            <Card className="p-8 bg-accent/5 border-accent/10 inline-block" data-testid="card-fixed-price-guarantee">
+              <p className="font-serif text-lg text-foreground">
+                Your engagement price is fixed at proposal. No scope creep. No surprise charges. What we quote is what you pay.
+              </p>
+            </Card>
+          </motion.div>
         </div>
       </section>
 
@@ -330,7 +338,7 @@ export default function HowItWorks() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <h2 className="font-serif text-3xl md:text-4xl text-[#faf6f1]">
-              Ready to Get Started?
+              Ready to Protect Your Records?
             </h2>
             <p className="text-[#b8b0a4] text-lg mt-4">
               Schedule a discovery call to discuss your aircraft and documentation goals.
@@ -338,20 +346,23 @@ export default function HowItWorks() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
               <Link href="/contact">
                 <Button size="lg" data-testid="button-hiw-cta-quote">
-                  Request Custom Quote
+                  Schedule a Discovery Session
                 </Button>
               </Link>
-              <Link href="/pricing">
+              <Link href="/services">
                 <Button
                   size="lg"
                   variant="outline"
                   className="backdrop-blur-sm bg-[#faf6f1]/5 border-[#faf6f1]/15 text-[#faf6f1]"
-                  data-testid="button-hiw-cta-pricing"
+                  data-testid="button-hiw-cta-services"
                 >
-                  View Pricing <ArrowRight className="ml-2 h-4 w-4" />
+                  Explore Our Services <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
+            <p className="text-[#b8b0a4] text-sm mt-6">
+              No commitment required. 30-minute confidential call. We'll share a preliminary scope assessment regardless.
+            </p>
           </motion.div>
         </div>
       </section>

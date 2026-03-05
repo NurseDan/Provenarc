@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
-  Globe, Shield, Scan, Calendar, Plane, FileCheck,
-  MonitorCheck, ArrowRight, CheckCircle2,
+  Globe, Shield, Scan, Lock, Plane, FileCheck,
+  ArrowRight, CheckCircle2, ShieldCheck, DollarSign,
 } from "lucide-react";
 
 const fadeUp = {
@@ -14,28 +14,11 @@ const fadeUp = {
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
 };
 
-const features = [
-  {
-    icon: Globe,
-    title: "Global Concierge Service",
-    description: "We travel to you\u2014anywhere in the world. No shipping carriers, ever.",
-  },
-  {
-    icon: Shield,
-    title: "Zero Shipping Risk",
-    description: "Your irreplaceable logbooks never leave your property. Zero risk of loss.",
-  },
-  {
-    icon: Scan,
-    title: "Integrated 3D Scanning",
-    description: "Records digitization and 3D aircraft preservation in a single visit.",
-  },
-];
-
-const stats = [
-  { value: "30%", label: "of transactions delayed by incomplete documentation" },
-  { value: "$500K+", label: "cost to reconstruct lost original logbooks" },
-  { value: "15\u201330%", label: "resale value lost from missing records" },
+const trustStats = [
+  { value: "30\u201350%", label: "of aircraft value tied to maintenance records", source: "VREF Aircraft Appraisals" },
+  { value: "100%", label: "On-site documentation", source: "Zero shipping risk" },
+  { value: "Global", label: "Aircraft served worldwide", source: "Any location, any hangar" },
+  { value: "Sub-mm", label: "3D scan resolution", source: "Insurance-grade precision" },
 ];
 
 const tiers = [
@@ -43,7 +26,6 @@ const tiers = [
     number: 1,
     name: "Essential Documentation",
     aircraft: "Piston Aircraft",
-    price: "$17,700",
     features: [
       "Complete logbook scanning",
       "Maintenance records & ADs",
@@ -55,7 +37,6 @@ const tiers = [
     number: 2,
     name: "Complete Documentation",
     aircraft: "Turboprop Aircraft",
-    price: "$35,400",
     features: [
       "Everything in Tier 1",
       "Exterior 3D scanning",
@@ -67,7 +48,6 @@ const tiers = [
     number: 3,
     name: "Premium Comprehensive",
     aircraft: "Light Jets",
-    price: "$53,100",
     features: [
       "Everything in Tier 2",
       "Mechanical 3D scanning",
@@ -75,14 +55,10 @@ const tiers = [
       "Advanced damage assessment",
     ],
   },
-];
-
-const premiumTiers = [
   {
     number: 4,
     name: "Executive Package",
-    aircraft: "Large Cabin Jets ($10M\u2013$30M)",
-    price: "$150,000",
+    aircraft: "Large Cabin Jets",
     features: [
       "5-day senior technician team",
       "Complete 3D documentation",
@@ -94,8 +70,7 @@ const premiumTiers = [
   {
     number: 5,
     name: "Flagship Comprehensive",
-    aircraft: "Ultra-Premium Jets ($30M+)",
-    price: "$210,000",
+    aircraft: "Ultra-Premium Jets",
     features: [
       "7-day concierge service",
       "4K resolution 3D models",
@@ -108,29 +83,28 @@ const premiumTiers = [
 
 const steps = [
   {
-    icon: Calendar,
-    title: "Schedule",
-    description: "Discovery call to understand your aircraft, timeline, and goals.",
+    icon: ShieldCheck,
+    title: "Confidential Consultation",
+    description: "Every engagement begins with a secure conversation. We execute a mutual NDA before any substantive discussion.",
+    deliverable: "Scope Assessment & Custom Engagement Plan",
   },
   {
     icon: Plane,
-    title: "We Travel",
-    description: "Global mobilization to your aircraft with specialized equipment.",
+    title: "On-Site Mobilization",
+    description: "Our team travels to your aircraft at any location worldwide.",
+    deliverable: "On-site Setup & Documentation Inventory",
   },
   {
     icon: Scan,
-    title: "On-Site Service",
-    description: "Records scanning and 3D documentation at your hangar.",
+    title: "Precision Digitization & 3D Capture",
+    description: "Maintenance records scanned, organized, indexed. Simultaneously, 3D scans of aircraft.",
+    deliverable: "Complete Digital Archive & 3D Asset Models",
   },
   {
     icon: FileCheck,
-    title: "Post-Production",
-    description: "OCR processing, point cloud optimization, and quality control.",
-  },
-  {
-    icon: MonitorCheck,
-    title: "Digital Delivery",
-    description: "RecordVault access, 3D viewer, and downloadable archives.",
+    title: "Secure Delivery & Ongoing Access",
+    description: "Complete digital records via encrypted transfer with redundant backup.",
+    deliverable: "Encrypted Digital Archive, Access Credentials & Documentation Report",
   },
 ];
 
@@ -153,31 +127,28 @@ export default function Home() {
             {...fadeUp}
             className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-8"
           >
-            Global Aviation Documentation & Preservation
+            Provenarc Aero
           </motion.p>
 
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#faf6f1] leading-[1.1] tracking-tight"
+            data-testid="text-hero-headline"
           >
-            We Don't Just Preserve
+            Aircraft documentation and 3D scanning.
             <br className="hidden sm:block" />
-            {" "}Your Records.{" "}
-            <span className="italic">
-              We Preserve
-              <br className="hidden sm:block" />
-              {" "}Your Aircraft.
-            </span>
+            {" "}On-site. Worldwide.{" "}
+            <span className="italic">Under NDA.</span>
           </motion.h1>
 
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             className="text-[#b8b0a4] text-base sm:text-lg md:text-xl mt-8 max-w-2xl mx-auto leading-relaxed"
+            data-testid="text-hero-subheadline"
           >
-            Concierge documentation and 3D preservation for ultra-premium aircraft. On-site.
-            Worldwide. Your originals never leave your hangar.
+            We travel to your aircraft &mdash; anywhere in the world &mdash; to digitize maintenance records and capture precision 3D scans. Your documents never leave your hands.
           </motion.p>
 
           <motion.div
@@ -186,86 +157,74 @@ export default function Home() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
           >
             <Link href="/contact">
-              <Button size="lg" data-testid="button-hero-quote">
-                Request Custom Quote
+              <Button size="lg" data-testid="button-hero-discovery">
+                Schedule a Discovery Session
               </Button>
             </Link>
-            <Link href="/services">
+            <Link href="/how-it-works">
               <Button
                 size="lg"
                 variant="outline"
                 className="backdrop-blur-sm bg-[#faf6f1]/5 border-[#faf6f1]/15 text-[#faf6f1]"
-                data-testid="button-hero-services"
+                data-testid="button-hero-process"
               >
-                Explore Services <ArrowRight className="ml-2 h-4 w-4" />
+                See Our Process <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </motion.div>
+
+          <motion.p
+            {...fadeUp}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+            className="text-[#b8b0a4]/60 text-sm mt-6"
+            data-testid="text-hero-reassurance"
+          >
+            No commitment required. 30-minute confidential call.
+          </motion.p>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </section>
 
-      <section className="py-16 border-b border-border/50">
+      <section className="py-16 border-b border-border/50" data-testid="section-trust-bar">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {features.map((feature, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            {trustStats.map((stat, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex items-start gap-4"
+                className="text-center"
+                data-testid={`stat-trust-${i}`}
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                  <feature.icon className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-medium text-sm" data-testid={`text-feature-${i}`}>{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm mt-1">{feature.description}</p>
-                </div>
+                <p className="font-serif text-3xl text-primary mb-1">{stat.value}</p>
+                <p className="text-sm font-medium mb-1">{stat.label}</p>
+                <p className="text-[10px] text-muted-foreground">{stat.source}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-24" data-testid="section-services-overview">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
-              The Industry Problem
+              Services Overview
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight">
-              Why Would You Ever Ship Irreplaceable Logbooks?
+              Comprehensive Documentation for Every Aircraft Class
             </h2>
             <p className="text-muted-foreground text-lg mt-6 max-w-3xl mx-auto leading-relaxed">
-              Traditional digitization services require you to ship original logbooks via FedEx or
-              UPS. Carriers lose thousands of packages annually. If your logbooks are lost,
-              reconstruction costs $50K&ndash;$500K+ and takes months. We eliminate that risk
-              entirely.
+              From piston aircraft to ultra-premium jets, we offer documentation and 3D scanning packages tailored to every class of aircraft.
             </p>
-          </motion.div>
-
-          <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16"
-          >
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center" data-testid={`stat-${i}`}>
-                <p className="font-mono text-3xl md:text-4xl font-bold text-foreground">
-                  {stat.value}
-                </p>
-                <p className="text-muted-foreground text-sm mt-2">{stat.label}</p>
-              </div>
-            ))}
           </motion.div>
         </div>
       </section>
 
-      <section className="py-24 bg-card/50">
+      <section className="py-24 bg-card/50" data-testid="section-service-tiers">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-16">
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
@@ -274,14 +233,10 @@ export default function Home() {
             <h2 className="font-serif text-3xl md:text-4xl">
               Five Tiers of Documentation Excellence
             </h2>
-            <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
-              From piston aircraft to ultra-premium jets, we offer documentation packages tailored
-              to every class of aircraft.
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-            {tiers.map((tier, i) => (
+            {tiers.slice(0, 3).map((tier, i) => (
               <motion.div
                 key={tier.number}
                 initial={{ opacity: 0, y: 20 }}
@@ -295,10 +250,6 @@ export default function Home() {
                   </span>
                   <h3 className="font-serif text-xl mt-2">{tier.name}</h3>
                   <p className="text-sm text-muted-foreground">{tier.aircraft}</p>
-                  <p className="font-mono text-2xl font-bold mt-4">
-                    {tier.price}
-                    <span className="text-sm text-muted-foreground font-normal ml-1">+ travel</span>
-                  </p>
                   <ul className="space-y-2 mt-4 mb-6 flex-1">
                     {tier.features.map((f, j) => (
                       <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -307,9 +258,9 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/services">
+                  <Link href="/contact">
                     <Button variant="outline" className="w-full" data-testid={`button-tier-${tier.number}`}>
-                      Learn More
+                      Discuss Your Project
                     </Button>
                   </Link>
                 </Card>
@@ -324,7 +275,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {premiumTiers.map((tier, i) => (
+            {tiers.slice(3).map((tier, i) => (
               <motion.div
                 key={tier.number}
                 initial={{ opacity: 0, y: 20 }}
@@ -338,10 +289,6 @@ export default function Home() {
                   </span>
                   <h3 className="font-serif text-xl mt-2">{tier.name}</h3>
                   <p className="text-sm text-muted-foreground">{tier.aircraft}</p>
-                  <p className="font-mono text-2xl font-bold mt-4">
-                    {tier.price}
-                    <span className="text-sm text-muted-foreground font-normal ml-1">+ travel</span>
-                  </p>
                   <ul className="space-y-2 mt-4 mb-6 flex-1">
                     {tier.features.map((f, j) => (
                       <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -352,7 +299,7 @@ export default function Home() {
                   </ul>
                   <Link href="/contact">
                     <Button className="w-full" data-testid={`button-tier-${tier.number}`}>
-                      Request Custom Quote
+                      Discuss Your Project
                     </Button>
                   </Link>
                 </Card>
@@ -362,7 +309,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-24" data-testid="section-process">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-16">
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
@@ -370,98 +317,118 @@ export default function Home() {
             </p>
             <h2 className="font-serif text-3xl md:text-4xl">How It Works</h2>
             <p className="text-muted-foreground text-lg mt-4">
-              Five simple steps from scheduling to delivery.
+              Four steps from consultation to delivery.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`text-center ${i === 4 ? "col-span-2 md:col-span-1 mx-auto max-w-[200px] md:max-w-none" : ""}`}
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="h-5 w-5 text-primary" />
-                </div>
-                <p className="font-mono text-xs text-primary mb-2">0{i + 1}</p>
-                <h3 className="font-medium text-sm mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-xs leading-relaxed">{step.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-card/50">
-        <div className="max-w-5xl mx-auto px-6">
-          <motion.div {...fadeUp} className="text-center mb-12">
-            <p className="text-primary font-mono text-xs tracking-[0.35em] uppercase mb-4">
-              Trusted by Aviation Professionals
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl leading-tight">
-              Built for the Standards You Demand
-            </h2>
-          </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "100%", label: "On-Site Service", sub: "Zero shipping risk" },
-              { value: "48hr", label: "Quote Turnaround", sub: "Custom proposals" },
-              { value: "Global", label: "Coverage", sub: "Any location worldwide" },
-              { value: "NDA", label: "Confidentiality", sub: "Every engagement" },
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-center"
-                data-testid={`stat-trust-${i}`}
+                data-testid={`step-${i}`}
               >
-                <p className="font-serif text-3xl text-primary mb-1">{stat.value}</p>
-                <p className="text-sm font-medium mb-1">{stat.label}</p>
-                <p className="text-xs text-muted-foreground">{stat.sub}</p>
+                <Card className="p-6 h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <step.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-mono text-xs text-primary mb-1">STEP 0{i + 1}</p>
+                      <h3 className="font-medium text-base mb-2">{step.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-3">{step.description}</p>
+                      <div className="flex items-start gap-2">
+                        <FileCheck className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                        <p className="text-xs text-muted-foreground">
+                          <span className="font-medium text-foreground">Deliverable:</span> {step.deliverable}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="relative py-24">
+      <section className="py-24 bg-card/50" data-testid="section-confidentiality">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div {...fadeUp}>
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Lock className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Confidentiality
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-6">
+              Discretion by Design
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto">
+              Every Provenarc engagement operates under a comprehensive mutual non-disclosure agreement. We do not publish client lists, display fleet details, or share engagement specifics &mdash; ever. This isn&rsquo;t a gap in our marketing. It&rsquo;s a commitment our clients require and a standard we uphold for every engagement, regardless of size.
+            </p>
+            <p className="text-muted-foreground/60 text-xs mt-8 max-w-2xl mx-auto">
+              All engagements protected by mutual NDA &middot; Client identities never disclosed &middot; Bank-grade encryption on all digital deliverables
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20" data-testid="section-fixed-price">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div {...fadeUp}>
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <DollarSign className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Pricing Integrity
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-6">
+              Fixed-Price Guarantee
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto">
+              Your engagement price is fixed at proposal. No scope creep. No surprise charges. What we quote is what you pay.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative py-24" data-testid="section-bottom-cta">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-6">
-              Get Started
+              Next Step
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#faf6f1] leading-tight">
-              Protect Your Aircraft&rsquo;s Provenance
+              Ready to protect your records?
             </h2>
-            <p className="text-[#b8b0a4] text-lg mt-6 max-w-xl mx-auto leading-relaxed">
-              Schedule a 30-minute discovery call to discuss your aircraft, timeline, and
-              documentation goals.
-            </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
               <Link href="/contact">
-                <Button size="lg" data-testid="button-cta-quote">
-                  Request Custom Quote
+                <Button size="lg" data-testid="button-cta-discovery">
+                  Schedule a Discovery Session
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/how-it-works">
                 <Button
                   size="lg"
                   variant="outline"
                   className="backdrop-blur-sm bg-[#faf6f1]/5 border-[#faf6f1]/15 text-[#faf6f1]"
-                  data-testid="button-cta-call"
+                  data-testid="button-cta-process"
                 >
-                  Schedule Discovery Call
+                  See Our Process <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
+            <p
+              className="text-[#b8b0a4]/60 text-sm mt-6 max-w-lg mx-auto"
+              data-testid="text-cta-reassurance"
+            >
+              No commitment required. 30-minute confidential call. We&rsquo;ll share a preliminary scope assessment regardless.
+            </p>
           </motion.div>
         </div>
       </section>

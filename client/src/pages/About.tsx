@@ -46,9 +46,9 @@ const partnerships = [
     icon: Handshake,
     title: "Broker Referral Program",
     description:
-      "Referral fees, white-label services, or co-branded packages. Differentiate your listings and close deals faster with professional documentation.",
+      "Partnership compensation, white-label services, or co-branded packages. Differentiate your listings and close deals faster with professional documentation.",
     benefits: [
-      "Referral compensation for qualified leads",
+      "Partnership compensation for qualified leads",
       "White-label documentation under your brand",
       "Expedited service for transaction deadlines",
       "Competitive advantage for your listings",
@@ -230,6 +230,51 @@ export default function About() {
         </div>
       </section>
 
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Core Values
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl">Our Principles</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Precision",
+                description: "Every scan, every page, every data point handled with methodical accuracy. Our 3:1 quality ratio ensures nothing is missed.",
+              },
+              {
+                title: "Integrity",
+                description: "Independence from OEMs, brokerages, and insurers means our only priority is accurate documentation. No conflicts. No agenda.",
+              },
+              {
+                title: "Discretion",
+                description: "Every engagement operates under mutual NDA. We protect your information with the same standards applied by private banks and family offices.",
+              },
+              {
+                title: "Innovation",
+                description: "Integrated 3D scanning and records digitization in a single concierge visit. We created a new category in aviation documentation.",
+              },
+            ].map((principle, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <Card className="p-6 h-full" data-testid={`card-principle-${i}`}>
+                  <h3 className="font-serif text-2xl mb-3">{principle.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{principle.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-card/50">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-4">
@@ -335,9 +380,12 @@ export default function About() {
             </p>
             <Link href="/contact">
               <Button size="lg" className="mt-8" data-testid="button-about-cta">
-                Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
+                Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
+            <p className="text-[#b8b0a4] text-sm mt-4">
+              No commitment required. 30-minute confidential call.
+            </p>
           </motion.div>
         </div>
       </section>

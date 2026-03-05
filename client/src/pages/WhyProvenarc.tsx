@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
   AlertTriangle, Shield, CheckCircle2, ArrowRight,
-  Globe, Scan, Clock, DollarSign, Quote,
+  Globe, Scan, Clock, Quote, Lock, MapPin, Timer, BadgeCheck,
 } from "lucide-react";
 
 const fadeUp = {
@@ -15,10 +15,10 @@ const fadeUp = {
 };
 
 const risks = [
-  { stat: "Thousands", desc: "of packages lost by FedEx/UPS annually" },
-  { stat: "$50K\u2013$500K+", desc: "cost to reconstruct lost logbooks" },
+  { stat: "Thousands", desc: "of packages lost by major carriers annually" },
+  { stat: "Months", desc: "to reconstruct lost original logbooks" },
   { stat: "15\u201330%", desc: "resale value lost from missing records" },
-  { stat: "$50K+", desc: "FAA fines for incomplete records" },
+  { stat: "Grounded", desc: "aircraft with incomplete FAA documentation" },
 ];
 
 const comparisonData = [
@@ -48,9 +48,32 @@ const comparisonData = [
     provenarc: "Worldwide",
   },
   {
-    feature: "Pricing",
-    competitor: "$3K\u2013$5K",
-    provenarc: "$18K\u2013$300K (premium)",
+    feature: "Service Scope",
+    competitor: "Records only",
+    provenarc: "Records + 3D + Preservation",
+  },
+];
+
+const protocolPillars = [
+  {
+    icon: Lock,
+    title: "NDA-First Engagement",
+    desc: "Every conversation begins under mutual non-disclosure. Your aircraft details are protected from the first call.",
+  },
+  {
+    icon: MapPin,
+    title: "On-Site Only",
+    desc: "We never require shipping of original documents. Your records never leave your sight.",
+  },
+  {
+    icon: Timer,
+    title: "3:1 Quality Standard",
+    desc: "Three days of post-production for every day in the field. Methodical, not rushed.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Fixed-Price Guarantee",
+    desc: "Your engagement price is fixed at proposal. No scope creep. No surprise charges.",
   },
 ];
 
@@ -69,7 +92,7 @@ const caseStudies = [
   },
   {
     quote:
-      "White-label partnership added six-figure annual revenue to our MRO services without any additional overhead.",
+      "White-label partnership added significant additional revenue to our MRO services without any additional overhead.",
     attribution: "MRO Facility Director",
     context: "MRO Partnership",
   },
@@ -201,6 +224,55 @@ export default function WhyProvenarc() {
 
       <section className="py-24">
         <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Shield className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Our Methodology
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl">The Provenarc Protocol</h2>
+            <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
+              Our proprietary methodology ensures consistent, insurance-grade results regardless of aircraft type or location.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+            {protocolPillars.map((pillar, i) => (
+              <Card key={i} className="p-6" data-testid={`card-protocol-${i}`}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <pillar.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium mb-2">{pillar.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{pillar.desc}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </motion.div>
+
+          <motion.div {...fadeUp}>
+            <Card className="p-6 lg:p-8 border-primary/10" data-testid="card-independence">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-medium mb-2">Independent & Unconflicted</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Our independence from OEMs, brokerages, and insurance carriers means our only priority is accurate, complete documentation of your aircraft. No conflicts. No agenda.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-card/50">
+        <div className="max-w-5xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-12">
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
               Comparison
@@ -233,7 +305,7 @@ export default function WhyProvenarc() {
 
           <motion.div {...fadeUp} className="mt-12">
             <Card className="p-6 lg:p-8">
-              <h3 className="font-serif text-xl mb-4">Why Premium Pricing Is Justified</h3>
+              <h3 className="font-serif text-xl mb-4">Why Premium Service Is Justified</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   "Global concierge model (we travel to you, anywhere)",
@@ -254,7 +326,7 @@ export default function WhyProvenarc() {
         </div>
       </section>
 
-      <section className="py-24 bg-card/50">
+      <section className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-12">
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
@@ -304,8 +376,8 @@ export default function WhyProvenarc() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
               <Link href="/contact">
-                <Button size="lg" data-testid="button-why-cta-quote">
-                  Request Custom Quote
+                <Button size="lg" data-testid="button-why-cta-discovery">
+                  Schedule a Discovery Session
                 </Button>
               </Link>
               <Link href="/how-it-works">
@@ -319,6 +391,9 @@ export default function WhyProvenarc() {
                 </Button>
               </Link>
             </div>
+            <p className="text-[#b8b0a4]/70 text-sm mt-4" data-testid="text-cta-reassurance">
+              No commitment required. 30-minute confidential call.
+            </p>
           </motion.div>
         </div>
       </section>

@@ -32,7 +32,6 @@ export function Footer() {
               {[
                 { label: "Service Tiers", href: "/services" },
                 { label: "How It Works", href: "/how-it-works" },
-                { label: "Pricing", href: "/pricing" },
                 { label: "Why Provenarc", href: "/why-provenarc" },
                 { label: "FAQ", href: "/faq" },
               ].map((item) => (
@@ -55,9 +54,9 @@ export function Footer() {
               {[
                 { label: "About Us", href: "/about" },
                 { label: "Partners", href: "/partners" },
+                { label: "Insights", href: "/insights" },
                 { label: "Broker Portal", href: "/broker/login" },
                 { label: "MRO Portal", href: "/mro/login" },
-                { label: "Contact", href: "/contact" },
                 { label: "Privacy Policy", href: "/privacy" },
               ].map((item) => (
                 <li key={item.label}>
@@ -73,22 +72,15 @@ export function Footer() {
 
           <div>
             <h4 className="text-[#faf6f1] text-sm font-medium tracking-wider uppercase mb-4">
-              Get in Touch
+              Let's Discuss Your Aircraft
             </h4>
             <ul className="space-y-2.5">
               <li className="text-sm">Texas, United States</li>
               <li className="text-sm">Global Service Coverage</li>
               <li>
                 <Link href="/contact">
-                  <span className="text-sm text-[#c9a96e] cursor-pointer transition-colors" data-testid="footer-link-quote">
-                    Request a Quote
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact">
                   <span className="text-sm text-[#c9a96e] cursor-pointer transition-colors" data-testid="footer-link-discovery">
-                    Schedule Discovery Call
+                    Schedule a Discovery Session
                   </span>
                 </Link>
               </li>
@@ -100,6 +92,9 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
+            <p className="text-xs text-[#6a6259] mt-4">
+              No commitment required. Confidential consultation.
+            </p>
           </div>
         </div>
 

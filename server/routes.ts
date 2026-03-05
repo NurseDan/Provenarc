@@ -1,7 +1,7 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import { type Server } from "http";
 import { storage } from "./storage";
-import { insertQuoteRequestSchema, insertContactInquirySchema, loginSchema } from "@shared/schema";
+import { insertQuoteRequestSchema, insertContactInquirySchema, insertBlogPostSchema, loginSchema } from "@shared/schema";
 import bcrypt from "bcrypt";
 
 declare module "express-session" {
@@ -175,6 +175,70 @@ export async function registerRoutes(
       res.status(201).json(inquiry);
     } catch (error: any) {
       res.status(400).json({ message: error.message || "Invalid request data" });
+    }
+  });
+
+  app.get("/api/blog", async (_req, res) => {
+    try {
+      const posts = await storage.getPublishedBlogPosts();
+      res.json(posts);
+    } catch (error: any) {
+      res.status(500).json({ message: "Failed to fetch posts" });
+    }
+  });
+
+  app.get("/api/blog/:slug", async (req, res) => {
+    try {
+      const post = await storage.getBlogPostBySlug(req.params.slug);
+      if (!post) {
+        return res.status(404).json({ message: "Post not found" });
+      }
+      res.json(post);
+    } catch (error: any) {
+      res.status(500).json({ message: "Failed to fetch post" });
+    }
+  });
+
+  app.get("/api/admin/blog", requireRole("admin"), async (_req, res) => {
+    try {
+      const posts = await storage.getAllBlogPosts();
+      res.json(posts);
+    } catch (error: any) {
+      res.status(500).json({ message: "Failed to fetch posts" });
+    }
+  });
+
+  app.post("/api/blog", requireRole("admin"), async (req, res) => {
+    try {
+      const data = insertBlogPostSchema.parse(req.body);
+      const post = await storage.createBlogPost(data);
+      res.status(201).json(post);
+    } catch (error: any) {
+      res.status(400).json({ message: error.message || "Invalid post data" });
+    }
+  });
+
+  app.patch("/api/blog/:id", requireRole("admin"), async (req, res) => {
+    try {
+      const post = await storage.updateBlogPost(req.params.id, req.body);
+      if (!post) {
+        return res.status(404).json({ message: "Post not found" });
+      }
+      res.json(post);
+    } catch (error: any) {
+      res.status(400).json({ message: error.message || "Invalid update data" });
+    }
+  });
+
+  app.delete("/api/blog/:id", requireRole("admin"), async (req, res) => {
+    try {
+      const deleted = await storage.deleteBlogPost(req.params.id);
+      if (!deleted) {
+        return res.status(404).json({ message: "Post not found" });
+      }
+      res.json({ message: "Post deleted" });
+    } catch (error: any) {
+      res.status(500).json({ message: "Failed to delete post" });
     }
   });
 
