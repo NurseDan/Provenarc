@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Plane, ChevronDown, Lock } from "lucide-react";
+import { Menu, X, ChevronDown, Lock, Plane, Anchor, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -8,6 +8,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+const divisionLinks = [
+  { label: "Aero Solutions", href: "/aero", icon: Plane },
+  { label: "Marine", href: "/marine", icon: Anchor },
+  { label: "Autos & Classics", href: "/autos-classics", icon: Car },
+];
 
 const mainLinks = [
   { label: "Services", href: "/services" },
@@ -42,17 +48,43 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <Link href="/" data-testid="link-home">
           <div className="flex items-center gap-2 cursor-pointer">
-            <Plane className="h-5 w-5 text-primary" />
             <div className="flex items-baseline gap-1.5">
               <span className="font-serif text-lg tracking-[0.15em] font-bold">PROVENARC</span>
               <span className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase hidden sm:inline">
-                Aero Solutions
+                Group
               </span>
             </div>
           </div>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6" data-testid="nav-desktop">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={`text-sm tracking-wide transition-colors flex items-center gap-1 ${
+                  ["/aero", "/marine", "/autos-classics"].includes(location)
+                    ? "text-foreground font-medium"
+                    : "text-muted-foreground"
+                }`}
+                data-testid="dropdown-divisions"
+              >
+                Divisions <ChevronDown className="h-3 w-3" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+              {divisionLinks.map((link) => (
+                <DropdownMenuItem key={link.href} asChild>
+                  <Link href={link.href}>
+                    <span className="cursor-pointer w-full flex items-center gap-2" data-testid={`link-division-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                      <link.icon className="h-3.5 w-3.5 text-primary" />
+                      {link.label}
+                    </span>
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           {mainLinks.map((link) => (
             <Link key={link.href} href={link.href} data-testid={`link-${link.label.toLowerCase().replace(/\s/g, "-")}`}>
               <span
@@ -140,6 +172,22 @@ export function Navbar() {
 
       {isOpen && (
         <div className="lg:hidden border-t border-border/50 px-6 py-4 space-y-1 bg-background/95 backdrop-blur-md">
+          <div className="pb-2 mb-2 border-b border-border/50">
+            <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Divisions</p>
+            {divisionLinks.map((link) => (
+              <Link key={link.href} href={link.href} data-testid={`link-mobile-division-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                <div
+                  className={`block py-2.5 text-sm cursor-pointer flex items-center gap-2 ${
+                    location === link.href ? "text-foreground font-medium" : "text-muted-foreground"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <link.icon className="h-3.5 w-3.5 text-primary" />
+                  {link.label}
+                </div>
+              </Link>
+            ))}
+          </div>
           {mobileLinks.map((link) => (
             <Link key={link.href} href={link.href} data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s/g, "-")}`}>
               <div

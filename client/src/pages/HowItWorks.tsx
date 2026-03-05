@@ -6,6 +6,7 @@ import {
   Calendar, Plane, Scan, FileCheck, MonitorCheck,
   ArrowRight, CheckCircle2, Shield, Eye,
   Database, Lock, Search, Cloud, Download,
+  Clock, Camera, Compass, Target,
 } from "lucide-react";
 
 const fadeUp = {
@@ -46,26 +47,26 @@ const steps = [
     number: "03",
     icon: Scan,
     title: "On-Site Documentation",
-    description: "Complete records scanning and 3D documentation at your hangar.",
+    description: "Meticulous records scanning, drone-based exterior capture, and comprehensive 3D documentation at your hangar.",
     details: [
       "High-resolution logbook and records scanning",
-      "3D exterior scanning (fuselage, wings, empennage, landing gear)",
+      "Drone-based exterior documentation (FAA Part 107 certified)",
       "3D interior scanning (cabin, cockpit, cargo areas)",
       "Mechanical systems scanning (engine, APU, critical components)",
       "Originals never leave your property \u2014 returned before departure",
-      "On-site quality verification before our team departs",
+      "Real-time cloud backup during on-site operations",
     ],
   },
   {
     number: "04",
     icon: FileCheck,
     title: "Post-Production",
-    description: "Methodical processing with our 3:1 quality ratio.",
+    description: "Methodical processing with our 3:1 quality ratio. Three days of meticulous quality control for every day in the field.",
     details: [
       "OCR processing and intelligent metadata tagging",
-      "Point cloud optimization and model generation",
-      "Multi-stage quality control review",
-      "Document organization and indexing",
+      "Point cloud optimization and 3D model generation",
+      "Multi-stage quality control review by senior technicians",
+      "Museum-grade archival volume coordination with bookbinders",
       "Executive deliverable preparation",
       "Three days of QC for every day in the field",
     ],
@@ -73,16 +74,102 @@ const steps = [
   {
     number: "05",
     icon: MonitorCheck,
-    title: "Digital Delivery",
-    description: "Secure access to your complete digital documentation package.",
+    title: "Delivery & Permanent Archive",
+    description: "Secure access to your complete digital documentation package and museum-grade physical deliverables.",
     details: [
       "RecordVault platform access with secure login",
       "Interactive 3D model viewer for aircraft visualization",
-      "Downloadable high-resolution archives",
+      "Museum-grade archival volumes delivered",
       "Cloud hosting with redundant backups",
-      "Ongoing access and support",
+      "Training on platform access and ongoing support",
     ],
   },
+];
+
+const processPhases = [
+  {
+    phase: "Phase 1",
+    name: "Pre-Service Coordination",
+    days: "Days 1\u20133",
+    icon: Calendar,
+    details: [
+      "Service planning and logistics coordination",
+      "Hangar access arrangements and scheduling",
+      "Document inventory and scope confirmation",
+      "International equipment customs clearance",
+      "Safety briefings and facility coordination",
+    ],
+  },
+  {
+    phase: "Phase 2",
+    name: "On-Site Documentation",
+    days: "Days 4\u201310",
+    icon: Scan,
+    details: [
+      "Portable scanning equipment deployment",
+      "Drone-based exterior documentation",
+      "Interior and mechanical systems scanning",
+      "Originals never leave your property",
+      "Real-time cloud backup of all captured data",
+    ],
+  },
+  {
+    phase: "Phase 3",
+    name: "Processing & Quality Control",
+    days: "Days 11\u201325",
+    icon: FileCheck,
+    details: [
+      "OCR verification and metadata tagging",
+      "Point cloud processing and 3D model generation",
+      "Multi-stage review by senior technicians",
+      "Museum-grade volume coordination with bookbinders",
+      "Every deliverable reviewed before release",
+    ],
+  },
+  {
+    phase: "Phase 4",
+    name: "Delivery & Integration",
+    days: "Days 26\u201330",
+    icon: MonitorCheck,
+    details: [
+      "RecordVault platform upload and configuration",
+      "Museum-grade archival volumes delivered",
+      "Client training on platform access",
+      "Documentation handover and acceptance",
+      "Indefinite support and platform access",
+    ],
+  },
+];
+
+const droneCoverage = [
+  {
+    icon: Target,
+    title: "Complete Top-of-Wing Coverage",
+    description: "Traditional documentation methods struggle with upper wing surfaces, especially on high-wing aircraft or T-tail configurations. Our drones capture comprehensive documentation from angles that ground-based systems cannot achieve.",
+  },
+  {
+    icon: Compass,
+    title: "Vertical Stabilizer & Empennage",
+    description: "Complete documentation of vertical stabilizer, horizontal stabilizer, and empennage surfaces without facility disruption or technician safety concerns.",
+  },
+  {
+    icon: Camera,
+    title: "Engine & Nacelle Detail",
+    description: "Millimeter-level documentation from multiple angles for pre-purchase verification and insurance baseline. Captures condition details invisible from ground level.",
+  },
+  {
+    icon: Plane,
+    title: "Fuselage & General Exterior",
+    description: "Complete fuselage curvature documentation without scaffolding or lifts. Paint condition, previous repairs, and surface anomalies documented with forensic clarity.",
+  },
+];
+
+const droneSpecs = [
+  "Professional-grade drones with obstacle avoidance and precision hover",
+  "20+ megapixel cameras with mechanical shutters",
+  "LiDAR sensors for dimensional accuracy",
+  "GPS + inertial navigation for precise positioning",
+  "Automated flight planning for repeatable scan patterns",
 ];
 
 const scanningCapabilities = [
@@ -150,11 +237,11 @@ export default function HowItWorks() {
               How It Works
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#faf6f1] leading-tight">
-              From Schedule to Delivery
+              The Provenarc Method
             </h1>
             <p className="text-[#b8b0a4] text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
               Five methodical steps. Zero days out of your custody. Complete documentation and 3D
-              preservation delivered with concierge precision.
+              preservation delivered with concierge precision and museum-grade standards.
             </p>
           </motion.div>
         </div>
@@ -166,7 +253,7 @@ export default function HowItWorks() {
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
               On-Site Process
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl">The Provenarc Method</h2>
+            <h2 className="font-serif text-3xl md:text-4xl">Five Steps to Permanent Preservation</h2>
             <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
               Every engagement follows the same methodical process, ensuring consistent
               insurance-grade results regardless of aircraft type or location.
@@ -224,12 +311,186 @@ export default function HowItWorks() {
               </div>
             </Card>
           </motion.div>
+        </div>
+      </section>
 
-          <motion.div {...fadeUp} className="mt-12 text-center">
-            <Card className="p-8 bg-accent/5 border-accent/10 inline-block" data-testid="card-fixed-price-guarantee">
-              <p className="font-serif text-lg text-foreground">
-                Your engagement price is fixed at proposal. No scope creep. No surprise charges. What we quote is what you pay.
+      <section className="py-24 bg-card/50" data-testid="section-precision-without-rush">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Our Philosophy
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl">
+              Precision Without Rush
+            </h2>
+            <p className="font-serif text-lg text-primary/80 italic mt-2">
+              Our Proprietary Process
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="max-w-3xl mx-auto mb-16">
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Quality documentation cannot be compressed without compromising integrity. Our
+                proprietary technology process has been developed over years of field operations and
+                incorporates lessons learned from thousands of aircraft.
               </p>
+              <p>
+                Every document receives individual attention. High-resolution scanning captures fine
+                print that inferior systems miss. OCR verification ensures searchable text accurately
+                reflects original content. Metadata tagging enables rapid retrieval years after
+                digitization. 3D scanning requires precise calibration and optimal lighting conditions
+                that cannot be expedited.
+              </p>
+              <Card className="p-6 border-primary/20 bg-primary/5">
+                <p className="text-foreground font-medium italic">
+                  "When competitors promise five-day turnaround, they are skipping steps. When we
+                  quote twenty-five to thirty days, we are accounting for every quality checkpoint
+                  our process requires. The difference shows in the deliverable."
+                </p>
+              </Card>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {processPhases.map((phase, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <Card className="p-6 h-full" data-testid={`card-phase-${i}`}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <phase.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-mono text-xs text-primary tracking-wider">{phase.phase}</p>
+                      <h3 className="font-medium text-sm">{phase.name}</h3>
+                    </div>
+                    <span className="ml-auto text-xs font-mono text-muted-foreground bg-muted/50 px-2 py-1 rounded">
+                      {phase.days}
+                    </span>
+                  </div>
+                  <ul className="space-y-2">
+                    {phase.details.map((detail, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-primary mt-0.5 flex-shrink-0" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div {...fadeUp} className="text-center">
+            <Card className="p-8 bg-primary/5 border-primary/10 inline-block" data-testid="card-3-1-ratio">
+              <div className="flex items-center gap-4">
+                <Clock className="h-8 w-8 text-primary" />
+                <div className="text-left">
+                  <p className="font-serif text-2xl text-primary">3:1</p>
+                  <p className="text-sm font-medium">Post-Production Ratio</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Three days of meticulous processing for every one day of field service
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24" data-testid="section-drone-technology">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Aerial Documentation
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl">
+              Advanced Drone Technology
+            </h2>
+            <p className="font-serif text-lg text-primary/80 italic mt-2">
+              Precision from Every Angle
+            </p>
+            <p className="text-muted-foreground text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
+              Exterior aircraft documentation presents unique challenges. Fuselage curvature, wing
+              leading edges, empennage surfaces, engine nacelles — comprehensive coverage requires
+              perspectives impossible to achieve with ground-based systems alone.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="mb-12">
+            <Card className="p-6 bg-primary/5 border-primary/10 max-w-2xl mx-auto text-center">
+              <Camera className="h-6 w-6 text-primary mx-auto mb-3" />
+              <p className="text-sm font-medium">FAA Part 107 Certified Operations</p>
+              <p className="text-xs text-muted-foreground mt-2">
+                All drone operations conducted by FAA Part 107 certified Remote Pilot in Command
+                operators with specific training in aviation facility operations.
+              </p>
+            </Card>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {droneCoverage.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <Card className="p-6 h-full" data-testid={`card-drone-coverage-${i}`}>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium mb-2">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div {...fadeUp}>
+            <Card className="p-6 lg:p-8">
+              <h3 className="font-serif text-xl mb-4">Technology Specifications</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                {droneSpecs.map((spec, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    {spec}
+                  </div>
+                ))}
+              </div>
+              <div className="border-t border-border/50 pt-4 mt-4">
+                <h4 className="text-sm font-medium mb-3">Operational Standards</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {[
+                    "Coordination with airport operations and air traffic control",
+                    "Weather monitoring and delay protocols",
+                    "Liability insurance specific to aerial operations",
+                    "Safety briefings and coordination with facility personnel",
+                  ].map((standard, i) => (
+                    <p key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+                      <Shield className="h-3 w-3 text-primary mt-0.5 flex-shrink-0" />
+                      {standard}
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <div className="border-t border-border/50 pt-4 mt-4">
+                <p className="text-sm text-muted-foreground italic">
+                  Drone-captured data integrates seamlessly with interior scanning and records
+                  digitization in comprehensive documentation packages.
+                </p>
+              </div>
             </Card>
           </motion.div>
         </div>
@@ -244,7 +505,7 @@ export default function HowItWorks() {
             <h2 className="font-serif text-3xl md:text-4xl">3D Scanning Technology</h2>
             <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
               Professional-grade 3D scanning equipment deployed on-site, creating
-              insurance-grade digital documentation of your aircraft&rsquo;s physical condition.
+              insurance-grade digital documentation of your aircraft's physical condition.
             </p>
           </motion.div>
 
@@ -277,13 +538,13 @@ export default function HowItWorks() {
 
           <motion.div {...fadeUp} className="mt-12">
             <Card className="p-6 lg:p-8">
-              <h3 className="font-serif text-xl mb-4">Use Cases</h3>
+              <h3 className="font-serif text-xl mb-4">Applications</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { title: "Baseline Documentation", desc: "Establish pre-existing condition for insurance policies" },
-                  { title: "Damage Assessment", desc: "Post-incident 3D comparison against baseline scans" },
-                  { title: "Remote Inspections", desc: "Enable buyers to inspect aircraft digitally from anywhere" },
-                  { title: "Provenance Preservation", desc: "Permanent digital record of aircraft condition over time" },
+                  { title: "Pre-Purchase Inspections", desc: "Comprehensive exterior documentation before scheduling in-person inspections. Hidden damage on upper surfaces becomes immediately visible." },
+                  { title: "Insurance Baseline", desc: "Pre-loss condition evidence protects both owners and insurers. Compare current condition against baseline scans to document changes." },
+                  { title: "Modification Verification", desc: "Before and after scanning preserves evidence of major modifications, paint schemes, and refurbishment work." },
+                  { title: "Provenance Preservation", desc: "Permanent digital record of aircraft condition. For show aircraft and classic aviation, these scans become invaluable historical artifacts." },
                 ].map((use, i) => (
                   <div key={i} className="p-4 rounded-md bg-muted/50">
                     <h4 className="text-sm font-medium mb-1">{use.title}</h4>
@@ -338,7 +599,7 @@ export default function HowItWorks() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <h2 className="font-serif text-3xl md:text-4xl text-[#faf6f1]">
-              Ready to Protect Your Records?
+              Ready to Preserve Your Aircraft's Heritage?
             </h2>
             <p className="text-[#b8b0a4] text-lg mt-4">
               Schedule a discovery call to discuss your aircraft and documentation goals.
@@ -361,7 +622,7 @@ export default function HowItWorks() {
               </Link>
             </div>
             <p className="text-[#b8b0a4] text-sm mt-6">
-              No commitment required. 30-minute confidential call. We'll share a preliminary scope assessment regardless.
+              No commitment required. 30-minute confidential call. We will share a preliminary scope assessment regardless.
             </p>
           </motion.div>
         </div>

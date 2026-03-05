@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
   Globe, Shield, Scan, FileCheck, Users, Handshake,
-  Building2, ArrowRight, CheckCircle2,
+  Building2, ArrowRight, CheckCircle2, BookOpen, Award,
 } from "lucide-react";
 
 const fadeUp = {
@@ -14,56 +14,50 @@ const fadeUp = {
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
 };
 
-const differentiators = [
+const pillars = [
+  {
+    icon: BookOpen,
+    title: "Deep Aviation Knowledge",
+    description:
+      "We do not simply scan pages. We understand what those pages mean. When we digitize an airworthiness directive compliance log, we recognize critical entries that impact aircraft value. When we document a major modification, we know which supporting documentation must accompany it. Our technicians can identify gaps in records before they become transaction obstacles because we have three decades of experience navigating these exact challenges.",
+  },
+  {
+    icon: Award,
+    title: "Uncompromising Quality Standards",
+    description:
+      "Our proprietary digitization process has been refined over thousands of hours of field operations. We never compress timelines at the expense of quality because precision demands time. Every scanned page undergoes OCR verification. Every 3D scan is processed through multiple quality checkpoints. Every deliverable is reviewed by senior team members before release.",
+  },
   {
     icon: Globe,
-    title: "Global Concierge Model",
+    title: "Global Concierge Capability",
     description:
-      "We travel to your aircraft\u2019s location\u2014anywhere in the world. No shipping carriers, no risk to original documents, and no coordinating multiple vendors.",
-  },
-  {
-    icon: Scan,
-    title: "Integrated 3D Scanning",
-    description:
-      "The only aviation records service offering integrated 3D documentation. From logbook pages to point clouds\u2014complete provenance preservation in a single visit.",
-  },
-  {
-    icon: FileCheck,
-    title: "3:1 Quality Ratio",
-    description:
-      "Three days of post-production quality control for every day in the field. OCR verification, metadata tagging, and multi-stage review ensure insurance-grade deliverables.",
-  },
-  {
-    icon: Shield,
-    title: "Zero Shipping Risk",
-    description:
-      "Your irreplaceable logbooks never touch a carrier. We scan on-site, return originals before we leave, and upload digital files to secure cloud storage.",
+      "We have documented aircraft in hangars across five continents. Whether your aircraft resides in Texas or Tokyo, we bring the same equipment, the same expertise, and the same white-glove service. Your irreplaceable logbooks never touch a carrier — we scan on-site, return originals before we leave, and upload digital files to secure cloud storage.",
   },
 ];
 
 const partnerships = [
   {
     icon: Handshake,
-    title: "Broker Referral Program",
+    title: "Broker & Agent Partnerships",
     description:
-      "Partnership compensation, white-label services, or co-branded packages. Differentiate your listings and close deals faster with professional documentation.",
+      "Referral compensation, white-label documentation under your brand, co-branded premium packages, and expedited service for transaction deadlines.",
     benefits: [
-      "Partnership compensation for qualified leads",
-      "White-label documentation under your brand",
-      "Expedited service for transaction deadlines",
-      "Competitive advantage for your listings",
+      "Three partnership models to match your business",
+      "Expedited service for active transactions",
+      "Marketing assets for differentiated listings",
+      "Transaction-ready documentation packages",
     ],
   },
   {
     icon: Building2,
     title: "MRO Partnerships",
     description:
-      "Offer documentation services to your maintenance customers as a value-add. We coordinate around your maintenance schedule for seamless integration.",
+      "Offer documentation services to your maintenance customers as a premium value-add. We coordinate around your maintenance schedule for seamless integration.",
     benefits: [
       "Revenue share on referred clients",
       "Documentation during scheduled maintenance",
       "Fleet program coordination",
-      "Custom integration with your workflow",
+      "Co-branded deliverables",
     ],
   },
   {
@@ -75,7 +69,7 @@ const partnerships = [
       "Baseline documentation for hull policies",
       "Post-incident rapid deployment",
       "Claims support and expert testimony",
-      "Premium discount programs for insured aircraft",
+      "Premium discount programs",
     ],
   },
 ];
@@ -94,9 +88,9 @@ export default function About() {
               Provenance. Precision. Permanence.
             </h1>
             <p className="text-[#b8b0a4] text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-              Founded by aviation professionals who understand irreplaceable value. We&rsquo;re
-              building the world&rsquo;s premier aircraft documentation and preservation company.
-              On-site. Worldwide. No compromises.
+              Three decades of aviation expertise. Museum-grade preservation standards. White-glove
+              global service. We are building the world's premier documentation and preservation
+              company for high-value transportation assets.
             </p>
           </motion.div>
         </div>
@@ -111,27 +105,31 @@ export default function About() {
                   Our Story
                 </p>
                 <h2 className="font-serif text-3xl md:text-4xl leading-tight">
-                  Born from a Simple Question
+                  Three Decades of Aviation Excellence
                 </h2>
               </div>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Why would anyone ship irreplaceable aircraft logbooks through a carrier that loses
-                  thousands of packages annually? The aviation industry&rsquo;s approach to records
-                  digitization was fundamentally broken: ship your most valuable documents across the
-                  country and hope for the best.
+                  Provenarc Aero Solutions was founded on a singular conviction: aircraft documentation
+                  should reflect the same precision and permanence as the aircraft themselves.
                 </p>
                 <p>
-                  Provenarc Aero Solutions was founded to solve this problem. We bring
-                  professional-grade scanning equipment to the aircraft&rsquo;s location, digitize
-                  everything on-site, and return your originals before we leave. Zero shipping risk.
-                  Zero days out of your custody.
+                  Our co-founders bring more than thirty years of combined experience across aviation
+                  maintenance, aerospace engineering, and records management. This is not a technology
+                  startup experimenting with aviation — this is aviation professionals bringing proven
+                  methodologies into the digital age.
                 </p>
                 <p>
-                  Then we went further. We integrated 3D scanning to create baseline documentation of
-                  the aircraft itself\u2014exterior, interior, and mechanical systems. No other
-                  company in aviation offers this combination. We created a new category: complete
-                  aircraft documentation and preservation.
+                  Every member of our team has worked directly with aircraft, maintenance logs, and
+                  regulatory compliance. We understand FAA Part 43 requirements not from reading manuals
+                  but from years of practical application. When we digitize an airworthiness directive
+                  compliance log, we recognize critical entries that impact aircraft value.
+                </p>
+                <p>
+                  We integrated 3D scanning and drone-based exterior documentation to create baseline
+                  condition records of the aircraft itself — exterior, interior, and mechanical systems.
+                  Combined with museum-grade archival volumes, we created a new category: complete
+                  aircraft documentation and permanent heritage preservation.
                 </p>
               </div>
             </div>
@@ -140,16 +138,17 @@ export default function About() {
           <motion.div {...fadeUp} className="mt-16">
             <Card className="p-6 lg:p-8 border-primary/20 max-w-2xl mx-auto">
               <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-3">
-                Why &ldquo;Provenarc&rdquo;
+                Why "Provenarc"
               </p>
               <h3 className="font-serif text-2xl mb-3">
                 <span className="text-primary">Proven</span>ance + <span className="text-primary">Arc</span>hive
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">Provenance</strong> &mdash; the origin, history,
+                <strong className="text-foreground">Provenance</strong> — the origin, history,
                 and authenticity of an asset.{" "}
-                <strong className="text-foreground">Archive</strong> &mdash; permanent preservation
-                for future reference. Every aircraft has a story. We preserve it.
+                <strong className="text-foreground">Archive</strong> — permanent preservation
+                for future reference. Every aircraft has a story. We preserve it with museum-grade
+                precision.
               </p>
             </Card>
           </motion.div>
@@ -170,12 +169,12 @@ export default function About() {
               {
                 name: "Dalton Montes",
                 role: "Co-Managing Member",
-                bio: "Aviation industry expertise with deep knowledge of aircraft documentation requirements, maintenance records compliance, and owner/operator needs across all aircraft classes.",
+                bio: "Decades of practical aviation maintenance and engineering expertise. Deep knowledge of aircraft documentation requirements, records compliance, and owner/operator needs across all aircraft classes — from piston singles to ultra-premium business jets.",
               },
               {
                 name: "Daniel Wiglesworth",
                 role: "Co-Managing Member",
-                bio: "Strategic operations leadership with experience in premium service delivery, technology integration, and building scalable concierge-model businesses for high-value clients.",
+                bio: "Strategic operations leadership with experience in premium service delivery, technology integration, and building scalable concierge-model businesses for high-value clients. Drives the company's expansion into marine and collector vehicle documentation.",
               },
             ].map((member, i) => (
               <Card key={i} className="p-6" data-testid={`card-team-${i}`}>
@@ -199,11 +198,11 @@ export default function About() {
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
               What Sets Us Apart
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl">Our Competitive Advantage</h2>
+            <h2 className="font-serif text-3xl md:text-4xl">Three Pillars of Excellence</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {differentiators.map((item, i) => (
+          <div className="space-y-6">
+            {pillars.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -211,14 +210,14 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Card className="p-6 h-full" data-testid={`card-diff-${i}`}>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
+                <Card className="p-6 lg:p-8" data-testid={`card-pillar-${i}`}>
+                  <div className="flex items-start gap-5">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <item.icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-medium">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                      <h3 className="font-serif text-xl mb-3">{item.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -243,19 +242,19 @@ export default function About() {
             {[
               {
                 title: "Precision",
-                description: "Every scan, every page, every data point handled with methodical accuracy. Our 3:1 quality ratio ensures nothing is missed.",
+                description: "Every scan, every page, every data point handled with methodical accuracy. Our 3:1 quality ratio ensures nothing is missed. Three days of processing for every day in the field.",
               },
               {
                 title: "Integrity",
-                description: "Independence from OEMs, brokerages, and insurers means our only priority is accurate documentation. No conflicts. No agenda.",
+                description: "Independence from OEMs, brokerages, and insurers means our only priority is accurate documentation. No conflicts. No agenda. We serve the asset and the owner.",
               },
               {
                 title: "Discretion",
-                description: "Every engagement operates under mutual NDA. We protect your information with the same standards applied by private banks and family offices.",
+                description: "Every engagement operates under mutual NDA. We protect your information with the same standards applied by private banks and family offices. Client identities never disclosed.",
               },
               {
-                title: "Innovation",
-                description: "Integrated 3D scanning and records digitization in a single concierge visit. We created a new category in aviation documentation.",
+                title: "Permanence",
+                description: "Museum-grade archival materials with century-plus lifespans. Digital archives on enterprise-grade infrastructure. We create documentation designed to outlast generations.",
               },
             ].map((principle, i) => (
               <motion.div
@@ -283,8 +282,8 @@ export default function About() {
             </p>
             <h2 className="font-serif text-3xl md:text-4xl">Provenarc Group LLC</h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              A Texas Limited Liability Company with three operating subsidiaries serving distinct
-              high-value asset markets.
+              A Texas Limited Liability Company with three operating divisions serving distinct
+              high-value asset markets worldwide.
             </p>
           </motion.div>
 
@@ -293,28 +292,27 @@ export default function About() {
               <p className="font-serif text-lg text-center mb-6">Provenarc Group LLC</p>
               <div className="space-y-3">
                 {[
-                  { name: "Provenarc Aero Solutions", status: "Active", desc: "Aviation Documentation" },
-                  { name: "Provenarc Marine", status: "Future", desc: "Marine Vessel Documentation" },
-                  { name: "Provenarc Autos & Classics", status: "Future", desc: "Collector Vehicle Provenance" },
+                  { name: "Provenarc Aero Solutions", status: "Active", desc: "Aviation Documentation & Preservation", href: "/aero" },
+                  { name: "Provenarc Marine", status: "Active", desc: "Maritime Vessel Documentation", href: "/marine" },
+                  { name: "Provenarc Autos & Classics", status: "Active", desc: "Collector Vehicle Provenance", href: "/autos-classics" },
                 ].map((sub, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-between gap-4 p-3 rounded-md bg-muted/50"
-                  >
-                    <div>
-                      <p className="text-sm font-medium">{sub.name}</p>
-                      <p className="text-xs text-muted-foreground">{sub.desc}</p>
-                    </div>
-                    <span
-                      className={`text-xs font-mono px-2 py-0.5 rounded ${
-                        sub.status === "Active"
-                          ? "bg-primary/10 text-primary"
-                          : "bg-muted text-muted-foreground"
-                      }`}
+                  <Link key={i} href={sub.href}>
+                    <div
+                      className="flex items-center justify-between gap-4 p-3 rounded-md bg-muted/50 cursor-pointer hover:bg-muted/80 transition-colors"
+                      data-testid={`link-division-${i}`}
                     >
-                      {sub.status}
-                    </span>
-                  </div>
+                      <div>
+                        <p className="text-sm font-medium">{sub.name}</p>
+                        <p className="text-xs text-muted-foreground">{sub.desc}</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono px-2 py-0.5 rounded bg-primary/10 text-primary">
+                          {sub.status}
+                        </span>
+                        <ArrowRight className="h-3 w-3 text-muted-foreground" />
+                      </div>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -372,11 +370,11 @@ export default function About() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <h2 className="font-serif text-3xl md:text-4xl text-[#faf6f1]">
-              Let&rsquo;s Discuss a Partnership
+              Let's Discuss How We Can Help
             </h2>
             <p className="text-[#b8b0a4] text-lg mt-4">
-              Whether you&rsquo;re a broker, MRO, or insurance carrier, we&rsquo;d love to explore
-              how we can work together.
+              Whether you own an aircraft, a vessel, or a collector vehicle — we would be honored to
+              discuss your documentation requirements.
             </p>
             <Link href="/contact">
               <Button size="lg" className="mt-8" data-testid="button-about-cta">

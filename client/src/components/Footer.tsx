@@ -1,23 +1,25 @@
 import { Link } from "wouter";
-import { Plane } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="bg-[#1a1814] text-[#9a9188]">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Plane className="h-5 w-5 text-[#c9a96e]" />
               <span className="font-serif text-lg tracking-[0.15em] text-[#faf6f1] font-bold">
                 PROVENARC
               </span>
+              <span className="text-[10px] text-[#6a6259] tracking-[0.2em] uppercase">
+                Group
+              </span>
             </div>
             <p className="text-sm leading-relaxed mb-4">
-              Global concierge documentation and 3D preservation for ultra-premium aircraft. On-site.
-              Worldwide. Your originals never leave your hangar.
+              Premier documentation and preservation services for aircraft, vessels, and collector
+              vehicles worldwide. Museum-grade archival standards. White-glove global service. Your
+              originals never leave your property.
             </p>
-            <p className="text-xs text-[#6a6259]">A division of Provenarc Group LLC</p>
+            <p className="text-xs text-[#6a6259]">Provenarc Group LLC — Texas, United States</p>
             <div className="mt-4 text-xs text-[#6a6259] space-y-1">
               <p>Mon&ndash;Fri: 8:00 AM &ndash; 6:00 PM CST</p>
               <p>Weekend/Emergency: By appointment</p>
@@ -26,6 +28,25 @@ export function Footer() {
 
           <div>
             <h4 className="text-[#faf6f1] text-sm font-medium tracking-wider uppercase mb-4">
+              Divisions
+            </h4>
+            <ul className="space-y-2.5">
+              {[
+                { label: "Aero Solutions", href: "/aero" },
+                { label: "Marine", href: "/marine" },
+                { label: "Autos & Classics", href: "/autos-classics" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href}>
+                    <span className="text-sm cursor-pointer transition-colors" data-testid={`footer-link-${item.label.split(" ")[0].toLowerCase()}`}>
+                      {item.label}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="text-[#faf6f1] text-sm font-medium tracking-wider uppercase mb-4 mt-8">
               Services
             </h4>
             <ul className="space-y-2.5">
@@ -72,7 +93,7 @@ export function Footer() {
 
           <div>
             <h4 className="text-[#faf6f1] text-sm font-medium tracking-wider uppercase mb-4">
-              Let's Discuss Your Aircraft
+              Let's Discuss Your Project
             </h4>
             <ul className="space-y-2.5">
               <li className="text-sm">Texas, United States</li>
@@ -109,7 +130,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-xs text-[#6a6259]">
-              Provenarc Aero Solutions &mdash; A division of Provenarc Group LLC, Texas
+              Aero Solutions &middot; Marine &middot; Autos &amp; Classics
             </p>
           </div>
         </div>

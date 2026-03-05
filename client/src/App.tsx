@@ -6,7 +6,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import Home from "@/pages/Home";
+import GroupHome from "@/pages/GroupHome";
+import AeroHome from "@/pages/AeroHome";
 import Services from "@/pages/Services";
 import HowItWorks from "@/pages/HowItWorks";
 import WhyProvenarc from "@/pages/WhyProvenarc";
@@ -22,6 +23,8 @@ import BrokerLogin from "@/pages/BrokerLogin";
 import MROLogin from "@/pages/MROLogin";
 import BrokerDashboard from "@/pages/BrokerDashboard";
 import MRODashboard from "@/pages/MRODashboard";
+import Marine from "@/pages/Marine";
+import AutosClassics from "@/pages/AutosClassics";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -35,7 +38,8 @@ function ScrollToTop() {
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={GroupHome} />
+      <Route path="/aero" component={AeroHome} />
       <Route path="/services" component={Services} />
       <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/why-provenarc" component={WhyProvenarc} />
@@ -51,6 +55,8 @@ function Router() {
       <Route path="/mro/login" component={MROLogin} />
       <Route path="/broker/dashboard" component={BrokerDashboard} />
       <Route path="/mro/dashboard" component={MRODashboard} />
+      <Route path="/marine" component={Marine} />
+      <Route path="/autos-classics" component={AutosClassics} />
       <Route component={NotFound} />
     </Switch>
   );

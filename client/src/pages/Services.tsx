@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, Plane, Clock, MapPin, FileText } from "lucide-react";
+import { CheckCircle2, ArrowRight, Plane, Clock, MapPin, FileText, BookOpen, Award } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -14,12 +14,14 @@ const fadeUp = {
 const tiers = [
   {
     number: 1,
-    name: "Essential Documentation",
-    subtitle: "Records Digitization Only",
+    name: "Heritage Foundation",
+    subtitle: "Professional Records Preservation",
     aircraft: "Piston Aircraft",
     description:
-      "Professional on-site digitization of all aircraft logbooks and maintenance records. Our technician travels to your location with portable scanning equipment, digitizes every page on-site, and returns your originals before departing. Zero shipping risk.",
-    turnaround: "10\u201315 business days",
+      "Your aircraft's history begins with its records. Our Heritage Foundation service provides museum-quality digitization of every logbook, maintenance entry, and compliance document. High-resolution scanning captures fine details that smartphone cameras miss. Professional OCR technology makes decades of handwritten entries fully searchable. Metadata tagging enables instant retrieval by date, component, or maintenance type. Deliverables include permanent cloud hosting through our RecordVault platform, complete with redundant backup systems and unlimited access.",
+    turnaround: "15 business days",
+    archival: "Optional museum-grade archival volumes",
+    bestFor: "Owners focused on compliance, transaction preparation, and insurance requirements",
     scope: [
       "Complete logbook scanning (all volumes)",
       "Maintenance records, 337s, STCs, AD compliance",
@@ -31,72 +33,79 @@ const tiers = [
   {
     number: 2,
     name: "Complete Documentation",
-    subtitle: "Records + Exterior & Interior 3D Scanning",
+    subtitle: "Records Plus Comprehensive 3D Baseline",
     aircraft: "Turboprop Aircraft",
     description:
-      "Everything in Tier 1, plus comprehensive 3D scanning of your aircraft\u2019s exterior and interior. Creates baseline condition documentation for insurance claims, enables remote buyer inspections, and preserves your aircraft\u2019s physical state digitally.",
-    turnaround: "15\u201320 business days",
+      "Complete Documentation integrates records preservation with dimensional capture of your aircraft itself. Drone-based exterior scanning documents every surface from optimal angles impossible to achieve with ground-based systems. Interior scanning preserves cabin configuration, avionics installations, and custom modifications with millimeter precision. This service creates comprehensive baseline evidence for insurance carriers, establishes pre-sale condition documentation for buyer confidence, and enables remote virtual inspections that accelerate transaction timelines.",
+    turnaround: "20 business days",
+    archival: "Museum-grade archival volume standard",
+    bestFor: "Owners seeking insurance baseline, pre-sale documentation, and remote inspection capability",
     scope: [
-      "Everything in Tier 1",
-      "Full exterior 3D scan (fuselage, wings, empennage, landing gear)",
+      "Everything in Heritage Foundation",
+      "Full exterior 3D scan via drone (fuselage, wings, empennage)",
       "Complete interior 3D scan (cabin, cockpit, cargo areas)",
-      "Baseline condition documentation",
-      "3D model viewer access",
-      "Insurance-grade documentation package",
+      "Interactive 3D model viewer access",
+      "Insurance-grade baseline documentation package",
+      "Museum-grade archival volume included",
     ],
   },
   {
     number: 3,
     name: "Premium Comprehensive",
-    subtitle: "Complete Documentation + Mechanical 3D Scanning",
+    subtitle: "Complete Documentation Plus Mechanical Systems Baseline",
     aircraft: "Light Jets",
     description:
-      "Our most comprehensive standard package. Includes everything in Tier 2, plus detailed 3D scanning of mechanical systems including engine components, critical systems, and modifications. Ideal for pre-sale documentation and insurance baseline.",
-    turnaround: "20\u201325 business days",
+      "Premium Comprehensive extends documentation into critical mechanical systems. Engine components, accessory installations, and major subsystems receive the same meticulous attention as exterior surfaces and interior spaces. Clients pursuing this tier typically face specific regulatory requirements, insurance carrier mandates, or transaction due diligence demands that exceed standard documentation scope. Corporate flight departments use mechanical baseline scans to track component condition evolution across maintenance cycles.",
+    turnaround: "25 business days",
+    archival: "Comprehensive multi-volume archival sets",
+    bestFor: "Corporate flight departments, regulatory compliance, major modification documentation",
     scope: [
-      "Everything in Tier 2",
+      "Everything in Complete Documentation",
       "Mechanical systems 3D scanning (engine, critical components)",
-      "Modification verification documentation",
       "STC/337 compliance visual verification",
-      "Advanced damage assessment capabilities",
-      "Premium deliverable package",
+      "Specialized technical documentation for regulatory submission",
+      "Detailed comparison reports for post-maintenance analysis",
+      "Premium multi-volume archival sets",
     ],
   },
   {
     number: 4,
-    name: "Executive Documentation Package",
-    subtitle: "For Large Cabin Jets",
+    name: "Executive Documentation",
+    subtitle: "For Large Cabin Jets \u2014 Comprehensive Preservation with White-Glove Delivery",
     aircraft: "G550, Global 6000, Large Cabin Jets",
     description:
-      "Ultra-premium service with a senior two-person technician team, extended on-site presence, and executive-grade deliverables. Designed for large cabin jets where comprehensive documentation directly protects significant investments.",
+      "Executive Documentation represents our complete preservation capability applied to high-value aircraft where documentation quality directly impacts transaction outcomes and insurance positioning. This service tier deploys senior technician teams for multi-day on-site engagements, capturing every aspect of your aircraft with forensic thoroughness. Beyond technical documentation, Executive service includes concierge coordination with maintenance facilities, insurance carriers, and transaction stakeholders.",
     turnaround: "25\u201330 business days",
+    archival: "Hand-crafted museum-grade volumes with custom embossing",
+    bestFor: "Large cabin jet owners, corporate flight departments, pre-sale preparation",
     scope: [
       "Complete records digitization (all logbooks, all maintenance records)",
-      "Full exterior 3D scanning (aircraft + engines)",
-      "Complete interior 3D scanning (all zones, galleys, lavatories, cargo)",
+      "Full exterior and interior 3D scanning",
       "Mechanical systems 3D scanning (APU, landing gear, major components)",
-      "Custom executive presentation deliverable",
+      "Custom executive presentation deliverable for board-level review",
+      "Concierge coordination with maintenance facilities and insurers",
       "Lifetime RecordVault hosting with priority support",
-      "Insurance-grade certification letter",
+      "Hand-crafted museum-grade archival volumes with custom embossing",
     ],
   },
   {
     number: 5,
     name: "Flagship Comprehensive",
-    subtitle: "For Ultra-Premium Jets",
-    aircraft: "G650, Global 7500, BBJ",
+    subtitle: "For Ultra-Premium Jets \u2014 The Definitive Aviation Heritage Archive",
+    aircraft: "G650, Global 7500, BBJ, ACJ",
     description:
-      "The pinnacle of aircraft documentation. Multi-day concierge service for the world\u2019s finest jets, including historical research, ownership transition support, concierge coordination, and in-person executive presentation delivery.",
+      "Flagship Comprehensive is reserved for the world's finest aircraft and the owners who demand documentation that reflects their investment. Multi-week engagements capture not only current condition but historical evolution through archival research and prior ownership coordination. The resulting documentation becomes the definitive record of your aircraft's complete provenance. This service tier includes elements unavailable at any other level: historical documentation research engaging with prior owners and maintenance facilities, custom ownership transition packages, and in-person executive presentation delivery.",
     turnaround: "30\u201340 business days",
+    archival: "Multi-volume sets with hand-tooled leather and gold leaf embossing",
+    bestFor: "Ultra-premium jet owners, legacy preservation, ownership transitions",
     scope: [
-      "Everything in Tier 4",
-      "Multi-day on-site service (aircraft availability flexibility)",
-      "Complete systems documentation (avionics, interior details, custom features)",
+      "Everything in Executive Documentation",
+      "Multi-day on-site service with aircraft availability flexibility",
       "Historical documentation research (prior owners, major events)",
       "Custom ownership transition package",
-      "Concierge coordination with maintenance shops, brokers, insurers",
-      "Executive presentation in-person delivery",
-      "10-year RecordVault platinum hosting",
+      "In-person executive presentation delivery at your chosen location",
+      "Multi-volume archival sets with hand-tooled leather and gold leaf",
+      "10-year RecordVault platinum hosting with dedicated concierge support",
     ],
   },
 ];
@@ -123,8 +132,8 @@ const addOns = [
   {
     name: "Expedited Service",
     description:
-      "Priority scheduling for aviation sales professionals with transaction deadlines. Same quality standards, compressed timeline through dedicated resources.",
-    turnaround: "50\u201367% faster turnaround",
+      "Priority scheduling for aviation sales professionals with transaction deadlines. Quality standards remain identical \u2014 we compress timelines through resource intensity, not by skipping steps.",
+    turnaround: "50\u201367% turnaround reduction",
   },
 ];
 
@@ -133,6 +142,24 @@ const investmentFactors = [
   { icon: MapPin, label: "Number of scan locations" },
   { icon: Clock, label: "Timeline requirements" },
   { icon: FileText, label: "Deliverable specifications" },
+];
+
+const archivalSpecs = [
+  "Archival-grade acid-free paper (100+ year lifespan)",
+  "600 DPI full-color printing",
+  "Smyth-sewn binding (pages never fall out)",
+  "Hardcover with leather or linen finish",
+  "Custom embossing (aircraft registration, owner name)",
+  "Protective slipcase",
+  "Certificate of authenticity",
+];
+
+const archivalPremium = [
+  "Hand-tooled leather with gold leaf embossing",
+  "Custom interior title pages with aircraft photography",
+  "Multi-volume sets for complex documentation",
+  "Climate-controlled archival storage boxes",
+  "Additional copies for stakeholders (insurance, buyer, family)",
 ];
 
 export default function Services() {
@@ -149,8 +176,9 @@ export default function Services() {
               Complete Aircraft Documentation & Preservation
             </h1>
             <p className="text-[#b8b0a4] text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-              From piston aircraft to ultra-premium jets, we offer five tiers of documentation
-              service&mdash;all delivered on-site at your aircraft&rsquo;s location, anywhere in the world.
+              Five tiers of meticulous documentation excellence, each featuring museum-grade archival
+              volumes, drone-based 3D scanning, and lifetime cloud hosting. Delivered on-site at your
+              aircraft's location, anywhere in the world.
             </p>
           </motion.div>
         </div>
@@ -172,7 +200,7 @@ export default function Services() {
                   Tier {tier.number}
                 </span>
                 <h2 className="font-serif text-3xl mt-2">{tier.name}</h2>
-                <p className="text-muted-foreground mt-1">{tier.subtitle}</p>
+                <p className="text-muted-foreground mt-1 italic">{tier.subtitle}</p>
                 <p className="text-muted-foreground mt-4 leading-relaxed">{tier.description}</p>
 
                 <h3 className="font-medium text-sm mt-8 mb-3">Scope of Service</h3>
@@ -190,8 +218,14 @@ export default function Services() {
                 <p className="text-sm font-medium mb-1" data-testid={`text-aircraft-tier-${tier.number}`}>
                   Best for: {tier.aircraft}
                 </p>
-                <p className="text-sm text-muted-foreground mt-3">
+                <p className="text-sm text-muted-foreground mt-2">
                   Turnaround: {tier.turnaround}
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Archival: {tier.archival}
+                </p>
+                <p className="text-xs text-muted-foreground/80 mt-3 italic">
+                  {tier.bestFor}
                 </p>
 
                 <Link href="/contact">
@@ -204,6 +238,87 @@ export default function Services() {
           </div>
         </section>
       ))}
+
+      <section className="py-24" data-testid="section-archival-volumes">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <BookOpen className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Heirloom-Quality Deliverables
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl">
+              Museum-Grade Archival Volumes
+            </h2>
+            <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto leading-relaxed italic">
+              When Digital Meets Timeless
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Digital archives provide operational utility. Physical volumes provide permanence and
+                presence. These are not office supply store print jobs — these are heirloom-quality
+                documents designed to survive generations.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Each volume is custom-bound using archival-grade materials that meet museum preservation
+                standards. Acid-free paper ensures documents will not yellow or degrade over decades.
+                Full-color printing reproduces original logbook entries, inspection stamps, and handwritten
+                notes with perfect fidelity.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                For pre-sale presentations, they demonstrate meticulous ownership. For corporate flight
+                departments, physical reference independent of technology. For family legacy, beautiful
+                artifacts. Some clients commission multiple copies — one operational, one for insurance,
+                one for permanent display.
+              </p>
+              <Card className="p-4 bg-primary/5 border-primary/10">
+                <p className="text-sm text-primary font-medium">
+                  Standard in Tier 4 & 5 service packages. Optional add-on for Tiers 1-3.
+                </p>
+                <p className="text-xs text-muted-foreground mt-2 italic">
+                  These volumes become part of your aircraft's permanent provenance.
+                </p>
+              </Card>
+            </div>
+
+            <div className="space-y-6">
+              <Card className="p-6">
+                <h3 className="font-medium text-sm mb-4 flex items-center gap-2">
+                  <Award className="h-4 w-4 text-primary" />
+                  Standard Specifications
+                </h3>
+                <ul className="space-y-2">
+                  {archivalSpecs.map((spec, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      {spec}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+
+              <Card className="p-6 border-primary/20">
+                <h3 className="font-medium text-sm mb-4 flex items-center gap-2">
+                  <BookOpen className="h-4 w-4 text-primary" />
+                  Premium Options
+                </h3>
+                <ul className="space-y-2">
+                  {archivalPremium.map((option, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       <section className="py-24 bg-card/50">
         <div className="max-w-6xl mx-auto px-6">
@@ -263,7 +378,7 @@ export default function Services() {
 
             <div className="text-center space-y-4">
               <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                You'll receive a detailed, fixed-price proposal after your discovery session &mdash; before any commitment.
+                You will receive a detailed, fixed-price proposal after your discovery session — before any commitment.
               </p>
               <p className="font-medium">
                 Your engagement price is fixed at proposal. No scope creep. No surprise charges.
@@ -278,7 +393,7 @@ export default function Services() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <h2 className="font-serif text-3xl md:text-4xl text-[#faf6f1]">
-              Ready to Preserve Your Aircraft?
+              Ready to Preserve Your Aircraft's Heritage?
             </h2>
             <p className="text-[#b8b0a4] text-lg mt-4">
               Contact us for a detailed proposal tailored to your aircraft and requirements.

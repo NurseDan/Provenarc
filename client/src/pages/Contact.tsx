@@ -194,10 +194,10 @@ function QuoteRequestForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="tier-1">Tier 1 &ndash; Essential Documentation</SelectItem>
+                    <SelectItem value="tier-1">Tier 1 &ndash; Heritage Foundation</SelectItem>
                     <SelectItem value="tier-2">Tier 2 &ndash; Complete Documentation</SelectItem>
                     <SelectItem value="tier-3">Tier 3 &ndash; Premium Comprehensive</SelectItem>
-                    <SelectItem value="tier-4">Tier 4 &ndash; Executive Package</SelectItem>
+                    <SelectItem value="tier-4">Tier 4 &ndash; Executive Documentation</SelectItem>
                     <SelectItem value="tier-5">Tier 5 &ndash; Flagship Comprehensive</SelectItem>
                     <SelectItem value="unsure">Not Sure &ndash; Help Me Choose</SelectItem>
                   </SelectContent>

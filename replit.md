@@ -1,14 +1,33 @@
-# Provenarc Aero Solutions Website
+# Provenarc Group Website
 
 ## Overview
-Premium trust-first luxury B2B marketing website for Provenarc Aero Solutions (a division of Provenarc Group LLC) showcasing global aircraft documentation and 3D scanning services. Follows quiet luxury design principles — no specific pricing displayed, consultation-first CTAs, confidentiality as a premium signal. Includes partner login portals, blog ("Insights") system with admin posting, and role-based dashboards.
+Premium multi-division trust-first luxury B2B marketing website for Provenarc Group LLC, showcasing three divisions: Aero Solutions (aircraft documentation), Marine (vessel documentation), and Autos & Classics (collector vehicle documentation). Styled after private wealth management firms (Patek Philippe, Goldman Sachs private wealth). Quiet luxury design — no pricing displayed, consultation-first CTAs, confidentiality as premium signal. Includes partner login portals, blog ("Insights") system with admin posting, and role-based dashboards.
 
 ## Architecture
 - **Frontend**: React + Vite, Wouter routing, Framer Motion animations, Shadcn/ui components, TanStack Query
 - **Backend**: Express.js API routes for form submissions, authentication, and blog CRUD
 - **Database**: PostgreSQL via Drizzle ORM
 - **Auth**: express-session + connect-pg-simple + bcrypt; session stored in PostgreSQL
-- **Styling**: Tailwind CSS with custom gold-accented aviation aesthetic
+- **Styling**: Tailwind CSS with custom gold-accented luxury aesthetic
+
+## Site Structure
+- `/` — **GroupHome**: Provenarc Group landing page (private wealth style, three division showcase, trust pillars, heritage philosophy)
+- `/aero` — **AeroHome**: Aero Solutions division page (aviation documentation, 5 tiers, drone tech, museum-grade archival)
+- `/marine` — **Marine**: Marine division page (vessel documentation, 5 tiers, hull scanning, VesselVault)
+- `/autos-classics` — **AutosClassics**: Autos & Classics division page (collector vehicles, 5 tiers, concours prep, VaultClassic)
+- `/services` — Aero-focused service tier details with full luxury descriptions, museum-grade archival volumes section
+- `/how-it-works` — The Provenarc Method (5 steps, "Precision Without Rush" philosophy, Advanced Drone Technology, 3D scanning, RecordVault)
+- `/why-provenarc` — Risk stats, The Provenarc Protocol, comparison table, independence, testimonials
+- `/about` — "Three Decades of Aviation Excellence" narrative, three pillars, corporate structure (all divisions Active), partnerships
+- `/partners` — Three partnership models (Referral, White-Label, Co-Branded), expedited service (50%/67%), broker deliverables, ROI metrics
+- `/faq` — 4 categories, 12 questions
+- `/contact` — "Schedule a Discovery Session", consultation form with updated tier dropdown
+- `/insights` — Blog listing
+- `/insights/:slug` — Individual blog post
+- `/admin/blog` — Admin blog management
+- `/privacy` — Privacy policy
+- `/broker/login`, `/mro/login` — Partner login portals
+- `/broker/dashboard`, `/mro/dashboard` — Protected dashboards
 
 ## Design System
 - **Fonts**: IBM Plex Sans (body), Playfair Display (headers), IBM Plex Mono (labels/code)
@@ -16,33 +35,49 @@ Premium trust-first luxury B2B marketing website for Provenarc Aero Solutions (a
 - **Dark sections**: Hardcoded hex (#141210, #1c1916, #1f1b17) for hero/CTA areas
 - **Light sections**: Shadcn semantic tokens (background, foreground, card, muted, etc.)
 - **Dark section outline buttons**: `bg-[#faf6f1]/5 border-[#faf6f1]/15 text-[#faf6f1]`
-- **Layout**: Top navbar only (no sidebar), responsive mobile hamburger menu
+- **Layout**: Top navbar with Divisions dropdown, responsive mobile hamburger menu
 - **Design philosophy**: Quiet luxury — generous whitespace, muted palette, restrained imagery, no aggressive animations
+
+## Navigation
+- **Navbar**: PROVENARC Group logo → Divisions dropdown (Aero Solutions, Marine, Autos & Classics) → Services, How It Works, Why Provenarc, Insights → Company dropdown (About, Partners, FAQ) → Login dropdown → Schedule a Consultation button
+- **Footer**: 5-column layout — Group description, Divisions, Services, Company, Contact CTA
+- **Mobile**: Divisions section at top of mobile menu, then main links, login, consultation button
+
+## Service Tiers (No prices displayed on any page)
+
+### Aero Solutions (RecordVault platform)
+1. Heritage Foundation — Piston aircraft, records digitization, 15 days
+2. Complete Documentation — Turboprop, records + 3D baseline, 20 days
+3. Premium Comprehensive — Light jets, mechanical systems, 25 days
+4. Executive Documentation — Large cabin jets, white-glove, 25-30 days
+5. Flagship Comprehensive — Ultra-premium jets, heritage archive, 30-40 days
+
+### Marine (VesselVault platform)
+1. Essential Vessel Documentation — 25-30 days
+2. Complete Vessel Documentation — 30-35 days
+3. Premium Comprehensive — 35-40 days
+4. Superyacht Executive Documentation — 40-50 days
+5. Flagship Heritage Preservation — Custom timeline
+
+### Autos & Classics (VaultClassic platform)
+1. Essential Vehicle Documentation — 20-25 days
+2. Complete Vehicle Documentation — 25-30 days
+3. Premium Comprehensive — 30-35 days
+4. Concours Executive Documentation — 35-45 days
+5. Heritage Collection Documentation — Custom timeline
+
+## Premium Language Guidelines
+- **Never use**: fast, cheap, easy, simple, affordable, beginner-friendly, rush service
+- **Always use**: thorough, comprehensive, meticulous, exacting, three decades, museum-grade, insurance-grade, forensic accuracy, heirloom quality, heritage preservation, white-glove service
+- **No dollar amounts** on any public-facing page
+- **CTA consistency**: "Schedule a Discovery Session" / "Schedule a Consultation" / "Discuss Your Project"
+- **Reassurance text** beside every CTA: "No commitment required. 30-minute confidential call."
 
 ## Trust Architecture
 - **No specific pricing** on any public page — uses investment framework with cost drivers
-- **CTA hierarchy**: Nav="Schedule a Consultation", Hero="Schedule a Discovery Session", Mid-page="Discuss Your Project", FAQ-end="Ready to protect your records?", Footer="Let's Discuss Your Aircraft"
-- **Reassurance text** beside every CTA: "No commitment required. 30-minute confidential call."
 - **Named methodology**: "The Provenarc Protocol" (NDA-First, On-Site Only, 3:1 Quality Standard, Fixed-Price Guarantee)
 - **Confidentiality positioning**: Discretion framed as premium feature, not marketing gap
-
-## Pages
-- **Home** (`/`): Trust architecture sequence — Hero → Trust Bar → Services Overview → Process → Confidentiality → Fixed-Price Guarantee → CTA
-- **Services** (`/services`): 5 tiers with scope/deliverable checklists (no prices), add-ons, investment framework section
-- **How It Works** (`/how-it-works`): 5-step process (Confidential Consultation first), 3D scanning, RecordVault, fixed-price guarantee
-- **Why Provenarc** (`/why-provenarc`): Risk stats (qualitative), The Provenarc Protocol methodology, comparison table, independence framing, testimonials
-- **About** (`/about`): Etymology, founding story, Our Principles (Precision/Integrity/Discretion/Innovation), corporate structure
-- **Partners** (`/partners`): Broker referral program, MRO revenue share, insurance integration (no dollar amounts)
-- **FAQ** (`/faq`): 4 categories (Fit & Scope, Process & Timeline, Investment & Value, Security & Confidentiality), 12 questions
-- **Contact** (`/contact`): "Schedule a Discovery Session" framing, consultation form (no pricing in dropdowns), confidentiality notice
-- **Insights** (`/insights`): Blog listing page with premium card layout
-- **Insights Post** (`/insights/:slug`): Individual blog post with markdown rendering
-- **Blog Admin** (`/admin/blog`): Admin-protected blog management (create/edit/publish/delete)
-- **Privacy** (`/privacy`): Standard privacy policy
-- **Broker Login** (`/broker/login`): Login form for broker/agent partners
-- **MRO Login** (`/mro/login`): Login form for MRO facility partners
-- **Broker Dashboard** (`/broker/dashboard`): Protected dashboard with referral stats
-- **MRO Dashboard** (`/mro/dashboard`): Protected dashboard with service stats
+- **Trust pillars**: 30+ Years Combined Experience, Museum-Grade Archival Standards, Global White-Glove Service, Proprietary Technology
 
 ## Database Tables
 - `users`: id, username, password, role (broker/mro/admin), companyName, contactName, email, phone
@@ -71,13 +106,6 @@ Premium trust-first luxury B2B marketing website for Provenarc Aero Solutions (a
 - `useAuth` hook in `client/src/hooks/useAuth.ts` for frontend auth state
 - `requireRole` middleware enforces role-based access on API routes
 - Blog admin requires "admin" role
-
-## Service Tiers (No prices displayed)
-1. Essential - Piston/single-engine aircraft, records digitization
-2. Complete - Turboprop, records + exterior/interior 3D
-3. Premium - Light jets, comprehensive documentation + 3D
-4. Executive - Large cabin jets
-5. Flagship - Ultra-premium/widebody aircraft
 
 ## Key Design Patterns
 - `fadeUp` animation pattern used consistently across all pages
