@@ -9,13 +9,8 @@ import {
   Waves, Users, Ship, Compass, Camera,
   BookOpen, CloudCog, CreditCard,
 } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const workflowSteps = [
   {
@@ -150,6 +145,7 @@ export default function MarineProcess() {
       <SEO
         title="Marine Documentation Process | Provenarc Marine"
         description="Ten-step vessel documentation workflow from consultation to delivery. Underwater operations protocol, VesselVault digital platform, and museum-grade archival volumes."
+        canonical="https://provenarc.com/marine/process"
       />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />

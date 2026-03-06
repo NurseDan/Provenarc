@@ -8,13 +8,8 @@ import {
   Globe, Scan, Clock, Lock, Anchor, Waves,
   FileCheck, TrendingUp, Users, Ship,
 } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const risks = [
   { stat: "Thousands", desc: "of packages lost by major carriers annually" },
@@ -143,6 +138,7 @@ export default function MarineWhyUs() {
       <SEO
         title="Why Provenarc Marine | Underwater 3D Scanning & Zero Shipping Risk"
         description="Underwater hull scanning without haul-out, zero shipping risk for irreplaceable documents, and worldwide deployment. Why discerning vessel owners choose Provenarc."
+        canonical="https://provenarc.com/marine/why-us"
       />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />

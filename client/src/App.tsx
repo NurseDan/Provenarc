@@ -31,6 +31,8 @@ import MarineProcess from "@/pages/MarineProcess";
 import MarineServices from "@/pages/MarineServices";
 import MarinePartners from "@/pages/MarinePartners";
 import AeroPartners from "@/pages/AeroPartners";
+import ForgotPassword from "@/pages/ForgotPassword";
+import ResetPassword from "@/pages/ResetPassword";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -60,6 +62,8 @@ function Router() {
       <Route path="/admin/blog" component={BlogAdmin} />
       <Route path="/broker/login" component={BrokerLogin} />
       <Route path="/mro/login" component={MROLogin} />
+      <Route path="/forgot-password" component={ForgotPassword} />
+      <Route path="/reset-password" component={ResetPassword} />
       <Route path="/broker/dashboard" component={BrokerDashboard} />
       <Route path="/mro/dashboard" component={MRODashboard} />
       <Route path="/marine" component={Marine} />

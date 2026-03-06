@@ -10,13 +10,8 @@ import {
   ClipboardCheck, BookMarked, Users, Crown, Star, Handshake,
   Clock, BadgeCheck, Scale, Cpu, Umbrella,
 } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const trustBadges = [
   {
@@ -161,6 +156,7 @@ export default function AeroHome() {
       <SEO
         title="Provenarc Aero Solutions | Aircraft Documentation, 3D Scanning & Archival Preservation"
         description="FAA Part 107 certified drone LiDAR scanning, nondestructive logbook digitization, and museum-grade archival volumes for business jets, turboprops, and helicopters. Bespoke services for heads of state and VVIP aircraft. Fleet programs available. Worldwide."
+        canonical="https://provenarc.com/aero"
       />
       <section className="relative min-h-[90vh] flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />

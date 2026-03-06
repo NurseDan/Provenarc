@@ -4,13 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SEO } from "@/components/SEO";
 import { CheckCircle2, ArrowRight, Anchor, Clock, MapPin, FileText, BookOpen, Award, Ship, Waves, Scan, Camera, FileSearch, Wrench, Zap, Shield, Navigation, Users, Globe, Crown, Star, Diamond, ShieldCheck, Lock, Umbrella } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const tiers = [
   {
@@ -272,6 +267,7 @@ export default function MarineServices() {
       <SEO
         title="Vessel Documentation Services & Tiers | Provenarc Marine"
         description="Five maritime documentation tiers plus underwater 3D scanning, superstructure documentation, document restoration, fleet programs, and bespoke services for megayachts and historic vessels. Fixed-price proposals. Worldwide."
+        canonical="https://provenarc.com/marine/services"
       />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />

@@ -7,13 +7,8 @@ import {
   AlertTriangle, Shield, CheckCircle2, ArrowRight,
   Globe, Scan, Clock, Quote, Lock, MapPin, Timer, BadgeCheck,
 } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const risks = [
   { stat: "Thousands", desc: "of packages lost by major carriers annually" },
@@ -105,6 +100,7 @@ export default function WhyProvenarc() {
       <SEO
         title="Why Provenarc | Risk Mitigation Through Documentation Excellence"
         description="The Provenarc Protocol: NDA-first engagement, on-site only documentation, 3:1 quality standard, and fixed-price guarantee. Independent, insured, and worldwide."
+        canonical="https://provenarc.com/why-provenarc"
       />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />

@@ -7,13 +7,8 @@ import {
   Globe, Shield, Scan, FileCheck, Users, Handshake,
   Building2, ArrowRight, CheckCircle2, BookOpen, Award,
 } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const pillars = [
   {
@@ -81,6 +76,7 @@ export default function About() {
       <SEO
         title="About Provenarc Group | Three Decades of Documentation Excellence"
         description="Learn about Provenarc Group LLC, our heritage, technology, and commitment to museum-grade documentation for the world's most valuable aircraft and vessels."
+        canonical="https://provenarc.com/about"
       />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />

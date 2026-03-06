@@ -13,15 +13,8 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import { Plus, Edit2, Trash2, Eye, EyeOff, ArrowLeft, Save, X } from "lucide-react";
 import type { BlogPost, InsertBlogPost } from "@shared/schema";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" },
-  }),
-};
 
 const categories = ["Industry Insights", "Technical", "Company News", "Case Studies"];
 

@@ -11,13 +11,8 @@ import {
   BarChart3, Wrench, Crown, Sparkles, Handshake,
   Clock, BadgeCheck, Scale, Cpu, Umbrella, Award,
 } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const differentiators = [
   {
@@ -237,6 +232,7 @@ export default function Marine() {
       <SEO
         title="Provenarc Marine | Vessel Documentation, Hull Scanning & Maritime Preservation"
         description="Underwater 3D scanning, comprehensive hull documentation, and nondestructive maritime record preservation for yachts, superyachts, and megayachts. Bespoke services for sovereign fleets and royal vessels. Fleet programs. Worldwide deployment to any port."
+        canonical="https://provenarc.com/marine"
       />
       <section className="relative min-h-[90vh] flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />
