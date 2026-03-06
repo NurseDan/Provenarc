@@ -5,15 +5,8 @@ import { Card } from "@/components/ui/card";
 import { SEO } from "@/components/SEO";
 import { Calendar, User, ArrowRight, BookOpen } from "lucide-react";
 import type { BlogPost } from "@shared/schema";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" },
-  }),
-};
 
 const categoryColors: Record<string, string> = {
   "Industry Insights": "bg-blue-900/30 text-blue-300",
@@ -32,6 +25,7 @@ export default function Blog() {
       <SEO
         title="Insights & Research | Provenarc Group"
         description="Research articles and industry insights on LiDAR 3D scanning, document preservation, insurance documentation, fleet management, and asset risk mitigation."
+        canonical="https://provenarc.com/insights"
       />
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto text-center">

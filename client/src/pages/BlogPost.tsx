@@ -6,15 +6,8 @@ import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
 import type { BlogPost as BlogPostType } from "@shared/schema";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" },
-  }),
-};
 
 export default function BlogPost() {
   const [, params] = useRoute("/insights/:slug");

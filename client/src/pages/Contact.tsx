@@ -32,13 +32,8 @@ import {
 } from "@/components/ui/select";
 import { Phone, MapPin, Clock, Send, Calendar, Shield, Crown, Zap, Users, ShieldCheck } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const inquiryTypeLabels: Record<string, { label: string; icon: typeof Crown; description: string }> = {
   bespoke: { label: "Bespoke Services Inquiry", icon: Crown, description: "Our team will arrange a private consultation to discuss your unique requirements." },
@@ -546,6 +541,7 @@ export default function Contact() {
       <SEO
         title="Schedule a Consultation | Provenarc Group"
         description="Schedule a confidential discovery session with Provenarc Group. Aircraft documentation, vessel preservation, fleet programs, bespoke services, and insurance baseline inquiries. Worldwide deployment."
+        canonical="https://provenarc.com/contact"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ContactPage",

@@ -1,19 +1,47 @@
 import { useEffect } from "react";
 import { useLocation, Link } from "wouter";
 import { motion } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/hooks/useAuth";
+import { fadeUp, stagger } from "@/lib/animations";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Wrench, DollarSign, Calendar, Clock,
   BarChart3, Plane, LogOut, ArrowRight,
 } from "lucide-react";
+import { apiRequest } from "@/lib/queryClient";
+import { format } from "date-fns";
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+interface MROStats {
+  scheduledServices: number;
+  completedServices: number;
+  activePartnership: boolean;
+  revenueShare: string;
+  totalRevenue: string;
+}
+
+interface Service {
+  id: string;
+  name: string;
+  company: string | null;
+  division: string | null;
+  serviceTier: string | null;
+  status: string;
+  createdAt: string;
+}
+
+interface DashboardData {
+  user: { id: string; username: string; role: string; companyName: string | null; contactName: string | null; email: string | null };
+  stats: MROStats;
+  recentServices: Service[];
+}
+
+const statusColors: Record<string, string> = {
+  new: "bg-amber-100 text-amber-800",
+  active: "bg-blue-100 text-blue-800",
+  completed: "bg-emerald-100 text-emerald-800",
 };
 
 export default function MRODashboard() {
@@ -21,13 +49,16 @@ export default function MRODashboard() {
   const [, setLocation] = useLocation();
 
   useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
-      setLocation("/mro/login");
-    }
-    if (!isLoading && isAuthenticated && user?.role !== "mro") {
-      setLocation("/");
-    }
+    if (!isLoading && !isAuthenticated) setLocation("/mro/login");
+    if (!isLoading && isAuthenticated && user?.role !== "mro") setLocation("/");
   }, [isLoading, isAuthenticated, user, setLocation]);
+
+  const { data: dashboard, isLoading: dashLoading } = useQuery<DashboardData>({
+    queryKey: ["/api/mro/dashboard"],
+    queryFn: () => apiRequest("GET", "/api/mro/dashboard").then((r) => r.json()),
+    enabled: !!isAuthenticated && user?.role === "mro",
+    staleTime: 30 * 1000,
+  });
 
   if (isLoading) {
     return (
@@ -46,6 +77,9 @@ export default function MRODashboard() {
     await logout();
     setLocation("/mro/login");
   };
+
+  const stats = dashboard?.stats;
+  const services = dashboard?.recentServices ?? [];
 
   return (
     <div>
@@ -82,44 +116,67 @@ export default function MRODashboard() {
           <motion.div {...fadeUp}>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {[
-                { icon: Plane, label: "Active Services", value: "0", color: "text-primary" },
-                { icon: Calendar, label: "Scheduled Visits", value: "0", color: "text-blue-500" },
-                { icon: Clock, label: "Completed This Year", value: "0", color: "text-emerald-500" },
-                { icon: DollarSign, label: "Revenue Share YTD", value: "$0", color: "text-primary" },
+                { icon: Plane, label: "Active Services", value: dashLoading ? "—" : String(stats?.scheduledServices ?? 0), color: "text-primary" },
+                { icon: Calendar, label: "Scheduled Visits", value: dashLoading ? "—" : String(stats?.scheduledServices ?? 0), color: "text-blue-500" },
+                { icon: Clock, label: "Completed This Year", value: dashLoading ? "—" : String(stats?.completedServices ?? 0), color: "text-emerald-500" },
+                { icon: DollarSign, label: "Revenue Share YTD", value: stats?.totalRevenue ?? "$0", color: "text-primary" },
               ].map((stat, i) => (
-                <Card key={i} className="p-6" data-testid={`card-mro-stat-${i}`}>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                      <stat.icon className={`h-5 w-5 ${stat.color}`} />
+                <motion.div key={i} {...stagger(i)}>
+                  <Card className="p-6" data-testid={`card-mro-stat-${i}`}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
+                        <stat.icon className={`h-5 w-5 ${stat.color}`} />
+                      </div>
+                      <span className="text-xs text-muted-foreground uppercase tracking-wider">
+                        {stat.label}
+                      </span>
                     </div>
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider">
-                      {stat.label}
-                    </span>
-                  </div>
-                  <p className="font-mono text-2xl font-bold">{stat.value}</p>
-                </Card>
+                    <p className="font-mono text-2xl font-bold">{stat.value}</p>
+                  </Card>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
-          <motion.div {...fadeUp} transition={{ delay: 0.1 }}>
+          <motion.div {...fadeUp} transition={{ delay: 0.15 }}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <Card className="p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <Calendar className="h-5 w-5 text-primary" />
                   <h2 className="font-medium">Upcoming Scheduled Services</h2>
                 </div>
-                <div className="py-12 text-center">
-                  <p className="text-muted-foreground text-sm mb-4">
-                    No services currently scheduled at your facility. Refer a client to schedule
-                    documentation during their next maintenance event.
-                  </p>
-                  <Link href="/contact">
-                    <Button variant="outline" data-testid="button-mro-schedule">
-                      Schedule Service <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
+                {services.length === 0 ? (
+                  <div className="py-12 text-center">
+                    <p className="text-muted-foreground text-sm mb-4">
+                      No services currently scheduled at your facility. Refer a client to schedule
+                      documentation during their next maintenance event.
+                    </p>
+                    <Link href="/contact">
+                      <Button variant="outline" data-testid="button-mro-schedule">
+                        Schedule Service <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="divide-y">
+                    {services.map((s) => (
+                      <div key={s.id} className="py-3 flex items-start justify-between gap-2">
+                        <div>
+                          <p className="text-sm font-medium">{s.name}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {s.company ?? "—"} · {s.division ?? "—"}
+                          </p>
+                          <p className="text-xs text-muted-foreground mt-0.5">
+                            {format(new Date(s.createdAt), "MMM d, yyyy")}
+                          </p>
+                        </div>
+                        <Badge className={`text-xs shrink-0 ${statusColors[s.status] ?? ""}`}>
+                          {s.status}
+                        </Badge>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </Card>
 
               <Card className="p-6">
@@ -138,18 +195,18 @@ export default function MRODashboard() {
                   </div>
                   <div className="flex items-center justify-between gap-1 text-sm">
                     <span className="text-muted-foreground">Year to Date</span>
-                    <span className="font-mono font-medium">$0</span>
+                    <span className="font-mono font-medium">{stats?.totalRevenue ?? "$0"}</span>
                   </div>
                   <div className="flex items-center justify-between gap-1 text-sm">
                     <span className="text-muted-foreground">Lifetime Revenue</span>
-                    <span className="font-mono font-medium">$0</span>
+                    <span className="font-mono font-medium">{stats?.revenueShare ?? "$0"}</span>
                   </div>
                 </div>
               </Card>
             </div>
           </motion.div>
 
-          <motion.div {...fadeUp} transition={{ delay: 0.2 }} className="mt-8">
+          <motion.div {...fadeUp} transition={{ delay: 0.25 }} className="mt-8">
             <Card className="p-6 bg-primary/5 border-primary/10">
               <div className="flex items-center gap-2 mb-2">
                 <Wrench className="h-5 w-5 text-primary" />

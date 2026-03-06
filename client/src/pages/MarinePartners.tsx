@@ -8,13 +8,8 @@ import {
   Users, Briefcase, TrendingUp, Award, Lock, Clock,
   Globe, Anchor, Ship, Building2, FileCheck,
 } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const partnershipModels = [
   {
@@ -147,6 +142,7 @@ export default function MarinePartners() {
       <SEO
         title="Maritime Partnership Programs | Provenarc Marine"
         description="Yacht broker, management company, and marine insurance partnership programs. Referral, white-label, and co-branded models. Fleet partner programs for multi-vessel operators. Worldwide."
+        canonical="https://provenarc.com/marine/partners"
       />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />

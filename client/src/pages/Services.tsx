@@ -4,13 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SEO } from "@/components/SEO";
 import { CheckCircle2, ArrowRight, Plane, Clock, MapPin, FileText, BookOpen, Award, Zap, Shield, BarChart3, Truck, Users, Crown, Globe, Star, Sparkles, Scan, Radio, Wrench, ShieldCheck, Lock, Umbrella } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const tiers = [
   {
@@ -228,6 +223,7 @@ export default function Services() {
       <SEO
         title="Aircraft Documentation Services & Tiers | Provenarc Aero Solutions"
         description="Five documentation tiers from Heritage Foundation to Flagship Comprehensive. Drone LiDAR scanning, nondestructive document scanning, document restoration, fleet programs, and bespoke services. Fixed-price proposals. Worldwide."
+        canonical="https://provenarc.com/services"
       />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />

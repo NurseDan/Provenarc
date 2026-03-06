@@ -9,13 +9,8 @@ import {
   TrendingUp, Award, Lock, Clock, FileCheck,
   Camera, Package,
 } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const partnershipModels = [
   {
@@ -110,6 +105,7 @@ export default function Partners() {
       <SEO
         title="Partnership Programs | Provenarc Group"
         description="Broker, MRO, and insurance carrier partnership models with competitive referral fees, white-label options, and co-branded premium packages."
+        canonical="https://provenarc.com/partners"
       />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />

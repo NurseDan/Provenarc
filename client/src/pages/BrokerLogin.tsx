@@ -18,13 +18,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Shield, Lock, Briefcase } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const loginSchema = z.object({
   username: z.string().min(1, "Username is required"),
@@ -48,10 +43,13 @@ export default function BrokerLogin() {
       await login(data);
       toast({ title: "Welcome back", description: "You've been logged in successfully." });
       setLocation("/broker/dashboard");
-    } catch {
+    } catch (err: any) {
+      const is429 = err?.status === 429 || err?.message?.includes("429");
       toast({
-        title: "Login failed",
-        description: "Invalid credentials. Please try again or contact your account manager.",
+        title: is429 ? "Too many attempts" : "Login failed",
+        description: is429
+          ? "Access temporarily locked. Please wait 15 minutes before trying again."
+          : "Invalid credentials. Please try again or contact your account manager.",
         variant: "destructive",
       });
     }
@@ -139,7 +137,13 @@ export default function BrokerLogin() {
                 </form>
               </Form>
 
-              <div className="mt-6 pt-5 border-t border-[#2e2a25]">
+              <div className="mt-4 text-center">
+                <a href="/forgot-password" className="text-xs text-[#6a6259] hover:text-[#c9a96e] transition-colors underline underline-offset-2">
+                  Forgot your password?
+                </a>
+              </div>
+
+              <div className="mt-5 pt-5 border-t border-[#2e2a25]">
                 <div className="flex items-start gap-3">
                   <Shield className="h-4 w-4 text-[#c9a96e] mt-0.5 flex-shrink-0" />
                   <p className="text-xs text-[#6a6259] leading-relaxed">

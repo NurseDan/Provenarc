@@ -1,12 +1,7 @@
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 export default function Privacy() {
   return (
@@ -14,6 +9,7 @@ export default function Privacy() {
       <SEO
         title="Privacy Policy | Provenarc Group"
         description="Provenarc Group LLC privacy policy covering data collection, usage, and protection practices."
+        canonical="https://provenarc.com/privacy"
         noindex={true}
       />
       <section className="relative py-24">

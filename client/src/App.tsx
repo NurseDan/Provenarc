@@ -4,6 +4,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import GroupHome from "@/pages/GroupHome";
@@ -16,6 +17,7 @@ import Partners from "@/pages/Partners";
 import FAQ from "@/pages/FAQ";
 import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import BlogAdmin from "@/pages/BlogAdmin";
@@ -29,6 +31,8 @@ import MarineProcess from "@/pages/MarineProcess";
 import MarineServices from "@/pages/MarineServices";
 import MarinePartners from "@/pages/MarinePartners";
 import AeroPartners from "@/pages/AeroPartners";
+import ForgotPassword from "@/pages/ForgotPassword";
+import ResetPassword from "@/pages/ResetPassword";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -52,11 +56,14 @@ function Router() {
       <Route path="/faq" component={FAQ} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
       <Route path="/insights" component={Blog} />
       <Route path="/insights/:slug" component={BlogPost} />
       <Route path="/admin/blog" component={BlogAdmin} />
       <Route path="/broker/login" component={BrokerLogin} />
       <Route path="/mro/login" component={MROLogin} />
+      <Route path="/forgot-password" component={ForgotPassword} />
+      <Route path="/reset-password" component={ResetPassword} />
       <Route path="/broker/dashboard" component={BrokerDashboard} />
       <Route path="/mro/dashboard" component={MRODashboard} />
       <Route path="/marine" component={Marine} />
@@ -78,13 +85,15 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <ScrollToTop />
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-1">
-            <Router />
-          </main>
-          <Footer />
-        </div>
+        <ErrorBoundary>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-1">
+              <Router />
+            </main>
+            <Footer />
+          </div>
+        </ErrorBoundary>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

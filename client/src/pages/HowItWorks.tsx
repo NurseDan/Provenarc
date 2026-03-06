@@ -9,13 +9,8 @@ import {
   Database, Lock, Search, Cloud, Download,
   Clock, Camera, Compass, Target,
 } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const steps = [
   {
@@ -233,6 +228,7 @@ export default function HowItWorks() {
       <SEO
         title="The Provenarc Method | How Aircraft Documentation Works"
         description="Five-step documentation process from discovery session to final delivery. Drone LiDAR scanning, nondestructive document digitization, and museum-grade archival production."
+        canonical="https://provenarc.com/how-it-works"
       />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />

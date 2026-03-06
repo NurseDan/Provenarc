@@ -7,13 +7,8 @@ import {
   Plane, Anchor, ArrowRight, Award,
   Globe, BookOpen, Cpu, Shield,
 } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const divisions = [
   {
@@ -69,6 +64,7 @@ export default function GroupHome() {
       <SEO
         title="Provenarc Group | Premium Aircraft & Vessel Documentation Worldwide"
         description="Provenarc Group LLC provides world-class aircraft and vessel documentation services. Drone LiDAR 3D scanning, nondestructive document preservation, and museum-grade archival volumes. Trusted by royals, heads of state, and the global elite. Worldwide deployment."
+        canonical="https://provenarc.com"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Organization",

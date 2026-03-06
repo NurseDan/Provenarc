@@ -9,13 +9,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ArrowRight } from "lucide-react";
+import { fadeUp } from '@/lib/animations';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
 
 const faqCategories = [
   {
@@ -109,6 +104,7 @@ export default function FAQ() {
       <SEO
         title="Frequently Asked Questions | Provenarc Group"
         description="Answers to common questions about aircraft and vessel documentation services, pricing, timelines, technology, and the engagement process."
+        canonical="https://provenarc.com/faq"
         jsonLd={faqJsonLd}
       />
       <section className="relative py-24">

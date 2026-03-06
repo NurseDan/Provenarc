@@ -79,6 +79,7 @@ export function Footer() {
                 { label: "Broker Portal", href: "/broker/login" },
                 { label: "MRO Portal", href: "/mro/login" },
                 { label: "Privacy Policy", href: "/privacy" },
+                { label: "Terms of Service", href: "/terms" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.href}>
@@ -127,6 +128,11 @@ export function Footer() {
             <Link href="/privacy">
               <span className="text-xs text-[#6a6259] cursor-pointer transition-colors">
                 Privacy Policy
+              </span>
+            </Link>
+            <Link href="/terms">
+              <span className="text-xs text-[#6a6259] cursor-pointer transition-colors">
+                Terms of Service
               </span>
             </Link>
             <p className="text-xs text-[#6a6259]">
