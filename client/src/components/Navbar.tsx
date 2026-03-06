@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ChevronDown, Lock, Plane, Anchor, Car } from "lucide-react";
+import { Menu, X, ChevronDown, Lock, Plane, Anchor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -12,7 +12,6 @@ import {
 const divisionLinks = [
   { label: "Aero Solutions", href: "/aero", icon: Plane },
   { label: "Marine", href: "/marine", icon: Anchor },
-  { label: "Autos & Classics", href: "/autos-classics", icon: Car },
 ];
 
 const mainLinks = [
@@ -62,7 +61,7 @@ export function Navbar() {
             <DropdownMenuTrigger asChild>
               <button
                 className={`text-sm tracking-wide transition-colors flex items-center gap-1 ${
-                  ["/aero", "/marine", "/autos-classics"].includes(location)
+                  ["/aero", "/marine"].includes(location)
                     ? "text-foreground font-medium"
                     : "text-muted-foreground"
                 }`}

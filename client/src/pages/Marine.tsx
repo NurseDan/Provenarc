@@ -299,7 +299,7 @@ export default function Marine() {
                 Schedule a Vessel Consultation
               </Button>
             </Link>
-            <Link href="/how-it-works">
+            <Link href="/marine/process">
               <Button
                 size="lg"
                 variant="outline"
@@ -753,6 +753,41 @@ export default function Marine() {
               specifics — ever. This is not a gap in our marketing. It is a commitment our clients
               require and a standard we uphold for every engagement.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16" data-testid="section-marine-explore">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-10">
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Explore Further
+            </p>
+            <h2 className="font-serif text-2xl md:text-3xl">Learn More About Provenarc Marine</h2>
+          </motion.div>
+          <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <Link href="/marine/why-us">
+              <Card className="p-6 cursor-pointer transition-all hover:shadow-md" data-testid="link-marine-why-us">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="font-serif text-lg mb-1">Why Provenarc Marine</h3>
+                    <p className="text-sm text-muted-foreground">What sets us apart — underwater scanning, zero shipping risk, and more.</p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-primary flex-shrink-0 ml-4" />
+                </div>
+              </Card>
+            </Link>
+            <Link href="/marine/process">
+              <Card className="p-6 cursor-pointer transition-all hover:shadow-md" data-testid="link-marine-process">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="font-serif text-lg mb-1">Our Process</h3>
+                    <p className="text-sm text-muted-foreground">Ten-step workflow from consultation to delivery, including underwater protocol.</p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-primary flex-shrink-0 ml-4" />
+                </div>
+              </Card>
+            </Link>
           </motion.div>
         </div>
       </section>

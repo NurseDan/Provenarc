@@ -174,7 +174,7 @@ export default function About() {
               {
                 name: "Daniel Wiglesworth",
                 role: "Co-Managing Member",
-                bio: "Strategic operations leadership with experience in premium service delivery, technology integration, and building scalable concierge-model businesses for high-value clients. Drives the company's expansion into marine and collector vehicle documentation.",
+                bio: "Strategic operations leadership with experience in premium service delivery, technology integration, and building scalable concierge-model businesses for high-value clients. Drives the company's expansion into marine documentation.",
               },
             ].map((member, i) => (
               <Card key={i} className="p-6" data-testid={`card-team-${i}`}>
@@ -282,7 +282,7 @@ export default function About() {
             </p>
             <h2 className="font-serif text-3xl md:text-4xl">Provenarc Group LLC</h2>
             <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-              A Texas Limited Liability Company with three operating divisions serving distinct
+              A Texas Limited Liability Company with two operating divisions serving distinct
               high-value asset markets worldwide.
             </p>
           </motion.div>
@@ -294,7 +294,6 @@ export default function About() {
                 {[
                   { name: "Provenarc Aero Solutions", status: "Active", desc: "Aviation Documentation & Preservation", href: "/aero" },
                   { name: "Provenarc Marine", status: "Active", desc: "Maritime Vessel Documentation", href: "/marine" },
-                  { name: "Provenarc Autos & Classics", status: "Active", desc: "Collector Vehicle Provenance", href: "/autos-classics" },
                 ].map((sub, i) => (
                   <Link key={i} href={sub.href}>
                     <div
@@ -373,7 +372,7 @@ export default function About() {
               Let's Discuss How We Can Help
             </h2>
             <p className="text-[#b8b0a4] text-lg mt-4">
-              Whether you own an aircraft, a vessel, or a collector vehicle — we would be honored to
+              Whether you own an aircraft or a vessel — we would be honored to
               discuss your documentation requirements.
             </p>
             <Link href="/contact">

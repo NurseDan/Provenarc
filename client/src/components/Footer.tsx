@@ -15,8 +15,8 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed mb-4">
-              Premier documentation and preservation services for aircraft, vessels, and collector
-              vehicles worldwide. Museum-grade archival standards. White-glove global service. Your
+              Premier documentation and preservation services for aircraft and vessels
+              worldwide. Museum-grade archival standards. White-glove global service. Your
               originals never leave your property.
             </p>
             <p className="text-xs text-[#6a6259]">Provenarc Group LLC — Texas, United States</p>
@@ -34,7 +34,6 @@ export function Footer() {
               {[
                 { label: "Aero Solutions", href: "/aero" },
                 { label: "Marine", href: "/marine" },
-                { label: "Autos & Classics", href: "/autos-classics" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.href}>
@@ -130,7 +129,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-xs text-[#6a6259]">
-              Aero Solutions &middot; Marine &middot; Autos &amp; Classics
+              Aero Solutions &middot; Marine
             </p>
           </div>
         </div>

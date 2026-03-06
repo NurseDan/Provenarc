@@ -24,7 +24,8 @@ import MROLogin from "@/pages/MROLogin";
 import BrokerDashboard from "@/pages/BrokerDashboard";
 import MRODashboard from "@/pages/MRODashboard";
 import Marine from "@/pages/Marine";
-import AutosClassics from "@/pages/AutosClassics";
+import MarineWhyUs from "@/pages/MarineWhyUs";
+import MarineProcess from "@/pages/MarineProcess";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -56,7 +57,8 @@ function Router() {
       <Route path="/broker/dashboard" component={BrokerDashboard} />
       <Route path="/mro/dashboard" component={MRODashboard} />
       <Route path="/marine" component={Marine} />
-      <Route path="/autos-classics" component={AutosClassics} />
+      <Route path="/marine/why-us" component={MarineWhyUs} />
+      <Route path="/marine/process" component={MarineProcess} />
       <Route component={NotFound} />
     </Switch>
   );

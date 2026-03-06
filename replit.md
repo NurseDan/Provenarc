@@ -1,7 +1,7 @@
 # Provenarc Group Website
 
 ## Overview
-Premium multi-division trust-first luxury B2B marketing website for Provenarc Group LLC, showcasing three divisions: Aero Solutions (aircraft documentation), Marine (vessel documentation), and Autos & Classics (collector vehicle documentation). Styled after private wealth management firms (Patek Philippe, Goldman Sachs private wealth). Quiet luxury design — no pricing displayed, consultation-first CTAs, confidentiality as premium signal. Includes partner login portals, blog ("Insights") system with admin posting, and role-based dashboards.
+Premium multi-division trust-first luxury B2B marketing website for Provenarc Group LLC, showcasing two divisions: Aero Solutions (aircraft documentation) and Marine (vessel documentation). Styled after private wealth management firms (Patek Philippe, Goldman Sachs private wealth). Quiet luxury design — no pricing displayed, consultation-first CTAs, confidentiality as premium signal. Includes partner login portals, blog ("Insights") system with admin posting, and role-based dashboards.
 
 ## Architecture
 - **Frontend**: React + Vite, Wouter routing, Framer Motion animations, Shadcn/ui components, TanStack Query
@@ -11,14 +11,15 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 - **Styling**: Tailwind CSS with custom gold-accented luxury aesthetic
 
 ## Site Structure
-- `/` — **GroupHome**: Provenarc Group landing page (private wealth style, three division showcase, trust pillars, heritage philosophy)
+- `/` — **GroupHome**: Provenarc Group landing page (private wealth style, two division showcase, trust pillars, heritage philosophy)
 - `/aero` — **AeroHome**: Aero Solutions division page (aviation documentation, 5 tiers, drone tech, museum-grade archival)
 - `/marine` — **Marine**: Marine division page (vessel documentation, 5 tiers, hull scanning, VesselVault)
-- `/autos-classics` — **AutosClassics**: Autos & Classics division page (collector vehicles, 5 tiers, concours prep, VaultClassic)
+- `/marine/why-us` — **MarineWhyUs**: Why Provenarc Marine (underwater 3D scanning, zero shipping risk, comparison table, who trusts us)
+- `/marine/process` — **MarineProcess**: Marine process (10-step workflow, service tiers, expedited service, underwater operations protocol)
 - `/services` — Aero-focused service tier details with full luxury descriptions, museum-grade archival volumes section
 - `/how-it-works` — The Provenarc Method (5 steps, "Precision Without Rush" philosophy, Advanced Drone Technology, 3D scanning, RecordVault)
 - `/why-provenarc` — Risk stats, The Provenarc Protocol, comparison table, independence, testimonials
-- `/about` — "Three Decades of Aviation Excellence" narrative, three pillars, corporate structure (all divisions Active), partnerships
+- `/about` — "Three Decades of Aviation Excellence" narrative, three pillars, corporate structure (two divisions Active), partnerships
 - `/partners` — Three partnership models (Referral, White-Label, Co-Branded), expedited service (50%/67%), broker deliverables, ROI metrics
 - `/faq` — 4 categories, 12 questions
 - `/contact` — "Schedule a Discovery Session", consultation form with updated tier dropdown
@@ -39,7 +40,7 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 - **Design philosophy**: Quiet luxury — generous whitespace, muted palette, restrained imagery, no aggressive animations
 
 ## Navigation
-- **Navbar**: PROVENARC Group logo → Divisions dropdown (Aero Solutions, Marine, Autos & Classics) → Services, How It Works, Why Provenarc, Insights → Company dropdown (About, Partners, FAQ) → Login dropdown → Schedule a Consultation button
+- **Navbar**: PROVENARC Group logo → Divisions dropdown (Aero Solutions, Marine) → Services, How It Works, Why Provenarc, Insights → Company dropdown (About, Partners, FAQ) → Login dropdown → Schedule a Consultation button
 - **Footer**: 5-column layout — Group description, Divisions, Services, Company, Contact CTA
 - **Mobile**: Divisions section at top of mobile menu, then main links, login, consultation button
 
@@ -58,13 +59,6 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 3. Premium Comprehensive — 35-40 days
 4. Superyacht Executive Documentation — 40-50 days
 5. Flagship Heritage Preservation — Custom timeline
-
-### Autos & Classics (VaultClassic platform)
-1. Essential Vehicle Documentation — 20-25 days
-2. Complete Vehicle Documentation — 25-30 days
-3. Premium Comprehensive — 30-35 days
-4. Concours Executive Documentation — 35-45 days
-5. Heritage Collection Documentation — Custom timeline
 
 ## Premium Language Guidelines
 - **Never use**: fast, cheap, easy, simple, affordable, beginner-friendly, rush service
@@ -113,3 +107,4 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 - Fixed-price guarantee: "Your engagement price is fixed at proposal. No scope creep."
 - Office hours: Mon-Fri 8AM-6PM CST
 - All data-testid attributes on interactive and display elements
+- Division sub-pages: `/marine/why-us` and `/marine/process` provide deeper content for the Marine division

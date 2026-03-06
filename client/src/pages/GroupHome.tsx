@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
-  Plane, Anchor, Car, ArrowRight, Award,
+  Plane, Anchor, ArrowRight, Award,
   Globe, BookOpen, Cpu, Shield,
 } from "lucide-react";
 
@@ -33,15 +33,6 @@ const divisions = [
     href: "/marine",
     platform: "VesselVault",
   },
-  {
-    icon: Car,
-    name: "Autos & Classics",
-    tagline: "Where Automotive Heritage Meets Museum-Grade Preservation",
-    description:
-      "Collector vehicle documentation combining automotive expertise, drone-based exterior and chassis scanning, and museum-grade archival volumes. From pre-war classics to modern supercars, concours preparation to racing heritage authentication.",
-    href: "/autos-classics",
-    platform: "VaultClassic",
-  },
 ];
 
 const trustPillars = [
@@ -49,7 +40,7 @@ const trustPillars = [
     icon: Award,
     title: "Three Decades of Combined Expertise",
     description:
-      "Our founders bring more than thirty years of experience across aviation maintenance, marine surveying, automotive restoration, and documentation compliance.",
+      "Our founders bring more than thirty years of experience across aviation maintenance, marine surveying, and documentation compliance.",
   },
   {
     icon: BookOpen,
@@ -61,7 +52,7 @@ const trustPillars = [
     icon: Globe,
     title: "Global White-Glove Service",
     description:
-      "We travel to your asset — any hangar, any marina, any collection facility on five continents. Your original documents never leave your custody.",
+      "We travel to your asset — any hangar, any marina on five continents. Your original documents never leave your custody.",
   },
   {
     icon: Cpu,
@@ -275,7 +266,7 @@ export default function GroupHome() {
               Permanent Preservation at Museum Standards
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Every aircraft, every vessel, every collector vehicle represents decades of engineering
+              Every aircraft and every vessel represents decades of engineering
               excellence, careful stewardship, and personal investment. At Provenarc Group, we believe
               the documentation of these extraordinary assets should reflect the same precision and
               permanence as the assets themselves.
@@ -334,7 +325,7 @@ export default function GroupHome() {
               Begin Your Documentation Journey
             </h2>
             <p className="text-[#b8b0a4] text-lg mt-6 max-w-xl mx-auto leading-relaxed">
-              Whether you own an aircraft, a vessel, or a collector vehicle, every engagement begins
+              Whether you own an aircraft or a vessel, every engagement begins
               with a confidential discovery session.
             </p>
             <div className="mt-10">
