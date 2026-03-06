@@ -3,6 +3,15 @@ import { pgTable, text, varchar, timestamp, boolean } from "drizzle-orm/pg-core"
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
+export const passwordResetTokens = pgTable("password_reset_tokens", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  userId: varchar("user_id").notNull(),
+  token: text("token").notNull().unique(),
+  expiresAt: timestamp("expires_at").notNull(),
+  usedAt: timestamp("used_at"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 export const users = pgTable("users", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   username: text("username").notNull().unique(),
@@ -26,6 +35,8 @@ export const quoteRequests = pgTable("quote_requests", {
   location: text("location"),
   timeline: text("timeline"),
   message: text("message"),
+  submittedBy: varchar("submitted_by"),
+  status: text("status").notNull().default("new"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
@@ -85,6 +96,8 @@ export const insertBlogPostSchema = createInsertSchema(blogPosts).omit({
   createdAt: true,
   updatedAt: true,
 });
+
+export type PasswordResetToken = typeof passwordResetTokens.$inferSelect;
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
