@@ -1,0 +1,136 @@
+# Provenarc Group LLC - Official Branding Standards
+
+**Effective Date:** March 4, 2026  
+**Authority:** Co-Managing Members  
+**Distribution:** All internal documents, marketing materials, legal filings
+
+-----
+
+## Official Entity Names (ALWAYS USE THESE)
+
+### Parent Company
+
+**Legal Name:** Provenarc Group LLC  
+**Jurisdiction:** Texas  
+**Entity Type:** Member-Managed Limited Liability Company
+
+### Operating Subsidiaries
+
+1. **Provenarc Aero Solutions**
+- Industry: Aviation records digitization
+- Launch: June 1, 2026
+- The subsidiary name IS the brand name
+1. **Provenarc Marine** (Future)
+- Industry: Marine vessel documentation
+- Target Launch: TBD
+- The subsidiary name IS the brand name
+
+-----
+
+## DEPRECATED NAMES (NEVER USE)
+
+❌ **Ironclad Records LLC** → Use: Provenarc Group LLC  
+❌ **Ironclad Records** → Use: Provenarc Aero Solutions  
+❌ **Aero Records** → Use: Provenarc Aero Solutions  
+❌ **Cert2FLY** → Use: Provenarc Aero Solutions  
+❌ **Cert2SAIL** → Use: Provenarc Marine  
+❌ **Cert2DRIVE** → Discontinued (auto division no longer part of Provenarc Group)  
+❌ “marine division” → Use: Provenarc Marine  
+❌ “collector car division” → Discontinued  
+❌ “automotive division” → Discontinued
+
+-----
+
+## Usage Guidelines
+
+### In Legal Documents
+
+Always use full legal names:
+
+- “Provenarc Group LLC” (parent company)
+- “Provenarc Aero Solutions” (aviation subsidiary)
+- “Provenarc Marine” (marine subsidiary)
+
+### In Marketing Materials
+
+The subsidiary names ARE the brands. Use them directly:
+
+- “Provenarc Aero Solutions provides professional aircraft records digitization…”
+- “Provenarc Marine offers comprehensive vessel documentation…”
+
+### In Customer Communications
+
+Use the appropriate subsidiary name based on the service:
+
+- Aviation clients → Provenarc Aero Solutions
+- Marine clients → Provenarc Marine
+
+### In Internal Communications
+
+- Refer to the parent company as “Provenarc Group” or “the Company”
+- Refer to subsidiaries by their full names or shortened versions:
+  - “Aero Solutions” (internal shorthand acceptable)
+  - “Marine” (internal shorthand acceptable)
+
+-----
+
+## Corporate Signature Blocks
+
+### For Parent Company Matters
+
+```
+PROVENARC GROUP LLC
+A Texas Limited Liability Company
+
+By: _________________________
+    [Name], Co-Managing Member
+```
+
+### For Subsidiary Operations
+
+```
+PROVENARC AERO SOLUTIONS
+A Division of Provenarc Group LLC
+
+By: _________________________
+    [Name], Authorized Representative
+```
+
+-----
+
+## Trademark Strategy
+
+### Filed/Pending
+
+- [ ] Provenarc Group LLC (parent company name)
+- [ ] Provenarc Aero Solutions
+- [ ] Provenarc Marine
+
+### Abandoned/Not Filing
+
+- Cert2FLY (not filing - using subsidiary name as brand)
+- Cert2SAIL (not filing - using subsidiary name as brand)
+- Cert2DRIVE (not filing - auto division discontinued)
+
+-----
+
+## Brand Architecture Principles
+
+1. **Clarity:** The subsidiary name IS the brand. No separate brand names.
+1. **Scalability:** New divisions follow the “Provenarc [Industry]” naming pattern
+1. **Legal Protection:** All subsidiary names protected via trademark
+1. **Consistency:** Use full names in external materials; shortened versions acceptable internally only
+
+-----
+
+**Document Control:**
+
+- Version: 3.0 (Auto Division Removed)
+- Last Updated: March 5, 2026
+- Next Review: Prior to June 1, 2026 launch
+- Owner: Co-Managing Members
+
+-----
+
+**Questions or Clarifications:**
+Contact: Co-Managing Members (Dalton Montes / Daniel Wiglesworth)
