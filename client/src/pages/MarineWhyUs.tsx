@@ -26,8 +26,8 @@ const risks = [
 const differentiators = [
   {
     icon: Waves,
-    title: "Underwater 3D Scanning",
-    desc: "Our owner-operator Daniel Wiglesworth is scuba certified, enabling underwater hull and running gear documentation without costly haul-outs. We capture baseline condition documentation for insurance, refit planning, and damage assessment while your vessel remains in the water.",
+    title: "Underwater 3D Scanning & Diving",
+    desc: "Our owner-operator is a certified scuba diver, enabling comprehensive underwater hull and running gear documentation without costly haul-outs. Using specialized underwater 3D scanners, we capture the condition of propellers, shafts, through-hulls, and zincs while the vessel remains in the water.",
   },
   {
     icon: Lock,

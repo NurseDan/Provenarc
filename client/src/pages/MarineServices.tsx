@@ -37,13 +37,14 @@ const tiers = [
     subtitle: "Records Plus Comprehensive 3D Baseline",
     vessel: "Motor Yachts & Sailing Vessels",
     description:
-      "Complete Vessel Documentation integrates records preservation with dimensional capture of your vessel itself. Drone-based hull and superstructure scanning documents every surface without costly haul-out. Interior scanning preserves cabin configuration, bridge systems, and engine room layouts with millimeter precision. This service creates comprehensive baseline evidence for marine insurers, establishes pre-sale condition documentation for buyer confidence, and enables remote virtual inspections that accelerate transaction timelines.",
+      "Complete Vessel Documentation integrates records preservation with dimensional capture of your vessel itself. Underwater 3D scanning and superstructure documentation capture every surface without costly haul-out. Interior scanning preserves cabin configuration, bridge systems, and engine room layouts with millimeter precision. This service creates comprehensive baseline evidence for marine insurers, establishes pre-sale condition documentation for buyer confidence, and enables remote virtual inspections that accelerate transaction timelines.",
     turnaround: "30–35 days",
     archival: "Museum-grade archival volume standard",
     bestFor: "Owners seeking insurance baseline, pre-sale documentation, and remote inspection capability",
     scope: [
       "Everything in Essential Vessel Documentation",
-      "Drone-based hull and superstructure 3D scan",
+      "Underwater 3D hull and running gear scan",
+      "Superstructure and deck documentation",
       "Complete interior 3D scan (cabins, salon, bridge, engine room)",
       "Interactive virtual tour and 3D model viewer access",
       "Insurance-grade baseline documentation package",
@@ -179,33 +180,33 @@ const addOns = [
 
 const technologyCards = [
   {
-    icon: Scan,
-    title: "Maritime Drone LiDAR Scanning",
-    subtitle: "Hull Documentation Without Haul-Out",
+    icon: Waves,
+    title: "Underwater 3D Scanning",
+    subtitle: "Diver-Deployed Hull Documentation Without Haul-Out",
     description:
-      "Our maritime-adapted drone LiDAR systems capture complete hull and superstructure geometry while your vessel remains in the water — eliminating costly haul-out requirements. Salt-air resilient housings and corrosion-resistant optics ensure reliable performance in harsh marine environments. Sub-millimeter point cloud generation documents every surface detail, from waterline paint condition to superstructure fairing integrity.",
+      "Our certified scuba divers utilize specialized underwater 3D scanning systems to capture complete hull and running gear geometry while your vessel remains in the water — eliminating costly haul-out requirements. Sub-millimeter point cloud generation documents every detail, from propeller condition to through-hull fitting integrity, providing indisputable evidence of below-waterline condition.",
     specs: [
-      "Maritime-hardened, salt-air resilient drone platforms",
+      "Certified scuba diver-deployed scanning operations",
       "Sub-millimeter accuracy point cloud generation",
       "Hull scanning without haul-out or dry dock",
-      "Waterline-to-masthead full exterior capture",
-      "Corrosion-resistant optics and sealed housings",
-      "FAA Part 107 certified operators with maritime endorsements",
+      "Complete running gear and appendage capture",
+      "Pre-incident baseline for insurance and P&I clubs",
+      "Comprehensive below-waterline condition reports",
     ],
   },
   {
-    icon: Camera,
-    title: "Underwater 3D Scanning",
-    subtitle: "Diver-Deployed, Sonar-Integrated Systems",
+    icon: Scan,
+    title: "Superstructure 3D Documentation",
+    subtitle: "Precision Capture from Waterline to Masthead",
     description:
-      "Beneath the waterline, our diver-deployed 3D scanning equipment captures hull condition, running gear, and underwater appendages with precision that traditional marine surveys cannot match. Sonar-integrated imaging penetrates turbid water conditions, while structured-light scanning documents surface detail in clear-water environments. The result is a complete below-waterline baseline — invaluable for insurance, classification, and transaction due diligence.",
+      "We capture complete superstructure and deck geometry using high-resolution 3D documentation systems. This process preserves every detail of your vessel's exterior condition, from fairing integrity to custom modifications. The resulting 3D models enable remote inspections and provide a permanent digital record that enhances vessel value and streamlines maintenance planning.",
     specs: [
-      "Diver-deployed structured-light 3D scanners",
-      "Sonar-integrated imaging for all water conditions",
-      "Running gear and propulsion system documentation",
-      "Through-hull fitting and appendage mapping",
-      "Cathodic protection system condition capture",
-      "Pre- and post-refit comparison capability",
+      "Waterline-to-masthead full exterior capture",
+      "Millimeter-accurate superstructure 3D modeling",
+      "Deck equipment and rigging documentation",
+      "Interactive 3D viewer access for stakeholders",
+      "High-resolution surface condition capture",
+      "Integrated with underwater scan for complete digital twin",
     ],
   },
   {
@@ -270,7 +271,7 @@ export default function MarineServices() {
     <div>
       <SEO
         title="Vessel Documentation Services & Tiers | Provenarc Marine"
-        description="Five maritime documentation tiers plus underwater 3D scanning, drone LiDAR, document restoration, fleet programs, and bespoke services for megayachts and historic vessels. Fixed-price proposals. Worldwide."
+        description="Five maritime documentation tiers plus underwater 3D scanning, superstructure documentation, document restoration, fleet programs, and bespoke services for megayachts and historic vessels. Fixed-price proposals. Worldwide."
       />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />
@@ -284,7 +285,7 @@ export default function MarineServices() {
             </h1>
             <p className="text-[#b8b0a4] text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
               Five tiers of meticulous maritime documentation excellence, each featuring museum-grade archival
-              volumes, drone-based 3D scanning, and lifetime cloud hosting. Delivered dockside at your
+              volumes, underwater 3D scanning, and lifetime cloud hosting. Delivered dockside at your
               vessel's location, anywhere in the world.
             </p>
           </motion.div>

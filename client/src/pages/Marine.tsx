@@ -49,11 +49,11 @@ const services = [
       "Museum-quality digitization of every maintenance log, survey report, and classification document. Professional OCR converts handwritten entries into fully searchable digital records. Hosted on our VesselVault platform with redundant encrypted backups and role-based access for owners, captains, and management companies.",
   },
   {
-    icon: Camera,
-    title: "Drone-Based Hull and Superstructure Documentation",
+    icon: Waves,
+    title: "Underwater 3D Scanning & Diving",
     platform: "No haul-out required",
     description:
-      "FAA Part 107 certified drone operators capture comprehensive exterior documentation without costly haul-out. LiDAR-enhanced scanning produces millimeter-accurate 3D models of hull condition, waterline profiles, running gear, and superstructure details — from bow thruster tunnels to radar arches.",
+      "Our owner-operator is a certified scuba diver, enabling comprehensive underwater hull and running gear documentation without costly haul-outs. Using specialized underwater 3D scanners, we capture the condition of propellers, shafts, through-hulls, and zincs while the vessel remains in the water.",
   },
   {
     icon: Scan,
@@ -77,11 +77,11 @@ const services = [
       "Specialized documentation protocols for classic yachts, historic workboats, and museum vessels. Our archival process preserves original construction details, restoration documentation, and provenance records that establish historical significance and protect legacy value.",
   },
   {
-    icon: Anchor,
-    title: "Maritime Drone Technology",
-    platform: "FAA Part 107 certified",
+    icon: Ship,
+    title: "Hull and Superstructure Documentation",
+    platform: "Comprehensive capture",
     description:
-      "Purpose-built drone systems for maritime documentation: hull condition assessment without haul-out, superstructure and rigging detail capture, mast-top inspection, and waterline profiling. 20+ megapixel imaging with mechanical shutters, LiDAR dimensional accuracy, and GPS-inertial positioning.",
+      "High-resolution capture of every exterior surface from the waterline to the masthead. Our process produces millimeter-accurate 3D models of hull condition, superstructure details, and deck equipment — creating a complete digital twin for insurance and maintenance baseline.",
   },
 ];
 
@@ -110,7 +110,7 @@ const tiers = [
     archival: "Standard",
     features: [
       "Everything in Essential Vessel Documentation",
-      "Drone-based hull and superstructure scanning",
+      "Underwater 3D hull and superstructure scan",
       "Interior 3D documentation of all living spaces",
       "Interactive virtual tour for remote inspections",
       "Insurance-grade baseline condition report",
@@ -236,7 +236,7 @@ export default function Marine() {
     <div>
       <SEO
         title="Provenarc Marine | Vessel Documentation, Hull Scanning & Maritime Preservation"
-        description="Underwater 3D scanning, drone LiDAR hull documentation, and nondestructive maritime record preservation for yachts, superyachts, and megayachts. Bespoke services for sovereign fleets and royal vessels. Fleet programs. Worldwide deployment to any port."
+        description="Underwater 3D scanning, comprehensive hull documentation, and nondestructive maritime record preservation for yachts, superyachts, and megayachts. Bespoke services for sovereign fleets and royal vessels. Fleet programs. Worldwide deployment to any port."
       />
       <section className="relative min-h-[90vh] flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />
@@ -288,7 +288,7 @@ export default function Marine() {
             classification society requirements that demand meticulous documentation. From the Mediterranean
             to the Caribbean, Asia-Pacific to Northern Europe, we go beyond regulatory compliance to create
             permanent preservation archives that protect your vessel's heritage and enhance its market position
-            through proprietary drone scanning, LiDAR-enhanced 3D modeling, and museum-grade archival volumes.
+            through proprietary underwater 3D scanning, high-resolution exterior modeling, and museum-grade archival volumes.
           </motion.p>
 
           <motion.div
@@ -872,7 +872,7 @@ export default function Marine() {
                 {[
                   { icon: Shield, title: "General Liability Insurance", description: "Comprehensive general liability coverage protects against any claim arising during dockside or on-vessel engagements." },
                   { icon: Scale, title: "Professional Errors & Omissions (E&O)", description: "Professional liability coverage for the accuracy and completeness of every maritime deliverable we produce." },
-                  { icon: Cpu, title: "Equipment & Technology Insurance", description: "Full coverage for all drone, LiDAR, underwater scanning, and documentation equipment deployed to your vessel." },
+                  { icon: Cpu, title: "Equipment & Technology Insurance", description: "Full coverage for all scanning, diving, and documentation equipment deployed to your vessel." },
                   { icon: FileCheck, title: "Inland Marine / Bailee Coverage", description: "Specialized coverage for documents in our care — your original vessel records are insured from the moment we handle them." },
                   { icon: ShieldCheck, title: "Workers Compensation", description: "Complete workers compensation coverage for all field personnel operating dockside or aboard your vessel." },
                   { icon: Lock, title: "Cyber Liability & Data Breach Insurance", description: "Protection for all digital assets, scanned records, and data we handle, store, or transmit." },

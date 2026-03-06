@@ -70,10 +70,10 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 
 ## Technology Sections
 Both Aero and Marine services pages include detailed technology sections:
-- **Drone LiDAR Scanning**: Sub-millimeter precision, FAA Part 107, 100+ points/cm², salt-air resilient (marine)
-- **Nondestructive Document Scanning**: Zero-contact, UV-free LED, 600+ DPI, museum-grade
-- **Document Restoration**: Optional add-on — archival conservation, ink stabilization, mold remediation, binding repair
-- **Underwater 3D Scanning** (Marine only): Diver-deployed structured-light scanners, sonar-integrated
+    - **Underwater 3D Scanning** (Marine only): Certified scuba diver-deployed structured-light scanners, eliminating haul-out requirements
+    - **Superstructure Documentation** (Marine only): High-resolution exterior capture from waterline to masthead
+    - **Nondestructive Document Scanning**: Zero-contact, UV-free LED, 600+ DPI, museum-grade
+    - **Document Restoration**: Optional add-on — archival conservation, ink stabilization, mold remediation, binding repair
 
 ## Expanded Add-On Services
 Both divisions offer:

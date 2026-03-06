@@ -57,7 +57,7 @@ const workflowSteps = [
         items: "Vessel logbooks covering all operational hours, maintenance and repair records, survey reports and compliance documentation, modification records and equipment upgrades, registration and title documentation.",
       },
       {
-        label: "Above-Water 3D Scanning",
+        label: "Hull and Superstructure Documentation",
         items: "Exterior documentation of hull, superstructure, and deck equipment. Interior documentation of cabins, galley, and systems. Mechanical systems documentation of engines, generators, and critical equipment.",
       },
       {
