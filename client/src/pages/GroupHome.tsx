@@ -154,7 +154,7 @@ export default function GroupHome() {
               Our Divisions
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight">
-              Three Practices, One Standard of Excellence
+              Two Divisions, One Standard of Excellence
             </h2>
           </motion.div>
 
