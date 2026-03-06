@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import {
   Calendar, Plane, Scan, FileCheck, MonitorCheck,
   ArrowRight, CheckCircle2, Shield, Eye,
@@ -229,6 +230,10 @@ const platformFeatures = [
 export default function HowItWorks() {
   return (
     <div>
+      <SEO
+        title="The Provenarc Method | How Aircraft Documentation Works"
+        description="Five-step documentation process from discovery session to final delivery. Drone LiDAR scanning, nondestructive document digitization, and museum-grade archival production."
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">

@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import {
   Handshake, Building2, Shield, ArrowRight,
   CheckCircle2, DollarSign, Users, Briefcase,
@@ -106,6 +107,10 @@ const roiMetrics = [
 export default function Partners() {
   return (
     <div>
+      <SEO
+        title="Partnership Programs | Provenarc Group"
+        description="Broker, MRO, and insurance carrier partnership models with competitive referral fees, white-label options, and co-branded premium packages."
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
@@ -379,7 +384,7 @@ export default function Partners() {
               </ul>
 
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact">
+                <Link href="/contact?type=partnership">
                   <Button data-testid="button-mro-apply">
                     Discuss Partnership <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -451,7 +456,7 @@ export default function Partners() {
             </div>
 
             <div className="text-center">
-              <Link href="/contact">
+              <Link href="/contact?type=insurance">
                 <Button size="lg" data-testid="button-insurance-contact">
                   Discuss Insurance Partnership <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -520,7 +525,7 @@ export default function Partners() {
               for your business and your clients.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-              <Link href="/contact">
+              <Link href="/contact?type=partnership">
                 <Button size="lg" data-testid="button-partners-cta">
                   Schedule Partnership Discussion <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

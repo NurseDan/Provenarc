@@ -3,6 +3,7 @@ import { useRoute, Link } from "wouter";
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
 import type { BlogPost as BlogPostType } from "@shared/schema";
 
@@ -64,6 +65,24 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#141210] via-[#1c1916] to-[#1f1b17] text-[#faf6f1]">
+      {post && (
+        <SEO
+          title={post.title}
+          description={post.excerpt}
+          ogType="article"
+          jsonLd={{
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.excerpt,
+            author: {
+              "@type": "Person",
+              name: post.author,
+            },
+            ...(post.publishedAt ? { datePublished: new Date(post.publishedAt).toISOString() } : {}),
+          }}
+        />
+      )}
       <article className="max-w-3xl mx-auto px-6 py-24">
         <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
           <Link href="/insights">

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -10,6 +11,11 @@ const fadeUp = {
 export default function Privacy() {
   return (
     <div>
+      <SEO
+        title="Privacy Policy | Provenarc Group"
+        description="Provenarc Group LLC privacy policy covering data collection, usage, and protection practices."
+        noindex={true}
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">

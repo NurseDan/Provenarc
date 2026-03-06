@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import {
   Handshake, Building2, Shield, ArrowRight,
   CheckCircle2, DollarSign, Users, Briefcase,
@@ -129,6 +130,10 @@ const fleetPartnerBenefits = [
 export default function AeroPartners() {
   return (
     <div>
+      <SEO
+        title="Aviation Partnership Programs | Provenarc Aero Solutions"
+        description="Broker referral, white-label, and co-branded partnership models for aircraft brokers, MRO facilities, insurance carriers, and fleet operators. Expedited service and dedicated account management."
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div
@@ -208,7 +213,7 @@ export default function AeroPartners() {
           </div>
 
           <motion.div {...fadeUp} className="flex flex-wrap items-center justify-center gap-4 mt-10">
-            <Link href="/contact">
+            <Link href="/contact?type=partnership&division=aero">
               <Button size="lg" data-testid="button-aero-broker-apply">
                 Discuss Broker Partnership <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -425,7 +430,7 @@ export default function AeroPartners() {
               </ul>
 
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact">
+                <Link href="/contact?type=partnership&division=aero">
                   <Button data-testid="button-aero-mro-apply">
                     Discuss MRO Partnership <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -497,7 +502,7 @@ export default function AeroPartners() {
             </div>
 
             <div className="text-center">
-              <Link href="/contact">
+              <Link href="/contact?type=insurance&division=aero">
                 <Button size="lg" data-testid="button-aero-insurance-contact">
                   Discuss Aviation Insurance Partnership <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -550,7 +555,7 @@ export default function AeroPartners() {
           </div>
 
           <motion.div {...fadeUp} className="text-center">
-            <Link href="/contact">
+            <Link href="/contact?type=fleet&division=aero">
               <Button size="lg" data-testid="button-aero-fleet-partner-contact">
                 Discuss Fleet Partner Program <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -625,7 +630,7 @@ export default function AeroPartners() {
               your client relationships.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-              <Link href="/contact">
+              <Link href="/contact?type=partnership&division=aero">
                 <Button size="lg" data-testid="button-aero-partners-cta-contact">
                   Schedule a Partnership Discussion
                 </Button>

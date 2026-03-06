@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 import {
   Accordion,
   AccordionContent,
@@ -88,8 +89,28 @@ const faqCategories = [
 ];
 
 export default function FAQ() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqCategories.flatMap((category) =>
+      category.items.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a,
+        },
+      }))
+    ),
+  };
+
   return (
     <div>
+      <SEO
+        title="Frequently Asked Questions | Provenarc Group"
+        description="Answers to common questions about aircraft and vessel documentation services, pricing, timelines, technology, and the engagement process."
+        jsonLd={faqJsonLd}
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">

@@ -2,7 +2,8 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, Anchor, Clock, MapPin, FileText, BookOpen, Award, Ship, Waves, Scan, Camera, FileSearch, Wrench, Zap, Shield, Navigation, Users, Globe, Crown, Star, Diamond } from "lucide-react";
+import { SEO } from "@/components/SEO";
+import { CheckCircle2, ArrowRight, Anchor, Clock, MapPin, FileText, BookOpen, Award, Ship, Waves, Scan, Camera, FileSearch, Wrench, Zap, Shield, Navigation, Users, Globe, Crown, Star, Diamond, ShieldCheck, Lock, Umbrella } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -267,6 +268,10 @@ const archivalPremium = [
 export default function MarineServices() {
   return (
     <div>
+      <SEO
+        title="Vessel Documentation Services & Tiers | Provenarc Marine"
+        description="Five maritime documentation tiers plus underwater 3D scanning, drone LiDAR, document restoration, fleet programs, and bespoke services for megayachts and historic vessels. Fixed-price proposals. Worldwide."
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
@@ -281,6 +286,87 @@ export default function MarineServices() {
               Five tiers of meticulous maritime documentation excellence, each featuring museum-grade archival
               volumes, drone-based 3D scanning, and lifetime cloud hosting. Delivered dockside at your
               vessel's location, anywhere in the world.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative py-24" data-testid="section-marine-bespoke">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />
+        <div className="relative max-w-5xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="w-14 h-14 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mx-auto mb-6">
+              <Diamond className="h-6 w-6 text-[#c9a96e]" />
+            </div>
+            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-4">
+              By Invitation or Inquiry
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl text-[#faf6f1]">Bespoke Maritime Services</h2>
+            <p className="text-[#b8b0a4] text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
+              Trusted by principals who operate at the highest levels of global affairs — from sovereign
+              fleets and royal yacht collections to the private vessels of heads of state and the global elite.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                icon: Crown,
+                title: "Personal Project Director",
+                description: "Not an account manager — a senior project director devoted exclusively to your engagement, with direct access at any hour. The discretion that dignitaries and global principals expect.",
+              },
+              {
+                icon: Star,
+                title: "Unlimited Scope & Revisions",
+                description: "No predefined boundaries. Every element of documentation, presentation, and delivery is tailored to your exact requirements — from sovereign estates to private collections.",
+              },
+              {
+                icon: Globe,
+                title: "Worldwide, Any Timeline",
+                description: "Your vessel's location is never a constraint. We deploy anywhere in the world, on your schedule, with the confidentiality that heads of state and royal families require.",
+              },
+              {
+                icon: BookOpen,
+                title: "Custom Archival Formats",
+                description: "Beyond our standard heirloom volumes — fully bespoke archival formats, materials, and presentations designed to your specifications for the world's most discerning owners.",
+              },
+              {
+                icon: Ship,
+                title: "Megayacht & Historic Expertise",
+                description: "Specialized capabilities for vessels that demand extraordinary care — from 100m+ superyachts to irreplaceable historic ships in sovereign and private collections.",
+              },
+              {
+                icon: Award,
+                title: "Private Executive Presentation",
+                description: "In-person delivery of completed documentation at your chosen location worldwide, with comprehensive walkthrough — absolute discretion guaranteed.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                <Card className="p-6 h-full bg-[#faf6f1]/5 border-[#faf6f1]/10" data-testid={`card-marine-bespoke-${i}`}>
+                  <div className="w-9 h-9 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mb-4">
+                    <item.icon className="h-4 w-4 text-[#c9a96e]" />
+                  </div>
+                  <h3 className="font-medium text-[#faf6f1] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#b8b0a4] leading-relaxed">{item.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div {...fadeUp} className="text-center">
+            <Link href="/contact?type=bespoke&division=marine">
+              <Button size="lg" data-testid="button-marine-bespoke-inquiry">
+                Begin a Confidential Conversation <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <p className="text-xs text-[#b8b0a4]/70 mt-3 italic">
+              Bespoke engagements begin with a confidential conversation. No commitment required.
             </p>
           </motion.div>
         </div>
@@ -588,7 +674,7 @@ export default function MarineServices() {
           </motion.div>
 
           <motion.div {...fadeUp} className="text-center">
-            <Link href="/contact">
+            <Link href="/contact?type=fleet&division=marine">
               <Button size="lg" data-testid="button-marine-fleet-pricing">
                 Contact Us for Fleet Pricing <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -600,81 +686,44 @@ export default function MarineServices() {
         </div>
       </section>
 
-      <section className="relative py-24" data-testid="section-marine-bespoke">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />
-        <div className="relative max-w-5xl mx-auto px-6">
-          <motion.div {...fadeUp} className="text-center mb-16">
-            <div className="w-14 h-14 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mx-auto mb-6">
-              <Diamond className="h-6 w-6 text-[#c9a96e]" />
-            </div>
-            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-4">
-              By Invitation or Inquiry
+      <section className="py-16 border-b border-border/50" data-testid="section-trust-coverage">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-10">
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Trust & Protection
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-[#faf6f1]">Bespoke Services</h2>
-            <p className="text-[#b8b0a4] text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
-              For megayacht owners, historic vessel collectors, and royal or state fleets — a fully custom engagement with no predefined scope.
-            </p>
+            <h2 className="font-serif text-2xl md:text-3xl">
+              Fully Insured & Guaranteed
+            </h2>
           </motion.div>
-
-          <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              {
-                icon: Crown,
-                title: "Personal Project Director",
-                description: "Not an account manager — a senior project director devoted exclusively to your engagement, with direct access at any hour.",
-              },
-              {
-                icon: Star,
-                title: "Unlimited Scope & Revisions",
-                description: "No predefined boundaries. Every element of documentation, presentation, and delivery is tailored to your exact requirements.",
-              },
-              {
-                icon: Globe,
-                title: "Worldwide, Any Timeline",
-                description: "Your vessel's location is never a constraint. We deploy anywhere in the world, on your schedule, accommodating any timeline.",
-              },
-              {
-                icon: BookOpen,
-                title: "Custom Archival Formats",
-                description: "Beyond our standard heirloom volumes — fully bespoke archival formats, materials, and presentations designed to your specifications.",
-              },
-              {
-                icon: Ship,
-                title: "Megayacht & Historic Expertise",
-                description: "Specialized capabilities for vessels that demand extraordinary care — from 100m+ superyachts to irreplaceable historic ships.",
-              },
-              {
-                icon: Award,
-                title: "Private Executive Presentation",
-                description: "In-person delivery of completed documentation at your chosen location, with comprehensive walkthrough of every deliverable.",
-              },
-            ].map((item, i) => (
+              { icon: Shield, label: "General Liability Insurance" },
+              { icon: ShieldCheck, label: "Errors & Omissions (E&O)" },
+              { icon: Lock, label: "Cyber Liability Coverage" },
+              { icon: Umbrella, label: "Bailee / Inland Marine Coverage" },
+              { icon: Award, label: "100+ Year Archival Guarantee" },
+              { icon: Clock, label: "On-Time Delivery Commitment" },
+            ].map((badge, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="text-center"
+                data-testid={`badge-marine-trust-${i}`}
               >
-                <Card className="p-6 h-full bg-[#faf6f1]/5 border-[#faf6f1]/10" data-testid={`card-marine-bespoke-${i}`}>
-                  <div className="w-9 h-9 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mb-4">
-                    <item.icon className="h-4 w-4 text-[#c9a96e]" />
-                  </div>
-                  <h3 className="font-medium text-[#faf6f1] mb-2">{item.title}</h3>
-                  <p className="text-sm text-[#b8b0a4] leading-relaxed">{item.description}</p>
-                </Card>
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                  <badge.icon className="h-4 w-4 text-primary" />
+                </div>
+                <p className="text-xs text-muted-foreground leading-tight">{badge.label}</p>
               </motion.div>
             ))}
-          </motion.div>
-
-          <motion.div {...fadeUp} className="text-center">
-            <Link href="/contact">
-              <Button size="lg" data-testid="button-marine-bespoke-inquiry">
-                Contact Us to Discuss <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <p className="text-xs text-[#b8b0a4]/70 mt-3 italic">
-              Bespoke engagements begin with a confidential conversation. No commitment required.
+          </div>
+          <motion.div {...fadeUp} className="text-center mt-8">
+            <p className="text-xs text-muted-foreground">
+              Certificate of Insurance provided before every engagement. Fixed-price guarantee on all proposals. Mutual NDA on every project.
             </p>
           </motion.div>
         </div>

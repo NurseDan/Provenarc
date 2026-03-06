@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import {
   AlertTriangle, Shield, CheckCircle2, ArrowRight,
   Globe, Scan, Clock, Lock, Anchor, Waves,
@@ -139,6 +140,10 @@ const whoTrustsUs = [
 export default function MarineWhyUs() {
   return (
     <div>
+      <SEO
+        title="Why Provenarc Marine | Underwater 3D Scanning & Zero Shipping Risk"
+        description="Underwater hull scanning without haul-out, zero shipping risk for irreplaceable documents, and worldwide deployment. Why discerning vessel owners choose Provenarc."
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">

@@ -20,6 +20,7 @@ export const quoteRequests = pgTable("quote_requests", {
   email: text("email").notNull(),
   phone: text("phone"),
   company: text("company"),
+  division: text("division"),
   aircraftType: text("aircraft_type"),
   serviceTier: text("service_tier"),
   location: text("location"),

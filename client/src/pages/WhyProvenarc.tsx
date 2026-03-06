@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import {
   AlertTriangle, Shield, CheckCircle2, ArrowRight,
   Globe, Scan, Clock, Quote, Lock, MapPin, Timer, BadgeCheck,
@@ -101,6 +102,10 @@ const caseStudies = [
 export default function WhyProvenarc() {
   return (
     <div>
+      <SEO
+        title="Why Provenarc | Risk Mitigation Through Documentation Excellence"
+        description="The Provenarc Protocol: NDA-first engagement, on-site only documentation, 3:1 quality standard, and fixed-price guarantee. Independent, insured, and worldwide."
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">

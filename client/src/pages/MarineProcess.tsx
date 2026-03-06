@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import {
   ArrowRight, Shield, Clock, CheckCircle2,
   Globe, Scan, Lock, FileCheck, Anchor,
@@ -146,6 +147,10 @@ const underwaterProtocol = [
 export default function MarineProcess() {
   return (
     <div>
+      <SEO
+        title="Marine Documentation Process | Provenarc Marine"
+        description="Ten-step vessel documentation workflow from consultation to delivery. Underwater operations protocol, VesselVault digital platform, and museum-grade archival volumes."
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">

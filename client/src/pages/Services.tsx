@@ -2,7 +2,8 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, Plane, Clock, MapPin, FileText, BookOpen, Award, Zap, Shield, BarChart3, Truck, Users, Crown, Globe, Star, Sparkles, Scan, Radio, Wrench } from "lucide-react";
+import { SEO } from "@/components/SEO";
+import { CheckCircle2, ArrowRight, Plane, Clock, MapPin, FileText, BookOpen, Award, Zap, Shield, BarChart3, Truck, Users, Crown, Globe, Star, Sparkles, Scan, Radio, Wrench, ShieldCheck, Lock, Umbrella } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -224,6 +225,10 @@ const archivalPremium = [
 export default function Services() {
   return (
     <div>
+      <SEO
+        title="Aircraft Documentation Services & Tiers | Provenarc Aero Solutions"
+        description="Five documentation tiers from Heritage Foundation to Flagship Comprehensive. Drone LiDAR scanning, nondestructive document scanning, document restoration, fleet programs, and bespoke services. Fixed-price proposals. Worldwide."
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
@@ -239,6 +244,80 @@ export default function Services() {
               volumes, drone-based 3D scanning, and lifetime cloud hosting. Delivered on-site at your
               aircraft's location, anywhere in the world.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative py-24" data-testid="section-bespoke-services">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
+        <div className="relative max-w-5xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="w-14 h-14 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mx-auto mb-6">
+              <Crown className="h-6 w-6 text-[#c9a96e]" />
+            </div>
+            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-4">
+              By Invitation or Inquiry
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#faf6f1]">
+              Bespoke Services
+            </h2>
+            <p className="text-[#b8b0a4] text-lg mt-4 max-w-3xl mx-auto leading-relaxed italic">
+              Trusted by principals who operate at the highest levels of global affairs — from sovereign
+              fleets to private collections of the world's most discerning owners.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="lg:col-span-3 space-y-6">
+              <p className="text-[#b8b0a4] leading-relaxed">
+                Some engagements transcend standard service tiers. When royal families, heads of state,
+                ultra-high-net-worth individuals, and family offices require documentation that reflects
+                their position, our Bespoke program delivers a fully tailored experience with absolute
+                discretion from inception to final deliverable.
+              </p>
+              <p className="text-[#b8b0a4] leading-relaxed">
+                Your personal project director — not simply an account manager — oversees every detail of your
+                engagement. Unlimited revisions, custom deliverable formats, and private in-person presentations
+                ensure the final product reflects your exact vision. Complete confidentiality is guaranteed
+                throughout every engagement.
+              </p>
+              <ul className="space-y-3 mt-6">
+                {bespokeFeatures.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-[#b8b0a4]">
+                    <Star className="h-4 w-4 text-[#c9a96e] mt-0.5 flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="lg:col-span-2">
+              <Card className="p-8 bg-[#faf6f1]/5 border-[#c9a96e]/20">
+                <div className="flex items-center gap-3 mb-6">
+                  <Sparkles className="h-5 w-5 text-[#c9a96e]" />
+                  <h3 className="font-serif text-xl text-[#faf6f1]">The Bespoke Experience</h3>
+                </div>
+                <div className="space-y-4 text-sm text-[#b8b0a4]">
+                  <p className="leading-relaxed">
+                    Every element is tailored to your exact requirements. There is no menu to choose from —
+                    your engagement is designed from a blank canvas with the discretion that dignitaries
+                    and global principals expect.
+                  </p>
+                  <p className="leading-relaxed">
+                    Available worldwide, on any timeline. Whether your aircraft is in Zurich, Dubai, Singapore,
+                    or São Paulo, our team mobilizes to meet your needs with sovereign-grade confidentiality.
+                  </p>
+                  <p className="text-xs text-[#b8b0a4]/70 italic mt-4">
+                    Bespoke engagements begin with a confidential conversation about your vision and requirements.
+                  </p>
+                </div>
+                <Link href="/contact?type=bespoke&division=aero">
+                  <Button className="w-full mt-6" data-testid="button-bespoke-inquiry">
+                    Begin a Confidential Conversation <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </Card>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -573,7 +652,7 @@ export default function Services() {
               <p className="text-xs text-muted-foreground/80 italic mb-6">
                 Scheduled annual documentation cycles ensure your fleet records remain current and comprehensive.
               </p>
-              <Link href="/contact">
+              <Link href="/contact?type=fleet&division=aero">
                 <Button className="w-full" data-testid="button-fleet-pricing">
                   Contact Us for Fleet Pricing <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -583,73 +662,45 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="relative py-24" data-testid="section-bespoke-services">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
-        <div className="relative max-w-5xl mx-auto px-6">
-          <motion.div {...fadeUp} className="text-center mb-16">
-            <div className="w-14 h-14 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mx-auto mb-6">
-              <Crown className="h-6 w-6 text-[#c9a96e]" />
-            </div>
-            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-4">
-              By Invitation or Inquiry
+      <section className="py-16 border-b border-border/50" data-testid="section-trust-coverage">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-10">
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Trust & Protection
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#faf6f1]">
-              Bespoke Services
+            <h2 className="font-serif text-2xl md:text-3xl">
+              Fully Insured & Guaranteed
             </h2>
-            <p className="text-[#b8b0a4] text-lg mt-4 max-w-3xl mx-auto leading-relaxed italic">
-              For clients who require the extraordinary — a fully custom engagement with no predefined scope,
-              no limitations, and no compromises.
-            </p>
           </motion.div>
-
-          <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            <div className="lg:col-span-3 space-y-6">
-              <p className="text-[#b8b0a4] leading-relaxed">
-                Some engagements transcend standard service tiers. When your requirements demand a level of
-                attention, customization, and discretion that cannot be templated, our Bespoke program
-                delivers a fully tailored experience from inception to final deliverable.
-              </p>
-              <p className="text-[#b8b0a4] leading-relaxed">
-                Your personal project director — not simply an account manager — oversees every detail of your
-                engagement. Unlimited revisions, custom deliverable formats, and private in-person presentations
-                ensure the final product reflects your exact vision.
-              </p>
-              <ul className="space-y-3 mt-6">
-                {bespokeFeatures.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-[#b8b0a4]">
-                    <Star className="h-4 w-4 text-[#c9a96e] mt-0.5 flex-shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="lg:col-span-2">
-              <Card className="p-8 bg-[#faf6f1]/5 border-[#c9a96e]/20">
-                <div className="flex items-center gap-3 mb-6">
-                  <Sparkles className="h-5 w-5 text-[#c9a96e]" />
-                  <h3 className="font-serif text-xl text-[#faf6f1]">The Bespoke Experience</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[
+              { icon: Shield, label: "General Liability Insurance" },
+              { icon: ShieldCheck, label: "Errors & Omissions (E&O)" },
+              { icon: Lock, label: "Cyber Liability Coverage" },
+              { icon: Umbrella, label: "Bailee / Inland Marine Coverage" },
+              { icon: Award, label: "100+ Year Archival Guarantee" },
+              { icon: Clock, label: "On-Time Delivery Commitment" },
+            ].map((badge, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="text-center"
+                data-testid={`badge-trust-${i}`}
+              >
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                  <badge.icon className="h-4 w-4 text-primary" />
                 </div>
-                <div className="space-y-4 text-sm text-[#b8b0a4]">
-                  <p className="leading-relaxed">
-                    Every element is tailored to your exact requirements. There is no menu to choose from —
-                    your engagement is designed from a blank canvas.
-                  </p>
-                  <p className="leading-relaxed">
-                    Available worldwide, on any timeline. Whether your aircraft is in Zurich, Dubai, Singapore,
-                    or São Paulo, our team mobilizes to meet your needs.
-                  </p>
-                  <p className="text-xs text-[#b8b0a4]/70 italic mt-4">
-                    Bespoke engagements begin with a confidential conversation about your vision and requirements.
-                  </p>
-                </div>
-                <Link href="/contact">
-                  <Button className="w-full mt-6" data-testid="button-bespoke-inquiry">
-                    Contact Us to Discuss <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </Card>
-            </div>
+                <p className="text-xs text-muted-foreground leading-tight">{badge.label}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div {...fadeUp} className="text-center mt-8">
+            <p className="text-xs text-muted-foreground">
+              Certificate of Insurance provided before every engagement. Fixed-price guarantee on all proposals. Mutual NDA on every project.
+            </p>
           </motion.div>
         </div>
       </section>

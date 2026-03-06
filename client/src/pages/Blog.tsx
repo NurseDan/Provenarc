@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import { Calendar, User, ArrowRight, BookOpen } from "lucide-react";
 import type { BlogPost } from "@shared/schema";
 
@@ -28,6 +29,10 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#141210] via-[#1c1916] to-[#1f1b17] text-[#faf6f1]">
+      <SEO
+        title="Insights & Research | Provenarc Group"
+        description="Research articles and industry insights on LiDAR 3D scanning, document preservation, insurance documentation, fleet management, and asset risk mitigation."
+      />
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <motion.p

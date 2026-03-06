@@ -4,11 +4,12 @@
 Premium multi-division trust-first luxury B2B marketing website for Provenarc Group LLC, showcasing two divisions: Aero Solutions (aircraft documentation) and Marine (vessel documentation). Styled after private wealth management firms (Patek Philippe, Goldman Sachs private wealth). Quiet luxury design — no pricing displayed, consultation-first CTAs, confidentiality as premium signal. Includes partner login portals, blog ("Insights") system with admin posting, role-based dashboards, division-specific partner pages, expanded add-on services, fleet programs, and bespoke ultra-premium tier.
 
 ## Architecture
-- **Frontend**: React + Vite, Wouter routing, Framer Motion animations, Shadcn/ui components, TanStack Query
+- **Frontend**: React + Vite, Wouter routing, Framer Motion animations, Shadcn/ui components, TanStack Query, react-helmet-async for SEO
 - **Backend**: Express.js API routes for form submissions, authentication, and blog CRUD
 - **Database**: PostgreSQL via Drizzle ORM
 - **Auth**: express-session + connect-pg-simple + bcrypt; session stored in PostgreSQL
 - **Styling**: Tailwind CSS with custom gold-accented luxury aesthetic
+- **SEO**: Per-page meta tags via `<SEO>` component (`client/src/components/SEO.tsx`), JSON-LD structured data, HelmetProvider in main.tsx
 
 ## Site Structure
 - `/` — **GroupHome**: Provenarc Group landing page (private wealth style, two division showcase, trust pillars, heritage philosophy)
@@ -25,7 +26,7 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 - `/about` — "Three Decades of Aviation Excellence" narrative, three pillars, corporate structure (two divisions Active), partnerships
 - `/partners` — Generic partnership overview (referral, white-label, co-branded), expedited service, broker deliverables, ROI metrics
 - `/faq` — 4 categories, 12 questions
-- `/contact` — "Schedule a Discovery Session", consultation form with updated tier dropdown
+- `/contact` — "Schedule a Discovery Session", context-aware forms with URL param support (?type=bespoke&division=aero), division selector, vessel/aircraft type options, expanded inquiry types
 - `/insights` — Blog listing (6 published research articles)
 - `/insights/:slug` — Individual blog post
 - `/admin/blog` — Admin blog management
@@ -92,14 +93,37 @@ Both divisions offer fleet programs for multi-asset operators:
 - Worldwide deployment
 - "Contact Us for Fleet Pricing" CTA (no prices displayed)
 
-## Bespoke Services
-Ultra-premium tier for both divisions:
+## Bespoke Services (Positioned FIRST on all pages)
+Ultra-premium tier for both divisions — positioned before standard service tiers:
 - "By Invitation or Inquiry" positioning
-- Personal project director
+- Language implies serving royals, heads of state, sovereign fleets, and the global elite
+- Personal project director, sovereign-grade confidentiality
 - Unlimited scope & revisions
 - Custom archival formats
 - Worldwide availability, any timeline
-- "Contact Us to Discuss" CTA
+- CTAs link to `/contact?type=bespoke&division=aero` (or marine)
+
+## Insurance Coverage & Guarantees
+Prominent sections on AeroHome and Marine pages:
+- **Insurance**: General liability, E&O, equipment & technology, inland marine/bailee, workers comp, cyber liability
+- **Guarantees**: Fixed-price, NDA/confidentiality, 3:1 quality verification, satisfaction, 100+ year archival material, on-time delivery
+- Certificate of Insurance provided before every engagement
+- Briefer trust badges on Services and MarineServices pages
+
+## Contact Form Features
+- URL param support: `?type=` (bespoke, fleet, insurance, rapid-deployment, partnership, restoration) and `?division=` (aero, marine)
+- Context banner shows when type param is passed
+- Division selector (Aero, Marine, Both)
+- Dynamic asset type options (aircraft or vessel types based on division)
+- Service interest dropdown includes bespoke, fleet, insurance, rapid deployment, restoration
+- Emergency timeline option (48-72hr)
+- All CTAs pass context params to /contact
+
+## SEO & AI Optimization
+- Per-page unique title, description, and OG tags via `<SEO>` component
+- JSON-LD structured data: Organization (GroupHome), FAQPage (FAQ), Article (BlogPost)
+- robots.txt in public directory
+- react-helmet-async HelmetProvider wrapping app
 
 ## Blog Content (6 Published Posts)
 1. "Why LiDAR 3D Scanning Is Transforming Asset Documentation" — Technology
@@ -124,7 +148,7 @@ Ultra-premium tier for both divisions:
 
 ## Database Tables
 - `users`: id, username, password, role (broker/mro/admin), companyName, contactName, email, phone
-- `quote_requests`: name, email, phone, company, aircraftType, serviceTier, location, timeline, message
+- `quote_requests`: name, email, phone, company, division, aircraftType, serviceTier, location, timeline, message
 - `contact_inquiries`: name, email, phone, inquiryType, message
 - `blog_posts`: id, title, slug (unique), excerpt, content (markdown), author, coverImageUrl, category, tags (text array), published, publishedAt, createdAt, updatedAt
 

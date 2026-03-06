@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import {
   Globe, Shield, Scan, FileCheck, Users, Handshake,
   Building2, ArrowRight, CheckCircle2, BookOpen, Award,
@@ -77,6 +78,10 @@ const partnerships = [
 export default function About() {
   return (
     <div>
+      <SEO
+        title="About Provenarc Group | Three Decades of Documentation Excellence"
+        description="Learn about Provenarc Group LLC, our heritage, technology, and commitment to museum-grade documentation for the world's most valuable aircraft and vessels."
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">

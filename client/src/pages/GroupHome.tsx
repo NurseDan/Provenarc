@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import {
   Plane, Anchor, ArrowRight, Award,
   Globe, BookOpen, Cpu, Shield,
@@ -65,6 +66,18 @@ const trustPillars = [
 export default function GroupHome() {
   return (
     <div>
+      <SEO
+        title="Provenarc Group | Premium Aircraft & Vessel Documentation Worldwide"
+        description="Provenarc Group LLC provides world-class aircraft and vessel documentation services. Drone LiDAR 3D scanning, nondestructive document preservation, and museum-grade archival volumes. Trusted by royals, heads of state, and the global elite. Worldwide deployment."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Provenarc Group LLC",
+          description: "Provenarc Group LLC provides world-class aircraft and vessel documentation services. Drone LiDAR 3D scanning, nondestructive document preservation, and museum-grade archival volumes. Trusted by royals, heads of state, and the global elite. Worldwide deployment.",
+          url: "https://provenarc.com",
+          sameAs: [],
+        }}
+      />
       <section className="relative min-h-[95vh] flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f0e0c] via-[#141210] to-[#1a1714]" />
         <div

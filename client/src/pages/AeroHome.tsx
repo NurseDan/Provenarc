@@ -2,11 +2,13 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import {
   Globe, Shield, Scan, Lock, Plane, FileCheck,
   ArrowRight, CheckCircle2, ShieldCheck, DollarSign,
   Award, Camera, BookOpen, Zap, ShieldAlert, TrendingUp,
   ClipboardCheck, BookMarked, Users, Crown, Star, Handshake,
+  Clock, BadgeCheck, Scale, Cpu, Umbrella,
 } from "lucide-react";
 
 const fadeUp = {
@@ -156,6 +158,10 @@ const steps = [
 export default function AeroHome() {
   return (
     <div>
+      <SEO
+        title="Provenarc Aero Solutions | Aircraft Documentation, 3D Scanning & Archival Preservation"
+        description="FAA Part 107 certified drone LiDAR scanning, nondestructive logbook digitization, and museum-grade archival volumes for business jets, turboprops, and helicopters. Bespoke services for heads of state and VVIP aircraft. Fleet programs available. Worldwide."
+      />
       <section className="relative min-h-[90vh] flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
         <div
@@ -270,6 +276,66 @@ export default function AeroHome() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="relative py-24" data-testid="section-bespoke">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="relative max-w-4xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center">
+            <div className="w-14 h-14 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mx-auto mb-6">
+              <Crown className="h-6 w-6 text-[#c9a96e]" />
+            </div>
+            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-4">
+              By Invitation or Inquiry
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#faf6f1] leading-tight mb-6">
+              Bespoke Aviation Services
+            </h2>
+            <p className="text-[#c9a96e]/80 font-serif text-lg italic mb-6">
+              Trusted by principals who operate at the highest levels of global affairs
+            </p>
+            <p className="text-[#b8b0a4] text-base leading-relaxed max-w-3xl mx-auto mb-4">
+              From sovereign fleets to private collections of the world's most discerning owners,
+              our Bespoke program serves royal families, heads of state, ultra-high-net-worth
+              individuals, and family offices who require absolute discretion and documentation
+              excellence without compromise.
+            </p>
+            <p className="text-[#b8b0a4]/80 text-sm leading-relaxed max-w-2xl mx-auto mb-8">
+              A fully custom engagement with no predefined scope — personal project director,
+              unlimited revisions, custom deliverable formats, and private in-person presentation.
+              Available worldwide, on any timeline, with complete confidentiality guaranteed.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+              {[
+                { icon: Star, label: "Personal Project Director" },
+                { icon: Globe, label: "Worldwide Availability" },
+                { icon: Shield, label: "Absolute Discretion" },
+                { icon: Lock, label: "Sovereign-Grade Confidentiality" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2 text-sm text-[#b8b0a4]">
+                  <item.icon className="h-4 w-4 text-[#c9a96e]/70" />
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </div>
+            <Link href="/contact?type=bespoke&division=aero">
+              <Button size="lg" data-testid="button-bespoke-inquiry">
+                Begin a Confidential Conversation
+              </Button>
+            </Link>
+            <p className="text-[#b8b0a4]/60 text-sm mt-4">
+              No commitment required. Completely confidential consultation.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -538,7 +604,7 @@ export default function AeroHome() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/contact?type=fleet&division=aero">
                     <Button data-testid="button-fleet-pricing">
                       Contact Us for Fleet Pricing
                     </Button>
@@ -546,56 +612,6 @@ export default function AeroHome() {
                 </div>
               </div>
             </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="relative py-24" data-testid="section-bespoke">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="relative max-w-4xl mx-auto px-6">
-          <motion.div {...fadeUp} className="text-center">
-            <div className="w-14 h-14 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mx-auto mb-6">
-              <Crown className="h-6 w-6 text-[#c9a96e]" />
-            </div>
-            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-4">
-              By Invitation or Inquiry
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#faf6f1] leading-tight mb-6">
-              Bespoke Services
-            </h2>
-            <p className="text-[#c9a96e]/80 font-serif text-lg italic mb-6">
-              For clients who require the extraordinary
-            </p>
-            <p className="text-[#b8b0a4] text-base leading-relaxed max-w-2xl mx-auto mb-8">
-              A fully custom engagement with no predefined scope — every element tailored to your exact requirements.
-              Personal project director, unlimited revisions, custom deliverable formats, and private presentation.
-              Available worldwide, on any timeline.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-              {[
-                { icon: Star, label: "Personal Project Director" },
-                { icon: Globe, label: "Worldwide Availability" },
-                { icon: Shield, label: "Unlimited Scope" },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm text-[#b8b0a4]">
-                  <item.icon className="h-4 w-4 text-[#c9a96e]/70" />
-                  <span>{item.label}</span>
-                </div>
-              ))}
-            </div>
-            <Link href="/contact">
-              <Button size="lg" data-testid="button-bespoke-inquiry">
-                Contact Us to Discuss
-              </Button>
-            </Link>
           </motion.div>
         </div>
       </section>
@@ -670,6 +686,94 @@ export default function AeroHome() {
               Your engagement price is fixed at proposal. No scope creep. No surprise charges. What we quote is what you pay.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-card/50" data-testid="section-insurance-guarantees">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Umbrella className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Trust & Protection
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-4">
+              Our Commitments & Coverage
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
+              Every Provenarc engagement is backed by comprehensive insurance coverage and iron-clad guarantees
+              that protect your assets, your records, and your peace of mind.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div {...fadeUp}>
+              <h3 className="font-serif text-xl mb-6 flex items-center gap-3">
+                <Shield className="h-5 w-5 text-primary" />
+                Comprehensive Insurance Coverage
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { icon: Shield, title: "General Liability Insurance", description: "Comprehensive general liability coverage protects against any claim arising during our on-site engagements." },
+                  { icon: Scale, title: "Professional Errors & Omissions (E&O)", description: "Professional liability coverage for the accuracy and completeness of every deliverable we produce." },
+                  { icon: Cpu, title: "Equipment & Technology Insurance", description: "Full coverage for all drone, scanning, and documentation equipment deployed to your location." },
+                  { icon: FileCheck, title: "Inland Marine / Bailee Coverage", description: "Specialized coverage for documents in our care — your original records are insured from the moment we handle them." },
+                  { icon: ShieldCheck, title: "Workers Compensation", description: "Complete workers compensation coverage for all field personnel operating at your facility." },
+                  { icon: Lock, title: "Cyber Liability & Data Breach Insurance", description: "Protection for all digital assets, scanned records, and data we handle, store, or transmit." },
+                ].map((item, i) => (
+                  <Card key={i} className="p-4" data-testid={`card-insurance-${i}`}>
+                    <div className="flex items-start gap-3">
+                      <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <item.icon className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-medium mb-1">{item.title}</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+              <Card className="p-4 bg-primary/5 border-primary/10 mt-4">
+                <div className="flex items-start gap-2">
+                  <BadgeCheck className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-primary font-medium">
+                    Certificate of Insurance provided before every engagement.
+                  </p>
+                </div>
+              </Card>
+            </motion.div>
+
+            <motion.div {...fadeUp}>
+              <h3 className="font-serif text-xl mb-6 flex items-center gap-3">
+                <Award className="h-5 w-5 text-primary" />
+                Iron-Clad Guarantees
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { icon: DollarSign, title: "Fixed-Price Guarantee", description: "Your engagement price is locked at proposal. No scope creep, no surprise charges, no hourly billing — what we quote is what you pay." },
+                  { icon: Lock, title: "Confidentiality Guarantee", description: "Mutual NDA executed on every engagement. Client identities, asset details, and engagement specifics are never disclosed." },
+                  { icon: CheckCircle2, title: "3:1 Quality Verification Standard", description: "Every deliverable undergoes triple verification — three independent quality checks before anything reaches your hands." },
+                  { icon: Star, title: "Satisfaction Guarantee", description: "We do not consider an engagement complete until you are fully satisfied. Unlimited revisions on all deliverables." },
+                  { icon: BookOpen, title: "100+ Year Archival Material Guarantee", description: "All physical archival volumes use acid-free materials certified to survive a century or more without degradation." },
+                  { icon: Clock, title: "On-Time Delivery Commitment", description: "We commit to agreed-upon delivery timelines and communicate proactively if any factor could affect scheduling." },
+                ].map((item, i) => (
+                  <Card key={i} className="p-4" data-testid={`card-guarantee-${i}`}>
+                    <div className="flex items-start gap-3">
+                      <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <item.icon className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-medium mb-1">{item.title}</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

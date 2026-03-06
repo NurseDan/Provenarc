@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SEO } from "@/components/SEO";
 import {
   Handshake, Shield, ArrowRight, CheckCircle2, DollarSign,
   Users, Briefcase, TrendingUp, Award, Lock, Clock,
@@ -143,6 +144,10 @@ const globalRegions = [
 export default function MarinePartners() {
   return (
     <div>
+      <SEO
+        title="Maritime Partnership Programs | Provenarc Marine"
+        description="Yacht broker, management company, and marine insurance partnership programs. Referral, white-label, and co-branded models. Fleet partner programs for multi-vessel operators. Worldwide."
+      />
       <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />
         <div
@@ -221,7 +226,7 @@ export default function MarinePartners() {
           </div>
 
           <motion.div {...fadeUp} className="flex flex-wrap items-center justify-center gap-4 mt-10">
-            <Link href="/contact">
+            <Link href="/contact?type=partnership&division=marine">
               <Button size="lg" data-testid="button-marine-broker-apply">
                 Discuss Yacht Broker Partnership <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -276,7 +281,7 @@ export default function MarinePartners() {
                 ))}
               </ul>
 
-              <Link href="/contact">
+              <Link href="/contact?type=partnership&division=marine">
                 <Button data-testid="button-management-apply">
                   Discuss Management Partnership <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -331,7 +336,7 @@ export default function MarinePartners() {
             </div>
 
             <div className="text-center">
-              <Link href="/contact">
+              <Link href="/contact?type=insurance&division=marine">
                 <Button size="lg" data-testid="button-marine-insurance-contact">
                   Discuss Insurance Partnership <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -409,7 +414,7 @@ export default function MarinePartners() {
                   </li>
                 ))}
               </ul>
-              <Link href="/contact">
+              <Link href="/contact?type=fleet&division=marine">
                 <Button size="lg" data-testid="button-fleet-partner-contact">
                   Discuss Fleet Partnership <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -542,7 +547,7 @@ export default function MarinePartners() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-              <Link href="/contact">
+              <Link href="/contact?type=partnership&division=marine">
                 <Button size="lg" data-testid="button-marine-partner-cta">
                   Schedule a Partnership Discussion <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
