@@ -27,6 +27,8 @@ import Marine from "@/pages/Marine";
 import MarineWhyUs from "@/pages/MarineWhyUs";
 import MarineProcess from "@/pages/MarineProcess";
 import MarineServices from "@/pages/MarineServices";
+import MarinePartners from "@/pages/MarinePartners";
+import AeroPartners from "@/pages/AeroPartners";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -61,9 +63,11 @@ function Router() {
       <Route path="/marine/services" component={MarineServices} />
       <Route path="/marine/why-us" component={MarineWhyUs} />
       <Route path="/marine/process" component={MarineProcess} />
+      <Route path="/marine/partners" component={MarinePartners} />
       <Route path="/aero/services" component={Services} />
       <Route path="/aero/how-it-works" component={HowItWorks} />
       <Route path="/aero/why-provenarc" component={WhyProvenarc} />
+      <Route path="/aero/partners" component={AeroPartners} />
       <Route component={NotFound} />
     </Switch>
   );

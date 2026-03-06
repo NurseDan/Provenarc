@@ -186,7 +186,7 @@ export default function MarineWhyUs() {
           <motion.div {...fadeUp}>
             <Card className="p-6 lg:p-8 border-primary/10" data-testid="card-hidden-cost">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <AlertTriangle className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -223,7 +223,7 @@ export default function MarineWhyUs() {
               {differentiators.map((item, i) => (
                 <Card key={i} className="p-6" data-testid={`card-differentiator-${i}`}>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <item.icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>
@@ -350,7 +350,7 @@ export default function MarineWhyUs() {
             ].map((item, i) => (
               <Card key={i} className="p-6" data-testid={`card-commitment-${i}`}>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <item.icon className="h-5 w-5 text-primary" />
                   </div>
                   <div>
@@ -384,7 +384,7 @@ export default function MarineWhyUs() {
               >
                 <Card className="p-6 h-full" data-testid={`card-trust-${i}`}>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <client.icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>

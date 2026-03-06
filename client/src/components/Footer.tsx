@@ -73,7 +73,8 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { label: "About Us", href: "/about" },
-                { label: "Partners", href: "/partners" },
+                { label: "Aero Partners", href: "/aero/partners" },
+                { label: "Marine Partners", href: "/marine/partners" },
                 { label: "Insights", href: "/insights" },
                 { label: "Broker Portal", href: "/broker/login" },
                 { label: "MRO Portal", href: "/mro/login" },

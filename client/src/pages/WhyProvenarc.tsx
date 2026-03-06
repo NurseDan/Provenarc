@@ -207,7 +207,7 @@ export default function WhyProvenarc() {
               ].map((item, i) => (
                 <Card key={i} className="p-6" data-testid={`card-solution-${i}`}>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <item.icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>
@@ -241,7 +241,7 @@ export default function WhyProvenarc() {
             {protocolPillars.map((pillar, i) => (
               <Card key={i} className="p-6" data-testid={`card-protocol-${i}`}>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <pillar.icon className="h-5 w-5 text-primary" />
                   </div>
                   <div>
@@ -256,7 +256,7 @@ export default function WhyProvenarc() {
           <motion.div {...fadeUp}>
             <Card className="p-6 lg:p-8 border-primary/10" data-testid="card-independence">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
                 </div>
                 <div>

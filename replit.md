@@ -1,7 +1,7 @@
 # Provenarc Group Website
 
 ## Overview
-Premium multi-division trust-first luxury B2B marketing website for Provenarc Group LLC, showcasing two divisions: Aero Solutions (aircraft documentation) and Marine (vessel documentation). Styled after private wealth management firms (Patek Philippe, Goldman Sachs private wealth). Quiet luxury design — no pricing displayed, consultation-first CTAs, confidentiality as premium signal. Includes partner login portals, blog ("Insights") system with admin posting, and role-based dashboards.
+Premium multi-division trust-first luxury B2B marketing website for Provenarc Group LLC, showcasing two divisions: Aero Solutions (aircraft documentation) and Marine (vessel documentation). Styled after private wealth management firms (Patek Philippe, Goldman Sachs private wealth). Quiet luxury design — no pricing displayed, consultation-first CTAs, confidentiality as premium signal. Includes partner login portals, blog ("Insights") system with admin posting, role-based dashboards, division-specific partner pages, expanded add-on services, fleet programs, and bespoke ultra-premium tier.
 
 ## Architecture
 - **Frontend**: React + Vite, Wouter routing, Framer Motion animations, Shadcn/ui components, TanStack Query
@@ -12,19 +12,21 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 
 ## Site Structure
 - `/` — **GroupHome**: Provenarc Group landing page (private wealth style, two division showcase, trust pillars, heritage philosophy)
-- `/aero` — **AeroHome**: Aero Solutions division page (aviation documentation, 5 tiers, drone tech, museum-grade archival)
-- `/marine` — **Marine**: Marine division page (vessel documentation, 5 tiers, hull scanning, VesselVault)
+- `/aero` — **AeroHome**: Aero Solutions division page (aviation documentation, 5 tiers, drone tech, museum-grade archival, additional services, fleet programs, bespoke tier, partner CTA)
+- `/marine` — **Marine**: Marine division page (vessel documentation, 5 tiers, hull scanning, VesselVault, additional services, fleet programs, bespoke tier, worldwide emphasis, partner CTA)
 - `/marine/why-us` — **MarineWhyUs**: Why Provenarc Marine (underwater 3D scanning, zero shipping risk, comparison table, who trusts us)
 - `/marine/process` — **MarineProcess**: Marine process (10-step workflow, service tiers, expedited service, underwater operations protocol)
-- `/aero/services` (also `/services`) — Aero-focused service tier details with full luxury descriptions, museum-grade archival volumes section
+- `/aero/services` (also `/services`) — Aero service tier details, technology section (drone LiDAR, nondestructive scanning, document restoration), expanded add-ons (rapid deployment, insurance, pre-sale, regulatory), fleet services, bespoke services
 - `/aero/how-it-works` (also `/how-it-works`) — The Provenarc Method (5 steps, "Precision Without Rush" philosophy, Advanced Drone Technology, 3D scanning, RecordVault)
 - `/aero/why-provenarc` (also `/why-provenarc`) — Risk stats, The Provenarc Protocol, comparison table, independence, testimonials
-- `/marine/services` — **MarineServices**: Marine-focused service tier details (5 tiers, vessel documentation, VesselVault, marine archival volumes)
+- `/marine/services` — **MarineServices**: Marine service tier details (5 tiers, technology section (maritime drone LiDAR, underwater 3D, nondestructive scanning, document restoration), expanded add-ons, fleet services, bespoke services)
+- `/aero/partners` — **AeroPartners**: Aviation-specific partnership page (broker models, MRO facility, insurance carrier, fleet partner programs, ROI metrics, expedited service)
+- `/marine/partners` — **MarinePartners**: Maritime-specific partnership page (yacht broker models, management company, marine insurance/P&I club, fleet programs, worldwide deployment, ROI metrics)
 - `/about` — "Three Decades of Aviation Excellence" narrative, three pillars, corporate structure (two divisions Active), partnerships
-- `/partners` — Three partnership models (Referral, White-Label, Co-Branded), expedited service (50%/67%), broker deliverables, ROI metrics
+- `/partners` — Generic partnership overview (referral, white-label, co-branded), expedited service, broker deliverables, ROI metrics
 - `/faq` — 4 categories, 12 questions
 - `/contact` — "Schedule a Discovery Session", consultation form with updated tier dropdown
-- `/insights` — Blog listing
+- `/insights` — Blog listing (6 published research articles)
 - `/insights/:slug` — Individual blog post
 - `/admin/blog` — Admin blog management
 - `/privacy` — Privacy policy
@@ -34,15 +36,19 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 ## Design System
 - **Fonts**: IBM Plex Sans (body), Playfair Display (headers), IBM Plex Mono (labels/code)
 - **Primary accent**: Gold (#c9a96e) mapped to `--primary` CSS variable (HSL 37 42% 61%)
-- **Dark sections**: Hardcoded hex (#141210, #1c1916, #1f1b17) for hero/CTA areas
+- **Dark sections (Aero)**: `from-[#141210] via-[#1c1916] to-[#1f1b17]`
+- **Dark sections (Marine)**: `from-[#0c1219] via-[#111a22] to-[#15202b]`
 - **Light sections**: Shadcn semantic tokens (background, foreground, card, muted, etc.)
 - **Dark section outline buttons**: `bg-[#faf6f1]/5 border-[#faf6f1]/15 text-[#faf6f1]`
+- **Icon containers**: `rounded-full` on marketing/content pages; `rounded-md` acceptable on dashboard/admin pages
+- **Section label tracking**: `tracking-[0.3em]` consistently across all pages
 - **Layout**: Top navbar with Divisions dropdown, responsive mobile hamburger menu
 - **Design philosophy**: Quiet luxury — generous whitespace, muted palette, restrained imagery, no aggressive animations
+- **Hover interactions**: Use `hover-elevate` utility class (not `hover:shadow-md` with `transition-all`)
 
 ## Navigation
-- **Navbar**: PROVENARC Group logo → Divisions dropdown (Aero Solutions, Marine) → Services dropdown (Aero Services, Marine Services) → How It Works dropdown (Aero Process, Marine Process) → Why Provenarc dropdown (Aero, Marine) → Insights → Company dropdown (About, Partners, FAQ) → Login dropdown → Schedule a Consultation button
-- **Footer**: 5-column layout — Group description, Divisions, Services, Company, Contact CTA
+- **Navbar**: PROVENARC Group logo → Divisions dropdown (Aero Solutions, Marine) → Services dropdown (Aero Services, Marine Services) → How It Works dropdown (Aero Process, Marine Process) → Why Provenarc dropdown (Aero, Marine) → Insights → Company dropdown (About, Aero Partners, Marine Partners, FAQ) → Login dropdown → Schedule a Consultation button
+- **Footer**: 5-column layout — Group description, Divisions, Services, Company (with Aero Partners & Marine Partners), Contact CTA
 - **Mobile**: Grouped sections — Divisions, Services (Aero/Marine), How It Works (Aero/Marine), Why Provenarc (Aero/Marine), Insights, Company, login portals, consultation button
 
 ## Service Tiers (No prices displayed on any page)
@@ -60,6 +66,48 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 3. Premium Comprehensive — 35-40 days
 4. Superyacht Executive Documentation — 40-50 days
 5. Flagship Heritage Preservation — Custom timeline
+
+## Technology Sections
+Both Aero and Marine services pages include detailed technology sections:
+- **Drone LiDAR Scanning**: Sub-millimeter precision, FAA Part 107, 100+ points/cm², salt-air resilient (marine)
+- **Nondestructive Document Scanning**: Zero-contact, UV-free LED, 600+ DPI, museum-grade
+- **Document Restoration**: Optional add-on — archival conservation, ink stabilization, mold remediation, binding repair
+- **Underwater 3D Scanning** (Marine only): Diver-deployed structured-light scanners, sonar-integrated
+
+## Expanded Add-On Services
+Both divisions offer:
+- **Rapid Deployment Program**: 48-72 hour worldwide emergency mobilization
+- **Insurance Baseline Documentation**: Pre-incident condition capture
+- **Before/After/Restored Comparison Package**: Three-phase 3D documentation for claims
+- **Pre-Sale & Transaction Support**: Expedited documentation for sales
+- **Regulatory & Inspection Documentation**: DOT, FAA, USCG, IMO, classification society, flag state
+- **Document Restoration**: Conservation of damaged/aged records
+
+## Fleet Services
+Both divisions offer fleet programs for multi-asset operators:
+- Volume discount rates
+- Scheduled annual documentation cycles
+- Dedicated fleet account manager
+- Consistent standards across fleets
+- Worldwide deployment
+- "Contact Us for Fleet Pricing" CTA (no prices displayed)
+
+## Bespoke Services
+Ultra-premium tier for both divisions:
+- "By Invitation or Inquiry" positioning
+- Personal project director
+- Unlimited scope & revisions
+- Custom archival formats
+- Worldwide availability, any timeline
+- "Contact Us to Discuss" CTA
+
+## Blog Content (6 Published Posts)
+1. "Why LiDAR 3D Scanning Is Transforming Asset Documentation" — Technology
+2. "The Hidden Risk: Why Shipping Irreplaceable Documents Is a Liability" — Risk Management
+3. "What to Look for in an Asset Risk Mitigation Company" — Industry Guide
+4. "Before, During, and After: How 3D Documentation Protects Your Insurance Claim" — Insurance
+5. "Nondestructive Document Scanning: Preserving Originals While Creating Digital Permanence" — Technology
+6. "The ROI of Professional Asset Documentation for High-Value Vehicles" — Business Case
 
 ## Premium Language Guidelines
 - **Never use**: fast, cheap, easy, simple, affordable, beginner-friendly, rush service
@@ -108,5 +156,7 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 - Fixed-price guarantee: "Your engagement price is fixed at proposal. No scope creep."
 - Office hours: Mon-Fri 8AM-6PM CST
 - All data-testid attributes on interactive and display elements
-- Division sub-pages: `/marine/why-us`, `/marine/process`, and `/marine/services` provide deeper content for the Marine division; `/aero/services`, `/aero/how-it-works`, `/aero/why-provenarc` are division-prefixed aliases for aero pages
-- Navbar uses dropdown menus for Services, How It Works, and Why Provenarc — each offering Aero and Marine options
+- Division sub-pages provide deeper content per division
+- Navbar uses dropdown menus for Services, How It Works, Why Provenarc, and Company
+- Partner marketing lives on dedicated partner pages (/aero/partners, /marine/partners) — individual division pages show brief "For Partners" CTA only
+- Worldwide emphasis throughout — "six continents, seventeen flag jurisdictions" messaging

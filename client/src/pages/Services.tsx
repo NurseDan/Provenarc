@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, Plane, Clock, MapPin, FileText, BookOpen, Award } from "lucide-react";
+import { CheckCircle2, ArrowRight, Plane, Clock, MapPin, FileText, BookOpen, Award, Zap, Shield, BarChart3, Truck, Users, Crown, Globe, Star, Sparkles, Scan, Radio, Wrench } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -113,28 +113,87 @@ const tiers = [
 const addOns = [
   {
     name: "Ownership Transition Package",
+    icon: FileText,
     description:
       "Historical records research, prior owner contact and document recovery, gap analysis, pre-sale documentation audit, and buyer presentation package.",
     turnaround: "+10 business days",
   },
   {
     name: "Annual Documentation Update",
+    icon: Clock,
     description:
       "Annual 3D condition baseline scan, records update, compliance verification (ADs, inspections), and insurance renewal documentation.",
     turnaround: "20\u201325 business days per visit",
   },
   {
     name: "Post-Incident Documentation",
+    icon: Shield,
     description:
       "Emergency 48\u201372 hour deployment, complete damage documentation via 3D scanning, pre/post comparison analysis, and insurance claim support package.",
     turnaround: "15\u201320 business days",
   },
   {
     name: "Expedited Service",
+    icon: Zap,
     description:
       "Priority scheduling for aviation sales professionals with transaction deadlines. Quality standards remain identical \u2014 we compress timelines through resource intensity, not by skipping steps.",
     turnaround: "50\u201367% turnaround reduction",
   },
+  {
+    name: "Rapid Deployment Program",
+    icon: Globe,
+    description:
+      "48\u201372 hour worldwide emergency mobilization for sales closings, insurance deadlines, regulatory requirements, transportation inspections, or any time-sensitive need. Our rapid response teams deploy anywhere in the world with full scanning and documentation capabilities.",
+    turnaround: "48\u201372 hour deployment",
+  },
+  {
+    name: "Insurance Baseline Documentation",
+    icon: Shield,
+    description:
+      "Comprehensive pre-incident condition capture designed specifically for insurers and owners. Establishes an irrefutable baseline of your aircraft's condition, protecting your coverage position and accelerating any future claims process.",
+    turnaround: "Aligned with service tier",
+  },
+  {
+    name: "Before/After/Restored Comparison Package",
+    icon: BarChart3,
+    description:
+      "Three-phase 3D documentation for insurance claims and restoration projects. Captures pre-incident condition, post-incident damage, and final restored state with precise dimensional comparison analysis and claim-ready reporting.",
+    turnaround: "Per-phase documentation",
+  },
+  {
+    name: "Pre-Sale & Transaction Support",
+    icon: Truck,
+    description:
+      "Expedited documentation packages designed to accelerate aircraft sales. Buyer-ready presentation materials, comprehensive condition reports, and interactive 3D models that enable remote due diligence and build buyer confidence.",
+    turnaround: "Expedited timelines available",
+  },
+  {
+    name: "Transportation & Regulatory Inspections",
+    icon: Plane,
+    description:
+      "On-demand documentation for DOT, FAA, or any regulatory requirement. Our teams provide forensic-grade documentation that satisfies the most demanding regulatory standards, delivered on your timeline.",
+    turnaround: "Aligned with regulatory deadlines",
+  },
+];
+
+const fleetFeatures = [
+  "Comprehensive fleet documentation programs for operators managing multiple aircraft",
+  "Volume discount rates for fleet operators, corporate flight departments, and charter operators",
+  "Scheduled annual documentation cycles across your entire fleet",
+  "Dedicated fleet account manager for streamlined coordination",
+  "Standardized documentation protocols ensuring consistency across all aircraft",
+  "Priority scheduling and expedited turnaround for fleet clients",
+  "Centralized RecordVault access for all fleet documentation",
+];
+
+const bespokeFeatures = [
+  "Fully custom engagement \u2014 no predefined scope, every element tailored to your exact requirements",
+  "Personal project director (not simply an account manager) overseeing every detail",
+  "Unlimited revisions until your vision is fully realized",
+  "Custom deliverable formats designed to your specifications",
+  "Private in-person presentation at your chosen location worldwide",
+  "Available on any timeline, anywhere in the world",
+  "Complete discretion and confidentiality throughout the engagement",
 ];
 
 const investmentFactors = [
@@ -320,7 +379,127 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-24 bg-card/50">
+      <section className="py-24 bg-card/50" data-testid="section-our-technology">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Radio className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Precision Instruments
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl">
+              Our Technology
+            </h2>
+            <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto leading-relaxed italic">
+              Purpose-built equipment for forensic-grade documentation
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0 }}
+            >
+              <Card className="p-6 h-full" data-testid="card-tech-lidar">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+                  <Scan className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="font-serif text-xl mb-2">Drone LiDAR Scanning</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  Our FAA Part 107-certified drone fleet deploys advanced LiDAR sensors capable of sub-millimeter precision across every exterior surface. From fuselage contours to empennage geometry, each scan generates dense point cloud data that captures your aircraft's exact dimensional state with forensic accuracy.
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    "Sub-millimeter measurement precision",
+                    "FAA Part 107-certified flight operations",
+                    "Dense point cloud generation (millions of data points)",
+                    "Full exterior coverage from optimal aerial angles",
+                    "Real-time quality verification during capture",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-primary mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Card className="p-6 h-full" data-testid="card-tech-document-scanner">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+                  <Shield className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="font-serif text-xl mb-2">Nondestructive Document Scanning</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  Museum-grade scanning systems that never make physical contact with your original documents. UV-free, archival-safe LED lighting preserves ink integrity while capturing every detail at resolutions exceeding 600 DPI. Decades of handwritten maintenance entries, inspection stamps, and compliance records are digitized without risk to the originals.
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    "Zero contact with original documents",
+                    "UV-free archival-safe LED illumination",
+                    "600+ DPI capture resolution",
+                    "Safe for aged inks, fragile bindings, and vintage paper",
+                    "Professional OCR for searchable digital archives",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-primary mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Card className="p-6 h-full border-primary/20" data-testid="card-tech-restoration">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+                  <Wrench className="h-5 w-5 text-primary" />
+                </div>
+                <p className="text-primary font-mono text-[10px] tracking-[0.3em] uppercase mb-3">Optional Service</p>
+                <h3 className="font-serif text-xl mb-2">Document Restoration</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  For aircraft with fragile, damaged, or deteriorating records, our archival conservation specialists can stabilize and restore original documents before digitization. Ink stabilization prevents further fading, spine repair ensures safe handling, and mold remediation protects both the documents and their long-term viability.
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    "Fragile and damaged logbook repair",
+                    "Archival conservation techniques",
+                    "Ink stabilization and fade prevention",
+                    "Spine and binding restoration",
+                    "Mold and moisture damage remediation",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-primary mt-0.5 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Card className="p-3 bg-primary/5 border-primary/10 mt-5">
+                  <p className="text-xs text-muted-foreground italic">
+                    Available as an add-on to any service tier. Assessment provided during your discovery session.
+                  </p>
+                </Card>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24" data-testid="section-addons">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-16">
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
@@ -328,29 +507,150 @@ export default function Services() {
             </p>
             <h2 className="font-serif text-3xl md:text-4xl">Add-On Services</h2>
             <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
-              Enhance any service tier with specialized documentation packages.
+              Enhance any service tier with specialized documentation packages tailored to your specific needs.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {addOns.map((addon, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
               >
                 <Card className="p-6 h-full" data-testid={`card-addon-${i}`}>
-                  <h3 className="font-medium mb-3">{addon.name}</h3>
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <addon.icon className="h-4 w-4 text-primary" />
+                    </div>
+                    <h3 className="font-medium pt-1.5">{addon.name}</h3>
+                  </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{addon.description}</p>
-                  <p className="text-xs text-muted-foreground mt-3">
-                    Turnaround: {addon.turnaround}
+                  <p className="text-xs text-muted-foreground/80 mt-4 font-mono tracking-wide">
+                    {addon.turnaround}
                   </p>
                 </Card>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-card/50" data-testid="section-fleet-services">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+                Multi-Aircraft Programs
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl">Fleet Services</h2>
+              <p className="text-muted-foreground text-lg mt-4 leading-relaxed">
+                For operators managing multiple aircraft, our fleet documentation programs deliver consistency,
+                efficiency, and meaningful value across your entire operation.
+              </p>
+              <ul className="space-y-3 mt-8">
+                {fleetFeatures.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <Card className="p-8 lg:sticky lg:top-24">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                <Users className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="font-serif text-2xl mb-3">Tailored Fleet Pricing</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+                Volume discount rates are available for corporate flight departments, charter operators,
+                FBOs, and any organization managing multiple aircraft. Every fleet program is structured
+                around your operational requirements.
+              </p>
+              <p className="text-xs text-muted-foreground/80 italic mb-6">
+                Scheduled annual documentation cycles ensure your fleet records remain current and comprehensive.
+              </p>
+              <Link href="/contact">
+                <Button className="w-full" data-testid="button-fleet-pricing">
+                  Contact Us for Fleet Pricing <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative py-24" data-testid="section-bespoke-services">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
+        <div className="relative max-w-5xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="w-14 h-14 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mx-auto mb-6">
+              <Crown className="h-6 w-6 text-[#c9a96e]" />
+            </div>
+            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-4">
+              By Invitation or Inquiry
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#faf6f1]">
+              Bespoke Services
+            </h2>
+            <p className="text-[#b8b0a4] text-lg mt-4 max-w-3xl mx-auto leading-relaxed italic">
+              For clients who require the extraordinary — a fully custom engagement with no predefined scope,
+              no limitations, and no compromises.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="lg:col-span-3 space-y-6">
+              <p className="text-[#b8b0a4] leading-relaxed">
+                Some engagements transcend standard service tiers. When your requirements demand a level of
+                attention, customization, and discretion that cannot be templated, our Bespoke program
+                delivers a fully tailored experience from inception to final deliverable.
+              </p>
+              <p className="text-[#b8b0a4] leading-relaxed">
+                Your personal project director — not simply an account manager — oversees every detail of your
+                engagement. Unlimited revisions, custom deliverable formats, and private in-person presentations
+                ensure the final product reflects your exact vision.
+              </p>
+              <ul className="space-y-3 mt-6">
+                {bespokeFeatures.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-[#b8b0a4]">
+                    <Star className="h-4 w-4 text-[#c9a96e] mt-0.5 flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="lg:col-span-2">
+              <Card className="p-8 bg-[#faf6f1]/5 border-[#c9a96e]/20">
+                <div className="flex items-center gap-3 mb-6">
+                  <Sparkles className="h-5 w-5 text-[#c9a96e]" />
+                  <h3 className="font-serif text-xl text-[#faf6f1]">The Bespoke Experience</h3>
+                </div>
+                <div className="space-y-4 text-sm text-[#b8b0a4]">
+                  <p className="leading-relaxed">
+                    Every element is tailored to your exact requirements. There is no menu to choose from —
+                    your engagement is designed from a blank canvas.
+                  </p>
+                  <p className="leading-relaxed">
+                    Available worldwide, on any timeline. Whether your aircraft is in Zurich, Dubai, Singapore,
+                    or São Paulo, our team mobilizes to meet your needs.
+                  </p>
+                  <p className="text-xs text-[#b8b0a4]/70 italic mt-4">
+                    Bespoke engagements begin with a confidential conversation about your vision and requirements.
+                  </p>
+                </div>
+                <Link href="/contact">
+                  <Button className="w-full mt-6" data-testid="button-bespoke-inquiry">
+                    Contact Us to Discuss <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </Card>
+            </div>
+          </motion.div>
         </div>
       </section>
 

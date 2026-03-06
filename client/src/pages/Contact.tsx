@@ -467,7 +467,7 @@ export default function Contact() {
                       { icon: Calendar, label: "Weekend/Emergency", value: "By appointment" },
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                           <item.icon className="h-4 w-4 text-primary" />
                         </div>
                         <div>

@@ -5,8 +5,9 @@ import { Card } from "@/components/ui/card";
 import {
   Anchor, Globe, Shield, Scan, Lock, FileCheck,
   ArrowRight, CheckCircle2, ShieldCheck, DollarSign,
-  Award, Camera, BookOpen, Ship, Compass, Waves,
-  Users, TrendingUp, Clock, MapPin,
+  Camera, BookOpen, Ship, Compass, Waves,
+  Users, MapPin, Zap, ClipboardCheck,
+  BarChart3, Wrench, Crown, Sparkles, Handshake,
 } from "lucide-react";
 
 const fadeUp = {
@@ -164,42 +165,36 @@ const tiers = [
   },
 ];
 
-const brokerModels = [
+const additionalServices = [
   {
-    icon: Users,
-    title: "Referral Partnership",
+    icon: Zap,
+    title: "Rapid Deployment",
     description:
-      "Refer vessel owners and earn competitive referral fees. We handle every aspect of the engagement — your clients receive white-glove service, and you receive a percentage of base fees for every completed project.",
-    features: [
-      "Competitive referral fee on base engagement value",
-      "No operational involvement required",
-      "Dedicated partner liaison for your clients",
-      "Co-branded status reports throughout engagement",
-    ],
+      "48\u201372 hour worldwide emergency mobilization for insurance events, pre-sale deadlines, regulatory inspections, or any time-sensitive maritime need.",
   },
   {
-    icon: Shield,
-    title: "White-Label Partnership",
+    icon: ShieldCheck,
+    title: "Insurance & Claims",
     description:
-      "Offer documentation services under your brokerage brand. Our expertise, equipment, and execution — your client relationship and brand identity. Revenue sharing model designed for high-volume brokerages.",
-    features: [
-      "All deliverables branded with your company identity",
-      "Dedicated project manager for your account",
-      "Revenue sharing on all engagements",
-      "Priority scheduling for your clients",
-    ],
+      "Pre-incident baseline capture and before/after/restored comparison packages for marine insurers, P&I clubs, and hull & machinery claims.",
   },
   {
-    icon: Award,
-    title: "Co-Branded Premium Package",
+    icon: BarChart3,
+    title: "Pre-Sale Support",
     description:
-      "Both brands featured on museum-grade deliverables. Ideal for prestigious brokerages that want to elevate their transaction packages with world-class documentation while maintaining brand visibility.",
-    features: [
-      "Dual branding on archival volumes and digital platforms",
-      "Joint marketing materials and case studies",
-      "Preferred pricing on all service tiers",
-      "Quarterly partnership reviews and optimization",
-    ],
+      "Expedited documentation packages that accelerate vessel transactions, giving buyers and surveyors immediate confidence in vessel condition and history.",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Maritime Regulatory",
+    description:
+      "On-demand documentation for USCG, IMO, classification society, and flag state requirements — any regulatory or survey need, worldwide.",
+  },
+  {
+    icon: Wrench,
+    title: "Document Restoration",
+    description:
+      "Professional conservation of water-damaged logs, faded entries, mold remediation, and ink recovery for saltwater-exposed maritime records.",
   },
 ];
 
@@ -264,7 +259,7 @@ export default function Marine() {
           >
             Preserving Maritime Heritage
             <br className="hidden sm:block" />
-            {" "}with Three Decades of Precision
+            {" "}Worldwide, with Three Decades of Precision
           </motion.h1>
 
           <motion.p
@@ -272,7 +267,7 @@ export default function Marine() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
             className="text-[#c9a96e]/80 font-serif text-lg sm:text-xl mt-6 italic"
           >
-            From coastal cruisers to megayachts — vessel documentation that transcends regulatory compliance
+            From coastal cruisers to megayachts — global vessel documentation that transcends regulatory compliance
           </motion.p>
 
           <motion.p
@@ -281,11 +276,12 @@ export default function Marine() {
             className="text-[#b8b0a4] text-base sm:text-lg mt-8 max-w-3xl mx-auto leading-relaxed"
             data-testid="text-marine-subheadline"
           >
-            Provenarc Marine brings three decades of maritime expertise to vessel documentation.
-            Our team understands that maritime assets face unique environmental challenges — corrosive
-            saltwater exposure, complex flag state jurisdictions, and classification society requirements
-            that demand meticulous documentation. We go beyond regulatory compliance to create permanent
-            preservation archives that protect your vessel's heritage and enhance its market position
+            Provenarc Marine brings three decades of maritime expertise to vessel documentation —
+            anywhere in the world. Our globally deployed teams understand that maritime assets face unique
+            environmental challenges — corrosive saltwater exposure, complex flag state jurisdictions, and
+            classification society requirements that demand meticulous documentation. From the Mediterranean
+            to the Caribbean, Asia-Pacific to Northern Europe, we go beyond regulatory compliance to create
+            permanent preservation archives that protect your vessel's heritage and enhance its market position
             through proprietary drone scanning, LiDAR-enhanced 3D modeling, and museum-grade archival volumes.
           </motion.p>
 
@@ -552,110 +548,190 @@ export default function Marine() {
         </div>
       </section>
 
-      <section className="py-24 bg-card/50" data-testid="section-broker-services">
+      <section className="py-24 bg-card/50" data-testid="section-additional-services">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-16">
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
-              Yacht Broker Services
+              Beyond the Standard
             </p>
             <h2 className="font-serif text-3xl md:text-4xl">
-              Partnership Programs for Maritime Professionals
+              Additional Services
             </h2>
             <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
-              Three partnership models designed for yacht brokers, management companies, and maritime professionals.
+              Specialized capabilities for every maritime scenario — from emergency mobilization to archival restoration, available worldwide.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {brokerModels.map((model, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {additionalServices.map((service, i) => (
               <motion.div
-                key={model.title}
+                key={service.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
               >
-                <Card className="p-8 h-full flex flex-col" data-testid={`card-broker-${i}`}>
+                <Card className="p-8 h-full" data-testid={`card-addon-${i}`}>
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-5">
-                    <model.icon className="h-5 w-5 text-primary" />
+                    <service.icon className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="font-serif text-lg mb-3">{model.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    {model.description}
+                  <h3 className="font-serif text-lg mb-3">{service.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {service.description}
                   </p>
-                  <ul className="space-y-2 mt-auto">
-                    {model.features.map((f, j) => (
-                      <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
                 </Card>
               </motion.div>
             ))}
           </div>
 
+          <motion.div {...fadeUp} className="text-center mt-12">
+            <Link href="/marine/services">
+              <Button variant="outline" data-testid="button-view-all-marine-services">
+                View All Marine Services <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24" data-testid="section-fleet-services">
+        <div className="max-w-4xl mx-auto px-6">
           <motion.div {...fadeUp}>
-            <Card className="p-8 max-w-4xl mx-auto" data-testid="card-expedited-service">
-              <div className="text-center mb-8">
-                <Clock className="h-6 w-6 text-primary mx-auto mb-3" />
-                <h3 className="font-serif text-2xl mb-2">Expedited Service</h3>
-                <p className="text-sm text-muted-foreground italic">
-                  Exclusive to broker and management company partners
+            <Card className="p-10 md:p-14" data-testid="card-fleet-services">
+              <div className="text-center">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <Ship className="h-6 w-6 text-primary" />
+                </div>
+                <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+                  Fleet Programs
+                </p>
+                <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-4">
+                  Multi-Vessel Fleet Documentation
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto mb-6">
+                  Purpose-built documentation programs for yacht management companies, charter fleets,
+                  and commercial operators managing multiple vessels worldwide.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8 text-left">
+                  {[
+                    "Volume discount rates for fleet operators",
+                    "Scheduled annual documentation cycles",
+                    "Dedicated fleet account manager",
+                    "Consistent standards across entire fleets",
+                    "Global deployment to any port or marina",
+                    "Priority scheduling for fleet engagements",
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/contact">
+                  <Button size="lg" data-testid="button-fleet-pricing">
+                    Contact Us for Fleet Pricing
+                  </Button>
+                </Link>
+                <p className="text-muted-foreground/60 text-xs mt-4">
+                  Custom pricing for 3+ vessels. Dedicated account team assigned.
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="text-center p-4">
-                  <p className="font-serif text-3xl text-primary mb-1">50%</p>
-                  <p className="text-sm font-medium mb-1">Standard Expedited</p>
-                  <p className="text-xs text-muted-foreground">Turnaround reduction through resource intensity</p>
-                </div>
-                <div className="text-center p-4">
-                  <p className="font-serif text-3xl text-primary mb-1">67%</p>
-                  <p className="text-sm font-medium mb-1">Priority Expedited</p>
-                  <p className="text-xs text-muted-foreground">Maximum compression for urgent transactions</p>
-                </div>
-              </div>
-              <p className="text-sm text-muted-foreground text-center leading-relaxed">
-                Quality standards remain identical — we compress through resource intensity, not
-                skipping steps. Additional team members, extended daily operations, and priority
-                processing queues achieve faster delivery without compromising thoroughness.
-              </p>
             </Card>
           </motion.div>
+        </div>
+      </section>
 
-          <motion.div {...fadeUp} className="mt-16">
-            <div className="text-center mb-8">
-              <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
-                Broker ROI
-              </p>
-              <h3 className="font-serif text-2xl">
-                The Business Case for Documentation Excellence
-              </h3>
+      <section className="relative py-24" data-testid="section-bespoke">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="relative max-w-4xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center">
+            <div className="w-14 h-14 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mx-auto mb-6">
+              <Crown className="h-6 w-6 text-[#c9a96e]" />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-4">
+              By Invitation or Inquiry
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#faf6f1] leading-tight mb-4">
+              Bespoke Maritime Services
+            </h2>
+            <p className="text-[#c9a96e]/80 font-serif text-lg italic mb-6">
+              For the most discerning vessel owners
+            </p>
+            <p className="text-[#b8b0a4] text-lg leading-relaxed max-w-3xl mx-auto mb-10">
+              A fully custom engagement with no predefined scope — every element tailored to the exact
+              requirements of megayacht owners, historic vessel collectors, and royal or state fleets.
+              Personal project director, unlimited revisions, custom archival formats, private presentation
+              delivery, and worldwide availability on any timeline.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-10">
               {[
-                { icon: Clock, value: "40\u201390 Days", label: "Transaction Timeline Reduction" },
-                { icon: TrendingUp, value: "5\u201315%", label: "Premium Price Retention" },
-                { icon: DollarSign, value: "Significant", label: "Holding Cost Savings" },
-                { icon: Award, value: "Elevated", label: "Brokerage Brand Positioning" },
-              ].map((stat, i) => (
+                { icon: Sparkles, label: "Unlimited Scope", detail: "Every detail tailored to your vision" },
+                { icon: Globe, label: "Worldwide", detail: "Any port, any marina, any timeline" },
+                { icon: Users, label: "Personal Director", detail: "Dedicated project director assigned" },
+              ].map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="text-center"
                 >
-                  <Card className="p-6 text-center h-full" data-testid={`card-roi-${i}`}>
-                    <stat.icon className="h-5 w-5 text-primary mx-auto mb-3" />
-                    <p className="font-serif text-xl text-primary mb-1">{stat.value}</p>
-                    <p className="text-xs text-muted-foreground">{stat.label}</p>
-                  </Card>
+                  <div className="w-10 h-10 rounded-full bg-[#c9a96e]/10 flex items-center justify-center mx-auto mb-3">
+                    <item.icon className="h-4 w-4 text-[#c9a96e]" />
+                  </div>
+                  <p className="text-sm font-medium text-[#faf6f1] mb-1">{item.label}</p>
+                  <p className="text-xs text-[#b8b0a4]/70">{item.detail}</p>
                 </motion.div>
               ))}
             </div>
+
+            <Link href="/contact">
+              <Button size="lg" data-testid="button-bespoke-inquiry">
+                Contact Us to Discuss
+              </Button>
+            </Link>
+            <p className="text-[#b8b0a4]/60 text-sm mt-4">
+              No commitment required. Completely confidential consultation.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-card/50" data-testid="section-for-partners">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div {...fadeUp}>
+            <Card className="p-10 md:p-14" data-testid="card-for-partners">
+              <div className="text-center">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <Handshake className="h-6 w-6 text-primary" />
+                </div>
+                <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+                  For Maritime Professionals
+                </p>
+                <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-4">
+                  Partnership Programs
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+                  Yacht brokers, management companies, marine insurers, and P&I clubs — explore
+                  partnership models designed to enhance your client offerings and accelerate transactions.
+                </p>
+                <Link href="/marine/partners">
+                  <Button size="lg" data-testid="button-marine-partners-cta">
+                    Explore Marine Partnerships <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </Card>
           </motion.div>
         </div>
       </section>
@@ -667,11 +743,12 @@ export default function Marine() {
               Global Maritime Reach
             </p>
             <h2 className="font-serif text-3xl md:text-4xl">
-              Four Continents. Seventeen Flag Jurisdictions.
+              Six Continents. Seventeen Flag Jurisdictions. One Standard.
             </h2>
             <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
-              We bring the same white-glove service, professional equipment, and meticulous
-              documentation standards to every marina, boatyard, and anchorage worldwide.
+              Wherever your vessel is berthed — Mediterranean superyacht marina, Caribbean anchorage,
+              Asian shipyard, or remote Pacific atoll — we deploy the same white-glove service,
+              professional equipment, and meticulous documentation standards worldwide.
             </p>
           </motion.div>
 
@@ -757,7 +834,7 @@ export default function Marine() {
         </div>
       </section>
 
-      <section className="py-16" data-testid="section-marine-explore">
+      <section className="py-24" data-testid="section-marine-explore">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-10">
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
@@ -767,7 +844,7 @@ export default function Marine() {
           </motion.div>
           <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Link href="/marine/why-us">
-              <Card className="p-6 cursor-pointer transition-all hover:shadow-md" data-testid="link-marine-why-us">
+              <Card className="p-6 cursor-pointer hover-elevate" data-testid="link-marine-why-us">
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="font-serif text-lg mb-1">Why Provenarc Marine</h3>
@@ -778,7 +855,7 @@ export default function Marine() {
               </Card>
             </Link>
             <Link href="/marine/process">
-              <Card className="p-6 cursor-pointer transition-all hover:shadow-md" data-testid="link-marine-process">
+              <Card className="p-6 cursor-pointer hover-elevate" data-testid="link-marine-process">
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="font-serif text-lg mb-1">Our Process</h3>
@@ -812,14 +889,14 @@ export default function Marine() {
                   Schedule a Discovery Session
                 </Button>
               </Link>
-              <Link href="/partners">
+              <Link href="/marine/partners">
                 <Button
                   size="lg"
                   variant="outline"
                   className="backdrop-blur-sm bg-[#faf6f1]/5 border-[#faf6f1]/15 text-[#faf6f1]"
                   data-testid="button-marine-cta-broker"
                 >
-                  Broker Partnerships <ArrowRight className="ml-2 h-4 w-4" />
+                  Marine Partnerships <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>

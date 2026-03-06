@@ -342,7 +342,7 @@ export default function About() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <Card className="p-6 h-full flex flex-col" data-testid={`card-partner-${i}`}>
-                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <partner.icon className="h-5 w-5 text-primary" />
                   </div>
                   <h3 className="font-medium mb-2">{partner.title}</h3>

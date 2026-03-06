@@ -445,7 +445,7 @@ export default function HowItWorks() {
               >
                 <Card className="p-6 h-full" data-testid={`card-drone-coverage-${i}`}>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <item.icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>
@@ -580,7 +580,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
                 <Card className="p-6 h-full" data-testid={`card-platform-${i}`}>
-                  <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <feature.icon className="h-5 w-5 text-primary" />
                   </div>
                   <h3 className="font-medium mb-2">{feature.title}</h3>

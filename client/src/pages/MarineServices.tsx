@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, Anchor, Clock, MapPin, FileText, BookOpen, Award, Ship, Waves } from "lucide-react";
+import { CheckCircle2, ArrowRight, Anchor, Clock, MapPin, FileText, BookOpen, Award, Ship, Waves, Scan, Camera, FileSearch, Wrench, Zap, Shield, Navigation, Users, Globe, Crown, Star, Diamond } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -113,27 +113,129 @@ const tiers = [
 const addOns = [
   {
     name: "Ownership Transition Package",
+    icon: FileSearch,
     description:
       "Historical records research, prior owner and shipyard contact, gap analysis, pre-sale documentation audit, and buyer presentation package tailored for maritime transactions.",
     turnaround: "+10–15 business days",
   },
   {
     name: "Annual Condition Update",
+    icon: Camera,
     description:
       "Annual 3D condition baseline scan, records update, survey compliance verification, and insurance renewal documentation. Tracks condition evolution across seasons.",
     turnaround: "25–30 business days per visit",
   },
   {
     name: "Post-Incident Documentation",
+    icon: Shield,
     description:
       "Emergency 48–72 hour deployment, complete damage documentation via 3D scanning, pre/post comparison analysis for hull and systems, and marine insurance claim support package.",
     turnaround: "15–20 business days",
   },
   {
     name: "Expedited Service",
+    icon: Clock,
     description:
       "Priority scheduling for yacht brokers and management companies with transaction deadlines. Quality standards remain identical — we compress timelines through resource intensity, not by skipping steps.",
     turnaround: "50–67% turnaround reduction",
+  },
+  {
+    name: "Rapid Deployment Program",
+    icon: Zap,
+    description:
+      "48–72 hour worldwide emergency mobilization for marine insurance claims, pre-sale inspections, regulatory deadlines, or any time-sensitive documentation requirement. Our teams deploy dockside anywhere in the world with complete scanning and documentation equipment.",
+    turnaround: "48–72 hour deployment",
+  },
+  {
+    name: "Insurance Baseline Documentation",
+    icon: Shield,
+    description:
+      "Pre-incident condition capture for marine insurers and vessel owners. Comprehensive 3D hull, superstructure, and interior baseline establishes indisputable condition evidence before any incident occurs. Accepted by leading marine underwriters and P&I clubs worldwide.",
+    turnaround: "Included with any 3D scan tier",
+  },
+  {
+    name: "Before / After / Restored Comparison Package",
+    icon: Camera,
+    description:
+      "Three-phase 3D documentation for marine insurance claims and refit projects: pre-incident baseline, post-incident damage capture, and post-restoration verification. Side-by-side comparison deliverables accelerate claim resolution and demonstrate restoration quality.",
+    turnaround: "Per-phase scheduling",
+  },
+  {
+    name: "Pre-Sale & Transaction Support",
+    icon: FileSearch,
+    description:
+      "Expedited documentation packages to accelerate vessel sales. Comprehensive condition reports, 3D virtual tours, and organized records packages give buyers confidence and reduce due diligence timelines. Trusted by leading yacht brokerages worldwide.",
+    turnaround: "Priority scheduling available",
+  },
+  {
+    name: "Maritime Regulatory & Survey Documentation",
+    icon: Navigation,
+    description:
+      "On-demand documentation for classification society surveys, flag state inspections, SOLAS compliance, ISM audits, and any maritime regulatory requirement. Submission-ready packages formatted to each authority's specifications.",
+    turnaround: "Aligned to survey schedule",
+  },
+];
+
+const technologyCards = [
+  {
+    icon: Scan,
+    title: "Maritime Drone LiDAR Scanning",
+    subtitle: "Hull Documentation Without Haul-Out",
+    description:
+      "Our maritime-adapted drone LiDAR systems capture complete hull and superstructure geometry while your vessel remains in the water — eliminating costly haul-out requirements. Salt-air resilient housings and corrosion-resistant optics ensure reliable performance in harsh marine environments. Sub-millimeter point cloud generation documents every surface detail, from waterline paint condition to superstructure fairing integrity.",
+    specs: [
+      "Maritime-hardened, salt-air resilient drone platforms",
+      "Sub-millimeter accuracy point cloud generation",
+      "Hull scanning without haul-out or dry dock",
+      "Waterline-to-masthead full exterior capture",
+      "Corrosion-resistant optics and sealed housings",
+      "FAA Part 107 certified operators with maritime endorsements",
+    ],
+  },
+  {
+    icon: Camera,
+    title: "Underwater 3D Scanning",
+    subtitle: "Diver-Deployed, Sonar-Integrated Systems",
+    description:
+      "Beneath the waterline, our diver-deployed 3D scanning equipment captures hull condition, running gear, and underwater appendages with precision that traditional marine surveys cannot match. Sonar-integrated imaging penetrates turbid water conditions, while structured-light scanning documents surface detail in clear-water environments. The result is a complete below-waterline baseline — invaluable for insurance, classification, and transaction due diligence.",
+    specs: [
+      "Diver-deployed structured-light 3D scanners",
+      "Sonar-integrated imaging for all water conditions",
+      "Running gear and propulsion system documentation",
+      "Through-hull fitting and appendage mapping",
+      "Cathodic protection system condition capture",
+      "Pre- and post-refit comparison capability",
+    ],
+  },
+  {
+    icon: FileSearch,
+    title: "Nondestructive Document Scanning",
+    subtitle: "Preservation-Grade Digitization for Maritime Records",
+    description:
+      "Maritime documents face unique challenges — saltwater exposure, humidity damage, and decades of handling aboard working vessels. Our museum-grade scanning systems never make contact with originals. UV-free, archival-safe LED illumination prevents further degradation of water-stained pages, faded ink entries, and fragile classification certificates. Every scan preserves the document exactly as found while creating a permanent digital archive.",
+    specs: [
+      "Zero-contact scanning — no pressure on fragile originals",
+      "UV-free, archival-safe LED illumination",
+      "Specialized handling for saltwater-exposed documents",
+      "600+ DPI capture preserves faded ink and water marks",
+      "Humidity-controlled scanning environment protocols",
+      "OCR processing adapted for maritime terminology and notation",
+    ],
+  },
+  {
+    icon: Wrench,
+    title: "Document Restoration Services",
+    subtitle: "Recovery & Conservation for Damaged Maritime Records",
+    description:
+      "Decades at sea take their toll on ship's logs, classification certificates, and maintenance records. Our optional restoration services recover information from documents that might otherwise be considered lost. Water-damaged logs undergo careful drying and stabilization. Mold-affected pages receive professional remediation. Faded entries are enhanced through archival ink recovery techniques — all performed by conservation specialists with maritime document experience.",
+    specs: [
+      "Water-damaged log drying and stabilization",
+      "Mold remediation for affected maritime documents",
+      "Archival ink recovery and enhancement techniques",
+      "Faded entry restoration and digital enhancement",
+      "Fragile binding repair and page consolidation",
+      "Conservation-grade materials and reversible methods",
+    ],
   },
 ];
 
@@ -239,6 +341,67 @@ export default function MarineServices() {
         </section>
       ))}
 
+      <section className="py-24" data-testid="section-marine-technology">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Scan className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-primary font-mono text-xs tracking-[0.35em] uppercase mb-4">
+              Our Technology
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl">
+              Maritime-Grade Equipment & Methods
+            </h2>
+            <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto leading-relaxed">
+              Purpose-built for the marine environment — salt-air resilient scanners, diver-deployed
+              underwater systems, and conservation-grade document handling designed for vessels and
+              their unique documentation challenges.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {technologyCards.map((tech, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <Card className="p-6 h-full" data-testid={`card-marine-technology-${i}`}>
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <tech.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-xl">{tech.title}</h3>
+                      <p className="text-sm text-muted-foreground italic mt-0.5">{tech.subtitle}</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                    {tech.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {tech.specs.map((spec, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
+                  {tech.title === "Document Restoration Services" && (
+                    <p className="text-xs text-muted-foreground/70 italic mt-4">
+                      Available as an optional add-on to any service tier.
+                    </p>
+                  )}
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24" data-testid="section-marine-archival-volumes">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-16">
@@ -342,7 +505,12 @@ export default function MarineServices() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <Card className="p-6 h-full" data-testid={`card-marine-addon-${i}`}>
-                  <h3 className="font-medium mb-3">{addon.name}</h3>
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <addon.icon className="h-4 w-4 text-primary" />
+                    </div>
+                    <h3 className="font-medium mt-1.5">{addon.name}</h3>
+                  </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{addon.description}</p>
                   <p className="text-xs text-muted-foreground mt-3">
                     Turnaround: {addon.turnaround}
@@ -351,6 +519,164 @@ export default function MarineServices() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-24" data-testid="section-marine-fleet-services">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Users className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Multi-Vessel Programs
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl">Fleet Services</h2>
+            <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+              Comprehensive documentation programs for yacht management companies, charter fleets, and commercial operators managing multiple vessels.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <Card className="p-6" data-testid="card-marine-fleet-volume">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Ship className="h-4 w-4 text-primary" />
+                </div>
+                <h3 className="font-medium mt-1.5">Volume Discount Programs</h3>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Preferred rates for operators documenting multiple vessels. The more vessels in your fleet program, the greater your per-vessel investment efficiency. Programs available for yacht management companies, charter operators, and commercial fleet owners worldwide.
+              </p>
+            </Card>
+
+            <Card className="p-6" data-testid="card-marine-fleet-scheduled">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="h-4 w-4 text-primary" />
+                </div>
+                <h3 className="font-medium mt-1.5">Scheduled Annual Documentation Cycles</h3>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Coordinate documentation across your entire fleet with scheduled annual cycles. We work around vessel schedules, charter seasons, and survey dates to minimize operational disruption while maintaining comprehensive condition baselines.
+              </p>
+            </Card>
+
+            <Card className="p-6" data-testid="card-marine-fleet-manager">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Users className="h-4 w-4 text-primary" />
+                </div>
+                <h3 className="font-medium mt-1.5">Dedicated Fleet Account Manager</h3>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                A single point of contact who understands your entire fleet, coordinates with captains and crew across vessels, and ensures documentation standards remain consistent. Your fleet manager handles scheduling, deliverable coordination, and priority service requests.
+              </p>
+            </Card>
+
+            <Card className="p-6" data-testid="card-marine-fleet-worldwide">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Globe className="h-4 w-4 text-primary" />
+                </div>
+                <h3 className="font-medium mt-1.5">Worldwide Fleet Coordination</h3>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Your vessels may be scattered across multiple ports, marinas, and shipyards worldwide. We deploy teams to each vessel's location, coordinating across time zones and seasons to ensure every vessel in your fleet receives the same meticulous standard of documentation.
+              </p>
+            </Card>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="text-center">
+            <Link href="/contact">
+              <Button size="lg" data-testid="button-marine-fleet-pricing">
+                Contact Us for Fleet Pricing <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <p className="text-xs text-muted-foreground mt-3 italic">
+              No commitment required. We tailor every fleet program to your specific operational requirements.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative py-24" data-testid="section-marine-bespoke">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0c1219] via-[#111a22] to-[#15202b]" />
+        <div className="relative max-w-5xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <div className="w-14 h-14 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mx-auto mb-6">
+              <Diamond className="h-6 w-6 text-[#c9a96e]" />
+            </div>
+            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-4">
+              By Invitation or Inquiry
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl text-[#faf6f1]">Bespoke Services</h2>
+            <p className="text-[#b8b0a4] text-lg mt-4 max-w-2xl mx-auto leading-relaxed">
+              For megayacht owners, historic vessel collectors, and royal or state fleets — a fully custom engagement with no predefined scope.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                icon: Crown,
+                title: "Personal Project Director",
+                description: "Not an account manager — a senior project director devoted exclusively to your engagement, with direct access at any hour.",
+              },
+              {
+                icon: Star,
+                title: "Unlimited Scope & Revisions",
+                description: "No predefined boundaries. Every element of documentation, presentation, and delivery is tailored to your exact requirements.",
+              },
+              {
+                icon: Globe,
+                title: "Worldwide, Any Timeline",
+                description: "Your vessel's location is never a constraint. We deploy anywhere in the world, on your schedule, accommodating any timeline.",
+              },
+              {
+                icon: BookOpen,
+                title: "Custom Archival Formats",
+                description: "Beyond our standard heirloom volumes — fully bespoke archival formats, materials, and presentations designed to your specifications.",
+              },
+              {
+                icon: Ship,
+                title: "Megayacht & Historic Expertise",
+                description: "Specialized capabilities for vessels that demand extraordinary care — from 100m+ superyachts to irreplaceable historic ships.",
+              },
+              {
+                icon: Award,
+                title: "Private Executive Presentation",
+                description: "In-person delivery of completed documentation at your chosen location, with comprehensive walkthrough of every deliverable.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                <Card className="p-6 h-full bg-[#faf6f1]/5 border-[#faf6f1]/10" data-testid={`card-marine-bespoke-${i}`}>
+                  <div className="w-9 h-9 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mb-4">
+                    <item.icon className="h-4 w-4 text-[#c9a96e]" />
+                  </div>
+                  <h3 className="font-medium text-[#faf6f1] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#b8b0a4] leading-relaxed">{item.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div {...fadeUp} className="text-center">
+            <Link href="/contact">
+              <Button size="lg" data-testid="button-marine-bespoke-inquiry">
+                Contact Us to Discuss <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <p className="text-xs text-[#b8b0a4]/70 mt-3 italic">
+              Bespoke engagements begin with a confidential conversation. No commitment required.
+            </p>
+          </motion.div>
         </div>
       </section>
 

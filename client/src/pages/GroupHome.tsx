@@ -132,7 +132,6 @@ export default function GroupHome() {
             <Link href="/contact">
               <Button
                 size="lg"
-                className="px-10"
                 data-testid="button-group-consultation"
               >
                 Schedule a Consultation
@@ -150,7 +149,7 @@ export default function GroupHome() {
       <section className="py-32" data-testid="section-divisions">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-20">
-            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.4em] uppercase mb-4">
+            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.3em] uppercase mb-4">
               Our Divisions
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight">
@@ -219,7 +218,7 @@ export default function GroupHome() {
       <section className="py-32 bg-card/30" data-testid="section-trust-pillars">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-20">
-            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.4em] uppercase mb-4">
+            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.3em] uppercase mb-4">
               The Provenarc Standard
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight">
@@ -259,7 +258,7 @@ export default function GroupHome() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <div className="w-px h-12 bg-gradient-to-b from-transparent to-[#c9a96e]/40 mx-auto mb-10" />
-            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.4em] uppercase mb-6">
+            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.3em] uppercase mb-6">
               Our Philosophy
             </p>
             <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-8">
@@ -330,7 +329,7 @@ export default function GroupHome() {
             </p>
             <div className="mt-10">
               <Link href="/contact">
-                <Button size="lg" className="px-10" data-testid="button-group-cta-consultation">
+                <Button size="lg" data-testid="button-group-cta-consultation">
                   Schedule a Discovery Session
                 </Button>
               </Link>

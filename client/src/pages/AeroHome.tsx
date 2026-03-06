@@ -5,7 +5,8 @@ import { Card } from "@/components/ui/card";
 import {
   Globe, Shield, Scan, Lock, Plane, FileCheck,
   ArrowRight, CheckCircle2, ShieldCheck, DollarSign,
-  Award, Camera, BookOpen,
+  Award, Camera, BookOpen, Zap, ShieldAlert, TrendingUp,
+  ClipboardCheck, BookMarked, Users, Crown, Star, Handshake,
 } from "lucide-react";
 
 const fadeUp = {
@@ -430,6 +431,201 @@ export default function AeroHome() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-24" data-testid="section-additional-services">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center mb-16">
+            <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+              Beyond Documentation
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl">
+              Additional Services
+            </h2>
+            <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
+              Specialized capabilities for every aviation need — from emergency mobilization to archival restoration.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Zap,
+                title: "Rapid Deployment",
+                description: "48-72 hour worldwide emergency mobilization for sales, insurance, regulatory deadlines, or any urgent need.",
+              },
+              {
+                icon: ShieldAlert,
+                title: "Insurance & Claims",
+                description: "Pre-incident baseline capture and before/after/restored comparison packages for comprehensive claim support.",
+              },
+              {
+                icon: TrendingUp,
+                title: "Pre-Sale Support",
+                description: "Expedited documentation to accelerate transactions and maximize asset value during sales.",
+              },
+              {
+                icon: ClipboardCheck,
+                title: "Inspections & Regulatory",
+                description: "On-demand documentation for DOT, FAA, or any regulatory requirement — anywhere in the world.",
+              },
+              {
+                icon: BookMarked,
+                title: "Document Restoration",
+                description: "Archival conservation for fragile or damaged logbooks — ink stabilization, careful repair, and preservation.",
+              },
+            ].map((service, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                data-testid={`card-addon-${i}`}
+              >
+                <Card className="p-6 h-full">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <service.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-medium text-base mb-2">{service.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div {...fadeUp} className="text-center mt-10">
+            <Link href="/aero/services">
+              <Button variant="outline" data-testid="button-view-all-services">
+                View All Services <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-card/50" data-testid="section-fleet-services">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div {...fadeUp}>
+            <Card className="p-8 md:p-12">
+              <div className="flex flex-col md:flex-row items-start gap-8">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Users className="h-6 w-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-3">
+                    Fleet Programs
+                  </p>
+                  <h2 className="font-serif text-2xl md:text-3xl leading-tight mb-4">
+                    Fleet Documentation Services
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    For corporate flight departments, charter operators, and fleet managers overseeing multiple aircraft.
+                    Volume programs with scheduled annual documentation cycles, a dedicated fleet account manager,
+                    and preferred rates across your entire fleet.
+                  </p>
+                  <ul className="space-y-2 mb-8">
+                    {[
+                      "Volume discount rates for multi-aircraft programs",
+                      "Scheduled annual documentation cycles",
+                      "Dedicated fleet account manager",
+                      "Consistent standards across every aircraft in your fleet",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/contact">
+                    <Button data-testid="button-fleet-pricing">
+                      Contact Us for Fleet Pricing
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative py-24" data-testid="section-bespoke">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#141210] via-[#1c1916] to-[#1f1b17]" />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="relative max-w-4xl mx-auto px-6">
+          <motion.div {...fadeUp} className="text-center">
+            <div className="w-14 h-14 rounded-full bg-[#c9a96e]/15 flex items-center justify-center mx-auto mb-6">
+              <Crown className="h-6 w-6 text-[#c9a96e]" />
+            </div>
+            <p className="text-[#c9a96e] font-mono text-xs tracking-[0.35em] uppercase mb-4">
+              By Invitation or Inquiry
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#faf6f1] leading-tight mb-6">
+              Bespoke Services
+            </h2>
+            <p className="text-[#c9a96e]/80 font-serif text-lg italic mb-6">
+              For clients who require the extraordinary
+            </p>
+            <p className="text-[#b8b0a4] text-base leading-relaxed max-w-2xl mx-auto mb-8">
+              A fully custom engagement with no predefined scope — every element tailored to your exact requirements.
+              Personal project director, unlimited revisions, custom deliverable formats, and private presentation.
+              Available worldwide, on any timeline.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+              {[
+                { icon: Star, label: "Personal Project Director" },
+                { icon: Globe, label: "Worldwide Availability" },
+                { icon: Shield, label: "Unlimited Scope" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2 text-sm text-[#b8b0a4]">
+                  <item.icon className="h-4 w-4 text-[#c9a96e]/70" />
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </div>
+            <Link href="/contact">
+              <Button size="lg" data-testid="button-bespoke-inquiry">
+                Contact Us to Discuss
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16" data-testid="section-for-partners">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div {...fadeUp}>
+            <Card className="p-10 md:p-14" data-testid="card-for-partners">
+              <div className="text-center">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <Handshake className="h-6 w-6 text-primary" />
+                </div>
+                <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
+                  For Aviation Professionals
+                </p>
+                <h2 className="font-serif text-3xl md:text-4xl leading-tight mb-4">
+                  Partnership Programs
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+                  Aircraft brokers, MRO facilities, insurance carriers, and fleet operators — explore
+                  partnership models designed to enhance your client offerings and accelerate transactions.
+                </p>
+                <Link href="/aero/partners">
+                  <Button size="lg" data-testid="button-aero-partners-cta">
+                    Explore Aero Partnerships <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </Card>
+          </motion.div>
         </div>
       </section>
 

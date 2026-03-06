@@ -31,7 +31,8 @@ const whyProvenarcLinks = [
 
 const companyLinks = [
   { label: "About Us", href: "/about" },
-  { label: "Partners", href: "/partners" },
+  { label: "Aero Partners", href: "/aero/partners" },
+  { label: "Marine Partners", href: "/marine/partners" },
   { label: "FAQ", href: "/faq" },
 ];
 
