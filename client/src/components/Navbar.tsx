@@ -14,11 +14,19 @@ const divisionLinks = [
   { label: "Marine", href: "/marine", icon: Anchor },
 ];
 
-const mainLinks = [
-  { label: "Services", href: "/services" },
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "Why Provenarc", href: "/why-provenarc" },
-  { label: "Insights", href: "/insights" },
+const servicesLinks = [
+  { label: "Aero Services", href: "/aero/services", icon: Plane },
+  { label: "Marine Services", href: "/marine/services", icon: Anchor },
+];
+
+const howItWorksLinks = [
+  { label: "Aero Process", href: "/aero/how-it-works", icon: Plane },
+  { label: "Marine Process", href: "/marine/process", icon: Anchor },
+];
+
+const whyProvenarcLinks = [
+  { label: "Why Provenarc — Aero", href: "/aero/why-provenarc", icon: Plane },
+  { label: "Why Provenarc — Marine", href: "/marine/why-us", icon: Anchor },
 ];
 
 const companyLinks = [
@@ -27,20 +35,11 @@ const companyLinks = [
   { label: "FAQ", href: "/faq" },
 ];
 
-const mobileLinks = [
-  { label: "Services", href: "/services" },
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "Why Provenarc", href: "/why-provenarc" },
-  { label: "Insights", href: "/insights" },
-  { label: "About", href: "/about" },
-  { label: "Partners", href: "/partners" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
-];
-
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+
+  const isActiveIn = (hrefs: string[]) => hrefs.some((h) => location === h);
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
@@ -61,7 +60,7 @@ export function Navbar() {
             <DropdownMenuTrigger asChild>
               <button
                 className={`text-sm tracking-wide transition-colors flex items-center gap-1 ${
-                  ["/aero", "/marine"].includes(location)
+                  isActiveIn(["/aero", "/marine"])
                     ? "text-foreground font-medium"
                     : "text-muted-foreground"
                 }`}
@@ -84,25 +83,104 @@ export function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          {mainLinks.map((link) => (
-            <Link key={link.href} href={link.href} data-testid={`link-${link.label.toLowerCase().replace(/\s/g, "-")}`}>
-              <span
-                className={`text-sm tracking-wide transition-colors cursor-pointer ${
-                  location === link.href
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={`text-sm tracking-wide transition-colors flex items-center gap-1 ${
+                  isActiveIn(servicesLinks.map((l) => l.href).concat(["/services"]))
                     ? "text-foreground font-medium"
                     : "text-muted-foreground"
                 }`}
+                data-testid="dropdown-services"
               >
-                {link.label}
-              </span>
-            </Link>
-          ))}
+                Services <ChevronDown className="h-3 w-3" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+              {servicesLinks.map((link) => (
+                <DropdownMenuItem key={link.href} asChild>
+                  <Link href={link.href}>
+                    <span className="cursor-pointer w-full flex items-center gap-2" data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                      <link.icon className="h-3.5 w-3.5 text-primary" />
+                      {link.label}
+                    </span>
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button
                 className={`text-sm tracking-wide transition-colors flex items-center gap-1 ${
-                  ["/about", "/partners", "/faq"].includes(location)
+                  isActiveIn(howItWorksLinks.map((l) => l.href).concat(["/how-it-works"]))
+                    ? "text-foreground font-medium"
+                    : "text-muted-foreground"
+                }`}
+                data-testid="dropdown-how-it-works"
+              >
+                How It Works <ChevronDown className="h-3 w-3" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+              {howItWorksLinks.map((link) => (
+                <DropdownMenuItem key={link.href} asChild>
+                  <Link href={link.href}>
+                    <span className="cursor-pointer w-full flex items-center gap-2" data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                      <link.icon className="h-3.5 w-3.5 text-primary" />
+                      {link.label}
+                    </span>
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={`text-sm tracking-wide transition-colors flex items-center gap-1 ${
+                  isActiveIn(whyProvenarcLinks.map((l) => l.href).concat(["/why-provenarc"]))
+                    ? "text-foreground font-medium"
+                    : "text-muted-foreground"
+                }`}
+                data-testid="dropdown-why-provenarc"
+              >
+                Why Provenarc <ChevronDown className="h-3 w-3" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+              {whyProvenarcLinks.map((link) => (
+                <DropdownMenuItem key={link.href} asChild>
+                  <Link href={link.href}>
+                    <span className="cursor-pointer w-full flex items-center gap-2" data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                      <link.icon className="h-3.5 w-3.5 text-primary" />
+                      {link.label}
+                    </span>
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Link href="/insights" data-testid="link-insights">
+            <span
+              className={`text-sm tracking-wide transition-colors cursor-pointer ${
+                location === "/insights"
+                  ? "text-foreground font-medium"
+                  : "text-muted-foreground"
+              }`}
+            >
+              Insights
+            </span>
+          </Link>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={`text-sm tracking-wide transition-colors flex items-center gap-1 ${
+                  isActiveIn(["/about", "/partners", "/faq"])
                     ? "text-foreground font-medium"
                     : "text-muted-foreground"
                 }`}
@@ -187,18 +265,85 @@ export function Navbar() {
               </Link>
             ))}
           </div>
-          {mobileLinks.map((link) => (
-            <Link key={link.href} href={link.href} data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s/g, "-")}`}>
-              <div
-                className={`block py-2.5 text-sm cursor-pointer ${
-                  location === link.href ? "text-foreground font-medium" : "text-muted-foreground"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </div>
-            </Link>
-          ))}
+
+          <div className="pb-2 mb-2 border-b border-border/50">
+            <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Services</p>
+            {servicesLinks.map((link) => (
+              <Link key={link.href} href={link.href} data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                <div
+                  className={`block py-2.5 text-sm cursor-pointer flex items-center gap-2 ${
+                    location === link.href ? "text-foreground font-medium" : "text-muted-foreground"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <link.icon className="h-3.5 w-3.5 text-primary" />
+                  {link.label}
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="pb-2 mb-2 border-b border-border/50">
+            <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">How It Works</p>
+            {howItWorksLinks.map((link) => (
+              <Link key={link.href} href={link.href} data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                <div
+                  className={`block py-2.5 text-sm cursor-pointer flex items-center gap-2 ${
+                    location === link.href ? "text-foreground font-medium" : "text-muted-foreground"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <link.icon className="h-3.5 w-3.5 text-primary" />
+                  {link.label}
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="pb-2 mb-2 border-b border-border/50">
+            <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2">Why Provenarc</p>
+            {whyProvenarcLinks.map((link) => (
+              <Link key={link.href} href={link.href} data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                <div
+                  className={`block py-2.5 text-sm cursor-pointer flex items-center gap-2 ${
+                    location === link.href ? "text-foreground font-medium" : "text-muted-foreground"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <link.icon className="h-3.5 w-3.5 text-primary" />
+                  {link.label}
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <Link href="/insights" data-testid="link-mobile-insights">
+            <div
+              className={`block py-2.5 text-sm cursor-pointer ${
+                location === "/insights" ? "text-foreground font-medium" : "text-muted-foreground"
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              Insights
+            </div>
+          </Link>
+
+          <div className="pb-2 mb-2 border-b border-border/50">
+            <p className="text-xs text-muted-foreground/60 uppercase tracking-wider mb-2 mt-2">Company</p>
+            {companyLinks.map((link) => (
+              <Link key={link.href} href={link.href} data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s/g, "-")}`}>
+                <div
+                  className={`block py-2.5 text-sm cursor-pointer ${
+                    location === link.href ? "text-foreground font-medium" : "text-muted-foreground"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </div>
+              </Link>
+            ))}
+          </div>
+
           <div className="pt-2 border-t border-border/50 mt-2 space-y-1">
             <Link href="/broker/login">
               <div className="py-2.5 text-sm text-muted-foreground cursor-pointer flex items-center gap-2" onClick={() => setIsOpen(false)}>
