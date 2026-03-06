@@ -220,7 +220,8 @@ export async function registerRoutes(
 
   app.patch("/api/blog/:id", requireRole("admin"), async (req, res) => {
     try {
-      const post = await storage.updateBlogPost(req.params.id as string, req.body);
+      const id = String(req.params.id);
+      const post = await storage.updateBlogPost(id, req.body);
       if (!post) {
         return res.status(404).json({ message: "Post not found" });
       }
@@ -232,7 +233,8 @@ export async function registerRoutes(
 
   app.delete("/api/blog/:id", requireRole("admin"), async (req, res) => {
     try {
-      const deleted = await storage.deleteBlogPost(req.params.id as string);
+      const id = String(req.params.id);
+      const deleted = await storage.deleteBlogPost(id);
       if (!deleted) {
         return res.status(404).json({ message: "Post not found" });
       }

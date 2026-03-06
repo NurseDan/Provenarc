@@ -717,7 +717,7 @@ export default function AeroHome() {
                 {[
                   { icon: Shield, title: "General Liability Insurance", description: "Comprehensive general liability coverage protects against any claim arising during our on-site engagements." },
                   { icon: Scale, title: "Professional Errors & Omissions (E&O)", description: "Professional liability coverage for the accuracy and completeness of every deliverable we produce." },
-                  { icon: Cpu, title: "Equipment & Technology Insurance", description: "Full coverage for all drone, scanning, and documentation equipment deployed to your location." },
+                  { icon: Cpu, title: "Equipment & Technology Insurance", description: "Full coverage for all scanning and documentation equipment deployed to your location." },
                   { icon: FileCheck, title: "Inland Marine / Bailee Coverage", description: "Specialized coverage for documents in our care — your original records are insured from the moment we handle them." },
                   { icon: ShieldCheck, title: "Workers Compensation", description: "Complete workers compensation coverage for all field personnel operating at your facility." },
                   { icon: Lock, title: "Cyber Liability & Data Breach Insurance", description: "Protection for all digital assets, scanned records, and data we handle, store, or transmit." },

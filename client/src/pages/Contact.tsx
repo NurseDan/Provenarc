@@ -406,7 +406,9 @@ function GeneralInquiryForm() {
   });
 
   useEffect(() => {
-    if (defaultType) form.setValue("inquiryType", defaultType);
+    if (defaultType) {
+      form.setValue("inquiryType", defaultType);
+    }
   }, [defaultType, form]);
 
   const mutation = useMutation({
@@ -440,7 +442,7 @@ function GeneralInquiryForm() {
               <FormItem>
                 <FormLabel>Full Name *</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your name" {...field} data-testid="input-contact-name" />
+                  <Input placeholder="Your name" {...field} value={field.value ?? ""} data-testid="input-contact-name" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -453,7 +455,7 @@ function GeneralInquiryForm() {
               <FormItem>
                 <FormLabel>Email *</FormLabel>
                 <FormControl>
-                  <Input type="email" placeholder="you@example.com" {...field} data-testid="input-contact-email" />
+                  <Input type="email" placeholder="you@example.com" {...field} value={field.value ?? ""} data-testid="input-contact-email" />
                 </FormControl>
                 <FormMessage />
               </FormItem>

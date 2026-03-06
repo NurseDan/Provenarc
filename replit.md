@@ -17,10 +17,10 @@ Premium multi-division trust-first luxury B2B marketing website for Provenarc Gr
 - `/marine` — **Marine**: Marine division page (vessel documentation, 5 tiers, hull scanning, VesselVault, additional services, fleet programs, bespoke tier, worldwide emphasis, partner CTA)
 - `/marine/why-us` — **MarineWhyUs**: Why Provenarc Marine (underwater 3D scanning, zero shipping risk, comparison table, who trusts us)
 - `/marine/process` — **MarineProcess**: Marine process (10-step workflow, service tiers, expedited service, underwater operations protocol)
-- `/aero/services` (also `/services`) — Aero service tier details, technology section (drone LiDAR, nondestructive scanning, document restoration), expanded add-ons (rapid deployment, insurance, pre-sale, regulatory), fleet services, bespoke services
+- `/aero/services` (also `/services`) — Aero service tier details, technology section (underwater 3D, nondestructive scanning, document restoration), expanded add-ons (rapid deployment, insurance, pre-sale, regulatory), fleet services, bespoke services
 - `/aero/how-it-works` (also `/how-it-works`) — The Provenarc Method (5 steps, "Precision Without Rush" philosophy, Advanced Drone Technology, 3D scanning, RecordVault)
 - `/aero/why-provenarc` (also `/why-provenarc`) — Risk stats, The Provenarc Protocol, comparison table, independence, testimonials
-- `/marine/services` — **MarineServices**: Marine service tier details (5 tiers, technology section (maritime drone LiDAR, underwater 3D, nondestructive scanning, document restoration), expanded add-ons, fleet services, bespoke services)
+- `/marine/services` — **MarineServices**: Marine service tier details (5 tiers, technology section (maritime underwater 3D, underwater 3D, nondestructive scanning, document restoration), expanded add-ons, fleet services, bespoke services)
 - `/aero/partners` — **AeroPartners**: Aviation-specific partnership page (broker models, MRO facility, insurance carrier, fleet partner programs, ROI metrics, expedited service)
 - `/marine/partners` — **MarinePartners**: Maritime-specific partnership page (yacht broker models, management company, marine insurance/P&I club, fleet programs, worldwide deployment, ROI metrics)
 - `/about` — "Three Decades of Aviation Excellence" narrative, three pillars, corporate structure (two divisions Active), partnerships
