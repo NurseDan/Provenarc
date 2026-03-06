@@ -21,7 +21,7 @@ export const quoteRequests = pgTable("quote_requests", {
   phone: text("phone"),
   company: text("company"),
   division: text("division"),
-  aircraftType: text("aircraft_type"),
+  assetType: text("asset_type"),
   serviceTier: text("service_tier"),
   location: text("location"),
   timeline: text("timeline"),

@@ -148,7 +148,7 @@ Prominent sections on AeroHome and Marine pages:
 
 ## Database Tables
 - `users`: id, username, password, role (broker/mro/admin), companyName, contactName, email, phone
-- `quote_requests`: name, email, phone, company, division, aircraftType, serviceTier, location, timeline, message
+- `quote_requests`: name, email, phone, company, division, assetType, serviceTier, location, timeline, message
 - `contact_inquiries`: name, email, phone, inquiryType, message
 - `blog_posts`: id, title, slug (unique), excerpt, content (markdown), author, coverImageUrl, category, tags (text array), published, publishedAt, createdAt, updatedAt
 

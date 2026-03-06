@@ -120,7 +120,7 @@ function QuoteRequestForm() {
       email: "",
       phone: "",
       company: "",
-      aircraftType: "",
+      assetType: "",
       serviceTier: defaultTier,
       location: "",
       timeline: params.type === "rapid-deployment" ? "critical" : "",
@@ -193,7 +193,7 @@ function QuoteRequestForm() {
               <FormItem>
                 <FormLabel>Phone</FormLabel>
                 <FormControl>
-                  <Input placeholder="+1 (555) 000-0000" {...field} data-testid="input-quote-phone" />
+                  <Input placeholder="+1 (555) 000-0000" {...field} value={field.value ?? ""} data-testid="input-quote-phone" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -206,7 +206,7 @@ function QuoteRequestForm() {
               <FormItem>
                 <FormLabel>Company / Organization</FormLabel>
                 <FormControl>
-                  <Input placeholder="Company name" {...field} data-testid="input-quote-company" />
+                  <Input placeholder="Company name" {...field} value={field.value ?? ""} data-testid="input-quote-company" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -239,7 +239,7 @@ function QuoteRequestForm() {
           />
           <FormField
             control={form.control}
-            name="aircraftType"
+            name="assetType"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>{watchDivision === "marine" ? "Vessel Type" : "Asset Type"}</FormLabel>
@@ -351,7 +351,7 @@ function QuoteRequestForm() {
             <FormItem>
               <FormLabel>{watchDivision === "marine" ? "Vessel Location" : "Asset Location"}</FormLabel>
               <FormControl>
-                <Input placeholder="City, State/Country or Marina/Airport" {...field} data-testid="input-quote-location" />
+                <Input placeholder="City, State/Country or Marina/Airport" {...field} value={field.value ?? ""} data-testid="input-quote-location" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -369,6 +369,7 @@ function QuoteRequestForm() {
                   placeholder="Tell us about your asset, timeline, and documentation goals..."
                   className="min-h-[100px]"
                   {...field}
+                  value={field.value ?? ""}
                   data-testid="textarea-quote-message"
                 />
               </FormControl>
@@ -390,7 +391,8 @@ function GeneralInquiryForm() {
   const { toast } = useToast();
   const params = useSearchParams();
 
-  const defaultType = ["partnership", "broker", "mro", "insurance", "fleet", "bespoke", "rapid-deployment", "restoration"].includes(params.type) ? params.type : "";
+  const validTypes = ["partnership", "broker", "mro", "insurance", "fleet", "bespoke", "rapid-deployment", "restoration"];
+  const defaultType = validTypes.includes(params.type) ? params.type : "";
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -402,6 +404,10 @@ function GeneralInquiryForm() {
       message: "",
     },
   });
+
+  useEffect(() => {
+    if (defaultType) form.setValue("inquiryType", defaultType);
+  }, [defaultType, form]);
 
   const mutation = useMutation({
     mutationFn: async (data: ContactFormData) => {
@@ -463,7 +469,7 @@ function GeneralInquiryForm() {
               <FormItem>
                 <FormLabel>Phone</FormLabel>
                 <FormControl>
-                  <Input placeholder="+1 (555) 000-0000" {...field} data-testid="input-contact-phone" />
+                  <Input placeholder="+1 (555) 000-0000" {...field} value={field.value ?? ""} data-testid="input-contact-phone" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
