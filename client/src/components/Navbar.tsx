@@ -10,29 +10,28 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const divisionLinks = [
-  { label: "Aero Solutions", href: "/aero", icon: Plane },
-  { label: "Marine", href: "/marine", icon: Anchor },
+  { label: "Aero Solutions", href: "/aero", icon: Plane, badge: "" },
+  { label: "Marine", href: "/marine", icon: Anchor, badge: "Coming Soon" },
 ];
 
 const servicesLinks = [
-  { label: "Aero Services", href: "/aero/services", icon: Plane },
-  { label: "Marine Services", href: "/marine/services", icon: Anchor },
+  { label: "Aero Services", href: "/aero/services", icon: Plane, badge: "" },
+  { label: "Marine Services", href: "/marine/services", icon: Anchor, badge: "Coming Soon" },
 ];
 
 const howItWorksLinks = [
-  { label: "Aero Process", href: "/aero/how-it-works", icon: Plane },
-  { label: "Marine Process", href: "/marine/process", icon: Anchor },
+  { label: "Aero Process", href: "/aero/how-it-works", icon: Plane, badge: "" },
+  { label: "Marine Process", href: "/marine/process", icon: Anchor, badge: "Coming Soon" },
 ];
 
 const whyProvenarcLinks = [
-  { label: "Why Provenarc — Aero", href: "/aero/why-provenarc", icon: Plane },
-  { label: "Why Provenarc — Marine", href: "/marine/why-us", icon: Anchor },
+  { label: "Why Provenarc — Aero", href: "/aero/why-provenarc", icon: Plane, badge: "" },
+  { label: "Why Provenarc — Marine", href: "/marine/why-us", icon: Anchor, badge: "Coming Soon" },
 ];
 
 const companyLinks = [
   { label: "About Us", href: "/about" },
   { label: "Aero Partners", href: "/aero/partners" },
-  { label: "Marine Partners", href: "/marine/partners" },
   { label: "FAQ", href: "/faq" },
 ];
 
@@ -77,6 +76,11 @@ export function Navbar() {
                     <span className="cursor-pointer w-full flex items-center gap-2" data-testid={`link-division-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
                       <link.icon className="h-3.5 w-3.5 text-primary" />
                       {link.label}
+                      {link.badge && (
+                        <span className="ml-auto text-[9px] font-mono tracking-wider text-primary/60 border border-primary/20 rounded px-1.5 py-0.5">
+                          {link.badge}
+                        </span>
+                      )}
                     </span>
                   </Link>
                 </DropdownMenuItem>
@@ -104,6 +108,11 @@ export function Navbar() {
                     <span className="cursor-pointer w-full flex items-center gap-2" data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
                       <link.icon className="h-3.5 w-3.5 text-primary" />
                       {link.label}
+                      {link.badge && (
+                        <span className="ml-auto text-[9px] font-mono tracking-wider text-primary/60 border border-primary/20 rounded px-1.5 py-0.5">
+                          {link.badge}
+                        </span>
+                      )}
                     </span>
                   </Link>
                 </DropdownMenuItem>
@@ -131,6 +140,11 @@ export function Navbar() {
                     <span className="cursor-pointer w-full flex items-center gap-2" data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
                       <link.icon className="h-3.5 w-3.5 text-primary" />
                       {link.label}
+                      {link.badge && (
+                        <span className="ml-auto text-[9px] font-mono tracking-wider text-primary/60 border border-primary/20 rounded px-1.5 py-0.5">
+                          {link.badge}
+                        </span>
+                      )}
                     </span>
                   </Link>
                 </DropdownMenuItem>
@@ -158,6 +172,11 @@ export function Navbar() {
                     <span className="cursor-pointer w-full flex items-center gap-2" data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
                       <link.icon className="h-3.5 w-3.5 text-primary" />
                       {link.label}
+                      {link.badge && (
+                        <span className="ml-auto text-[9px] font-mono tracking-wider text-primary/60 border border-primary/20 rounded px-1.5 py-0.5">
+                          {link.badge}
+                        </span>
+                      )}
                     </span>
                   </Link>
                 </DropdownMenuItem>
@@ -262,6 +281,11 @@ export function Navbar() {
                 >
                   <link.icon className="h-3.5 w-3.5 text-primary" />
                   {link.label}
+                  {link.badge && (
+                    <span className="text-[9px] font-mono tracking-wider text-primary/60 border border-primary/20 rounded px-1.5 py-0.5">
+                      {link.badge}
+                    </span>
+                  )}
                 </div>
               </Link>
             ))}
@@ -279,6 +303,11 @@ export function Navbar() {
                 >
                   <link.icon className="h-3.5 w-3.5 text-primary" />
                   {link.label}
+                  {link.badge && (
+                    <span className="text-[9px] font-mono tracking-wider text-primary/60 border border-primary/20 rounded px-1.5 py-0.5">
+                      {link.badge}
+                    </span>
+                  )}
                 </div>
               </Link>
             ))}
@@ -296,6 +325,11 @@ export function Navbar() {
                 >
                   <link.icon className="h-3.5 w-3.5 text-primary" />
                   {link.label}
+                  {link.badge && (
+                    <span className="text-[9px] font-mono tracking-wider text-primary/60 border border-primary/20 rounded px-1.5 py-0.5">
+                      {link.badge}
+                    </span>
+                  )}
                 </div>
               </Link>
             ))}
@@ -313,6 +347,11 @@ export function Navbar() {
                 >
                   <link.icon className="h-3.5 w-3.5 text-primary" />
                   {link.label}
+                  {link.badge && (
+                    <span className="text-[9px] font-mono tracking-wider text-primary/60 border border-primary/20 rounded px-1.5 py-0.5">
+                      {link.badge}
+                    </span>
+                  )}
                 </div>
               </Link>
             ))}
