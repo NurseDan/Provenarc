@@ -6,38 +6,28 @@ import { SEO } from "@/components/SEO";
 import {
   Globe, Shield, Scan, Lock, Plane, FileCheck,
   ArrowRight, CheckCircle2, ShieldCheck, DollarSign,
-  Award, Camera, BookOpen, Zap, ShieldAlert, TrendingUp,
+  Award, BookOpen, Zap, ShieldAlert, TrendingUp,
   ClipboardCheck, BookMarked, Users, Crown, Star, Handshake,
   Clock, BadgeCheck, Scale, Cpu, Umbrella,
 } from "lucide-react";
 import { fadeUp } from '@/lib/animations';
 
 
-const trustBadges = [
+const threePillars = [
   {
-    icon: Award,
-    title: "30+ Years Combined Aviation Experience",
-    description: "Our co-founders bring decades of practical aviation maintenance, engineering, and records management expertise.",
+    icon: Shield,
+    title: "Provenance",
+    description: "We protect the historical narrative of the aircraft — its records, ownership history, modifications, and compliance documentation — so that narrative remains intact, verifiable, and defensible across ownership transitions.",
   },
   {
-    icon: Camera,
-    title: "FAA Part 107 Certified Drone Pilots",
-    description: "Professional-grade aerial documentation conducted by certified Remote Pilot in Command operators.",
-  },
-  {
-    icon: BookOpen,
-    title: "Museum-Grade Archival Materials",
-    description: "Preservation-quality deliverables designed to survive generations, not just transactions.",
+    icon: FileCheck,
+    title: "Integrity",
+    description: "Our records are structured for operational credibility: FAA-aligned, inspection-ready, and suited to pre-buy scrutiny, insurance claims, and regulatory review. Documentation that looks good is not enough. Documentation that holds up under pressure is the standard.",
   },
   {
     icon: Globe,
-    title: "Global Service Capability",
-    description: "We have documented aircraft on five continents, bringing the same white-glove service worldwide.",
-  },
-  {
-    icon: Shield,
-    title: "Zero Shipping Risk Guarantee",
-    description: "Your original documents never leave your property. We travel to you, scan on-site, return immediately.",
+    title: "Stewardship",
+    description: "We do not mail documents. We go to the aircraft, perform the work on-site, return every original before we leave, and deliver a preservation record that will serve the aircraft's next owner as well as its current one.",
   },
 ];
 
@@ -183,18 +173,10 @@ export default function AeroHome() {
             className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#faf6f1] leading-[1.1] tracking-tight"
             data-testid="text-aero-headline"
           >
-            Preserving Aviation Heritage
+            Protecting the provenance, integrity,
             <br className="hidden sm:block" />
-            {" "}with Three Decades of Precision
+            {" "}and value of extraordinary aircraft.
           </motion.h1>
-
-          <motion.p
-            {...fadeUp}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-            className="text-[#c9a96e]/80 font-serif text-lg sm:text-xl mt-6 italic"
-          >
-            From original logbooks to heirloom-quality archival volumes — your aircraft deserves nothing less
-          </motion.p>
 
           <motion.p
             {...fadeUp}
@@ -202,13 +184,9 @@ export default function AeroHome() {
             className="text-[#b8b0a4] text-base sm:text-lg mt-8 max-w-3xl mx-auto leading-relaxed"
             data-testid="text-aero-subheadline"
           >
-            Provenarc Aero Solutions represents the convergence of three decades of aviation expertise
-            and cutting-edge preservation technology. Founded by professionals who have dedicated their
-            careers to aerospace excellence, we understand that your aircraft is more than an asset — it
-            is a legacy. Our proprietary digitization process cannot be rushed because quality demands
-            time. Using advanced drone technology for exterior documentation and museum-grade materials
-            for physical archives, we create deliverables that serve dual purposes: immediate operational
-            utility and permanent historical record.
+            Provenarc Aero Solutions travels to your aircraft — anywhere in the world — to deliver
+            complete records digitization, 3D documentation, and inspection-ready archives.
+            Original documents never leave your custody.
           </motion.p>
 
           <motion.div
@@ -247,28 +225,28 @@ export default function AeroHome() {
       </section>
 
       <section className="py-20 border-b border-border/50" data-testid="section-trust-badges">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <motion.div {...fadeUp} className="text-center mb-12">
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
-              Why Clients Trust Provenarc
+              The Three Pillars
             </p>
+            <h2 className="font-serif text-2xl md:text-3xl">Provenance. Integrity. Stewardship.</h2>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {trustBadges.map((badge, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {threePillars.map((pillar, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="text-center"
                 data-testid={`badge-trust-${i}`}
               >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <badge.icon className="h-5 w-5 text-primary" />
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <pillar.icon className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="text-sm font-medium mb-2 leading-tight">{badge.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{badge.description}</p>
+                <h3 className="font-serif text-lg mb-3">{pillar.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{pillar.description}</p>
               </motion.div>
             ))}
           </div>
@@ -301,7 +279,7 @@ export default function AeroHome() {
             </p>
             <p className="text-[#b8b0a4] text-base leading-relaxed max-w-3xl mx-auto mb-4">
               From sovereign fleets to private collections of the world's most discerning owners,
-              our Bespoke program serves royal families, heads of state, ultra-high-net-worth
+              our fully custom documentation program serves royal families, heads of state, ultra-high-net-worth
               individuals, and family offices who require absolute discretion and documentation
               excellence without compromise.
             </p>
@@ -395,7 +373,7 @@ export default function AeroHome() {
                   </ul>
                   <Link href="/contact">
                     <Button variant="outline" className="w-full" data-testid={`button-tier-${tier.number}`}>
-                      Discuss Your Project
+                      Discuss Your Engagement
                     </Button>
                   </Link>
                 </Card>
@@ -440,7 +418,7 @@ export default function AeroHome() {
                   </ul>
                   <Link href="/contact">
                     <Button className="w-full" data-testid={`button-tier-${tier.number}`}>
-                      Discuss Your Project
+                      Discuss Your Engagement
                     </Button>
                   </Link>
                 </Card>
@@ -781,7 +759,7 @@ export default function AeroHome() {
               Next Step
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#faf6f1] leading-tight">
-              Ready to Preserve Your Aircraft's Heritage?
+              Ready to Protect Your Aircraft's Provenance?
             </h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
               <Link href="/contact">

@@ -90,8 +90,8 @@ export default function About() {
             </h1>
             <p className="text-[#b8b0a4] text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
               Three decades of aviation expertise. Museum-grade preservation standards. White-glove
-              global service. We are building the world's premier documentation and preservation
-              company for high-value transportation assets.
+              global service. We are building the world's premier provenance protection and documentation
+              company for extraordinary aircraft and vessels.
             </p>
           </motion.div>
         </div>
@@ -130,7 +130,7 @@ export default function About() {
                   We integrated 3D scanning and drone-based exterior documentation to create baseline
                   condition records of the aircraft itself — exterior, interior, and mechanical systems.
                   Combined with museum-grade archival volumes, we created a new category: complete
-                  aircraft documentation and permanent heritage preservation.
+                  aircraft provenance protection and permanent preservation.
                 </p>
               </div>
             </div>
@@ -247,7 +247,7 @@ export default function About() {
               },
               {
                 title: "Integrity",
-                description: "Independence from OEMs, brokerages, and insurers means our only priority is accurate documentation. No conflicts. No agenda. We serve the asset and the owner.",
+                description: "Independence from OEMs, brokerages, and insurers means our only priority is accurate documentation. No conflicts. No agenda. We serve the aircraft and the owner.",
               },
               {
                 title: "Discretion",

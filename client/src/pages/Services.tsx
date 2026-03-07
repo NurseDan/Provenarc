@@ -364,7 +364,7 @@ export default function Services() {
 
                 <Link href="/contact">
                   <Button className="w-full mt-6" data-testid={`button-quote-tier-${tier.number}`}>
-                    Discuss Your Project <ArrowRight className="ml-2 h-4 w-4" />
+                    Discuss Your Engagement <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </Card>
@@ -406,7 +406,7 @@ export default function Services() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 For pre-sale presentations, they demonstrate meticulous ownership. For corporate flight
                 departments, physical reference independent of technology. For family legacy, beautiful
-                artifacts. Some clients commission multiple copies — one operational, one for insurance,
+                artifacts. Some clients request multiple copies — one operational, one for insurance,
                 one for permanent display.
               </p>
               <Card className="p-4 bg-primary/5 border-primary/10">
@@ -695,7 +695,7 @@ export default function Services() {
           </div>
           <motion.div {...fadeUp} className="text-center mt-8">
             <p className="text-xs text-muted-foreground">
-              Certificate of Insurance provided before every engagement. Fixed-price guarantee on all proposals. Mutual NDA on every project.
+              Certificate of Insurance provided before every engagement. Fixed-price guarantee on all proposals. Mutual NDA on every engagement.
             </p>
           </motion.div>
         </div>
@@ -740,7 +740,7 @@ export default function Services() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <h2 className="font-serif text-3xl md:text-4xl text-[#faf6f1]">
-              Ready to Preserve Your Aircraft's Heritage?
+              Ready to Protect Your Aircraft's Provenance?
             </h2>
             <p className="text-[#b8b0a4] text-lg mt-4">
               Contact us for a detailed proposal tailored to your aircraft and requirements.

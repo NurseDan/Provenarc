@@ -600,7 +600,7 @@ export default function HowItWorks() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <motion.div {...fadeUp}>
             <h2 className="font-serif text-3xl md:text-4xl text-[#faf6f1]">
-              Ready to Preserve Your Aircraft's Heritage?
+              Ready to Protect Your Aircraft's Provenance?
             </h2>
             <p className="text-[#b8b0a4] text-lg mt-4">
               Schedule a discovery call to discuss your aircraft and documentation goals.

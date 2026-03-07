@@ -176,6 +176,23 @@ export default function AeroPartners() {
             </p>
           </motion.div>
 
+          <motion.div {...fadeUp} className="mb-10">
+            <Card className="p-6 lg:p-8 border-primary/20 bg-primary/5">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                {[
+                  { stat: "15–30%", label: "Asking price lost when records are incomplete or missing" },
+                  { stat: "30–60 days", label: "Faster transaction timeline with professional documentation on file" },
+                  { stat: "Zero", label: "Buyer objections about records when provenance protection is complete" },
+                ].map((item, i) => (
+                  <div key={i}>
+                    <p className="font-serif text-2xl text-primary mb-1">{item.stat}</p>
+                    <p className="text-xs text-muted-foreground leading-snug">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </motion.div>
+
           <div className="space-y-6">
             {partnershipModels.map((model, i) => (
               <motion.div
@@ -404,8 +421,8 @@ export default function AeroPartners() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Offer aircraft documentation services to your maintenance customers as a premium value-add.
                 We coordinate around your maintenance schedule for seamless integration with minimal
-                disruption to your MRO operations. Quality standards remain identical regardless of
-                facility or timeline.
+                disruption to your MRO operations. Deliverables are structured for FAA compliance and
+                inspection-ready archiving. Quality standards remain identical regardless of facility or timeline.
               </p>
 
               <h3 className="font-medium text-sm mb-3">Partnership Advantages</h3>

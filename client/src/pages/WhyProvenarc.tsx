@@ -182,6 +182,14 @@ export default function WhyProvenarc() {
             </h2>
           </motion.div>
 
+          <motion.div {...fadeUp} className="mb-12">
+            <Card className="p-6 lg:p-8 border-primary/20 bg-primary/5">
+              <p className="font-serif text-lg text-foreground leading-relaxed italic mb-0">
+                "We do not accept shipped documents. Ever. We come to the aircraft, perform the work on-site, and return every original before we leave. Your logbooks are irreplaceable. The risk of putting them in the hands of a carrier is not a risk we are willing to ask you to take."
+              </p>
+            </Card>
+          </motion.div>
+
           <motion.div {...fadeUp}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               {[
@@ -274,6 +282,15 @@ export default function WhyProvenarc() {
 
       <section className="py-24 bg-card/50">
         <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...fadeUp} className="mb-16">
+            <Card className="p-6 lg:p-8 border-primary/20">
+              <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">Our Standard</p>
+              <p className="font-serif text-lg text-foreground leading-relaxed italic mb-0">
+                "We are thorough, not fast. We process three days of post-production for every day in the field — OCR verification, metadata tagging, multi-stage quality review. Our turnaround is 10 to 40 business days depending on the engagement. If you need documentation done quickly, we are not the right choice. If you need it done right, we are the only choice."
+              </p>
+            </Card>
+          </motion.div>
+
           <motion.div {...fadeUp} className="text-center mb-12">
             <p className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4">
               Comparison
@@ -305,6 +322,11 @@ export default function WhyProvenarc() {
           </motion.div>
 
           <motion.div {...fadeUp} className="mt-12">
+            <Card className="p-6 lg:p-8 border-primary/20 bg-primary/5 mb-6">
+              <p className="font-serif text-base text-foreground leading-relaxed italic">
+                "Our competitors require you to ship irreplaceable logbooks via FedEx and offer no 3D scanning capability. We travel to the aircraft, deliver complete records digitization and 3D documentation in a single visit, and return every original before we leave. We are not in the same category. We are the only company offering this service globally."
+              </p>
+            </Card>
             <Card className="p-6 lg:p-8">
               <h3 className="font-serif text-xl mb-4">Why Premium Service Is Justified</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

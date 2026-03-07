@@ -15,9 +15,8 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed mb-4">
-              Premier documentation and preservation services for aircraft and vessels
-              worldwide. Museum-grade archival standards. White-glove global service. Your
-              originals never leave your property.
+              Provenance protection and on-site documentation for extraordinary aircraft and vessels
+              worldwide. Inspection-ready records. Original documents never leave your custody.
             </p>
             <p className="text-xs text-[#6a6259]">Provenarc Group LLC — Texas, United States</p>
             <div className="mt-4 text-xs text-[#6a6259] space-y-1">
@@ -94,7 +93,7 @@ export function Footer() {
 
           <div>
             <h4 className="text-[#faf6f1] text-sm font-medium tracking-wider uppercase mb-4">
-              Let's Discuss Your Project
+              Let's Discuss Your Engagement
             </h4>
             <ul className="space-y-2.5">
               <li className="text-sm">Texas, United States</li>

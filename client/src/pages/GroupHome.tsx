@@ -14,7 +14,7 @@ const divisions = [
   {
     icon: Plane,
     name: "Aero Solutions",
-    tagline: "Preserving Aviation Heritage with Three Decades of Precision",
+    tagline: "Protecting the provenance, integrity, and value of extraordinary aircraft.",
     description:
       "Complete aircraft documentation and 3D preservation for piston aircraft through ultra-premium jets. On-site logbook digitization, drone-based exterior scanning, museum-grade archival volumes, and lifetime RecordVault cloud hosting.",
     href: "/aero",
@@ -50,7 +50,7 @@ const trustPillars = [
     icon: Globe,
     title: "Global White-Glove Service",
     description:
-      "We travel to your asset — any hangar, any marina on five continents. Your original documents never leave your custody.",
+      "We travel to your aircraft or vessel — any hangar, any marina on five continents. Your original documents never leave your custody.",
   },
   {
     icon: Cpu,
@@ -120,7 +120,7 @@ export default function GroupHome() {
             className="font-serif text-xl sm:text-2xl md:text-3xl text-[#c9a96e] leading-relaxed tracking-wide"
             data-testid="text-group-tagline"
           >
-            Preserving the Heritage of the World's Finest Assets
+            Protecting the provenance, integrity, and value of extraordinary aircraft and vessels.
           </motion.p>
 
           <motion.p
@@ -130,8 +130,7 @@ export default function GroupHome() {
             className="text-[#b8b0a4] text-base sm:text-lg mt-8 max-w-2xl mx-auto leading-relaxed"
             data-testid="text-group-subtitle"
           >
-            Three decades of precision documentation. Museum-grade archival standards.
-            White-glove global service.
+            On-site documentation. Inspection-ready records. Original documents never leave your custody.
           </motion.p>
 
           <motion.div
@@ -294,8 +293,8 @@ export default function GroupHome() {
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
               Every aircraft and every vessel represents decades of engineering
               excellence, careful stewardship, and personal investment. At Provenarc Group, we believe
-              the documentation of these extraordinary assets should reflect the same precision and
-              permanence as the assets themselves.
+              the documentation of these extraordinary aircraft and vessels should reflect the same precision and
+              permanence as the aircraft and vessels themselves.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               We never compromise on quality. We offer permanent preservation executed at museum
