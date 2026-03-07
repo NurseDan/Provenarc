@@ -25,11 +25,7 @@ import BrokerLogin from "@/pages/BrokerLogin";
 import MROLogin from "@/pages/MROLogin";
 import BrokerDashboard from "@/pages/BrokerDashboard";
 import MRODashboard from "@/pages/MRODashboard";
-import Marine from "@/pages/Marine";
-import MarineWhyUs from "@/pages/MarineWhyUs";
-import MarineProcess from "@/pages/MarineProcess";
-import MarineServices from "@/pages/MarineServices";
-import MarinePartners from "@/pages/MarinePartners";
+import MarineTeaser from "@/pages/MarineTeaser";
 import AeroPartners from "@/pages/AeroPartners";
 import ForgotPassword from "@/pages/ForgotPassword";
 import ResetPassword from "@/pages/ResetPassword";
@@ -66,11 +62,11 @@ function Router() {
       <Route path="/reset-password" component={ResetPassword} />
       <Route path="/broker/dashboard" component={BrokerDashboard} />
       <Route path="/mro/dashboard" component={MRODashboard} />
-      <Route path="/marine" component={Marine} />
-      <Route path="/marine/services" component={MarineServices} />
-      <Route path="/marine/why-us" component={MarineWhyUs} />
-      <Route path="/marine/process" component={MarineProcess} />
-      <Route path="/marine/partners" component={MarinePartners} />
+      <Route path="/marine" component={MarineTeaser} />
+      <Route path="/marine/services" component={MarineTeaser} />
+      <Route path="/marine/why-us" component={MarineTeaser} />
+      <Route path="/marine/process" component={MarineTeaser} />
+      <Route path="/marine/partners" component={MarineTeaser} />
       <Route path="/aero/services" component={Services} />
       <Route path="/aero/how-it-works" component={HowItWorks} />
       <Route path="/aero/why-provenarc" component={WhyProvenarc} />

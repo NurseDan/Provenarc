@@ -19,15 +19,17 @@ const divisions = [
       "Complete aircraft documentation and 3D preservation for piston aircraft through ultra-premium jets. On-site logbook digitization, drone-based exterior scanning, museum-grade archival volumes, and lifetime RecordVault cloud hosting.",
     href: "/aero",
     platform: "RecordVault",
+    comingSoon: false,
   },
   {
     icon: Anchor,
     name: "Marine",
-    tagline: "Preserving Maritime Heritage with Three Decades of Precision",
+    tagline: "Launching Soon — Museum-Grade Vessel Documentation",
     description:
-      "Professional vessel documentation combining maritime expertise, drone-based hull and superstructure scanning, and museum-grade archival volumes. From coastal cruisers to superyachts across four continents and seventeen flag jurisdictions.",
+      "The full Provenarc standard — drone hull scanning, flag state registry packages, museum-grade archival volumes, and VesselVault cloud hosting — coming to superyachts, classic vessels, and the world's finest maritime assets. Register your interest to be first in line.",
     href: "/marine",
     platform: "VesselVault",
+    comingSoon: true,
   },
 ];
 
@@ -189,7 +191,14 @@ export default function GroupHome() {
                           <p className="font-mono text-[10px] tracking-[0.3em] text-primary uppercase mb-1">
                             Provenarc
                           </p>
-                          <h3 className="font-serif text-2xl">{division.name}</h3>
+                          <div className="flex items-center gap-3">
+                            <h3 className="font-serif text-2xl">{division.name}</h3>
+                            {division.comingSoon && (
+                              <span className="text-[9px] font-mono tracking-[0.2em] text-primary/70 border border-primary/25 rounded px-2 py-0.5 uppercase">
+                                Coming Soon
+                              </span>
+                            )}
+                          </div>
                         </div>
                       </div>
 
@@ -197,9 +206,16 @@ export default function GroupHome() {
                         <p className="font-mono text-[10px] tracking-[0.3em] text-primary uppercase mb-1 hidden lg:block">
                           Provenarc
                         </p>
-                        <h3 className="font-serif text-2xl mb-2 hidden lg:block">
-                          {division.name}
-                        </h3>
+                        <div className="hidden lg:flex items-center gap-3 mb-2">
+                          <h3 className="font-serif text-2xl">
+                            {division.name}
+                          </h3>
+                          {division.comingSoon && (
+                            <span className="text-[9px] font-mono tracking-[0.2em] text-primary/70 border border-primary/25 rounded px-2 py-0.5 uppercase">
+                              Coming Soon
+                            </span>
+                          )}
+                        </div>
                         <p className="text-sm text-primary/80 italic mb-3">
                           {division.tagline}
                         </p>
@@ -212,7 +228,9 @@ export default function GroupHome() {
                       </div>
 
                       <div className="flex items-center gap-2 text-primary opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                        <span className="text-sm font-medium hidden sm:inline">Explore</span>
+                        <span className="text-sm font-medium hidden sm:inline">
+                          {division.comingSoon ? "Learn More" : "Explore"}
+                        </span>
                         <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
