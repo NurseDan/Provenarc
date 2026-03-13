@@ -1,0 +1,30 @@
+{
+  "name": "Provenarc Dev",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "features": {
+    "ghcr.io/devcontainers/features/postgresql:1": {
+      "version": "16"
+    }
+  },
+  "postCreateCommand": "npm install && chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
+  "postStartCommand": "pg_ctlcluster 16 main start || true",
+  "forwardPorts": [5000],
+  "portsAttributes": {
+    "5000": {
+      "label": "Provenarc App",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
